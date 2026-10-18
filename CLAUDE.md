@@ -79,6 +79,11 @@ These cost money (Nebius credit and/or Tavily credits). Run them only when the u
   multi-step instructions where terse wording could be misread.
 - **Caveman covers chat only.** Code, comments, commit messages, PR text, docs (README, CLAUDE.md, skills, agents),
   memory files, notification messages and all interface text in `web/i18n.js` stay in normal English (or Arabic).
+- **Work in a git worktree, never on `main` directly.** Before the first edit of a task, create a worktree on a new
+  branch (`EnterWorktree`, or `git worktree add .claude/worktrees/<task> -b <task>`), make all changes and run the
+  tests there, and tell the user the worktree path and branch name. Do not commit or push to `main` from the main
+  checkout. When the work is done, report the branch and ask before merging or pushing. This keeps parallel
+  branches and sessions from conflicting. A read-only question needs no worktree.
 - After a change, run the tests. For a UI change, also check it in the `batchwatch-web` preview.
 
 ## Project agents (`.claude/agents/`)

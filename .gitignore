@@ -16,3 +16,6 @@ registry/runs.jsonl
 registry/watch_state.json
 registry/*.tmp
 live/
+
+# git worktrees made for parallel work
+.claude/worktrees/
