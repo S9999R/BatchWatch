@@ -58,3 +58,15 @@ def test_new_trace_is_capped_but_cached_trace_is_free(monkeypatch):
     assert blocked.status_code == 429 and "limit" in blocked.json()["detail"]
     assert runs == ["new-1"]
     assert client.get("/api/limits").json()["used_today"] == 1
+
+
+def test_nano_column_mapping_is_capped(monkeypatch):
+    calls = []
+    monkeypatch.setenv("NEBIUS_API_KEY", "test")
+    monkeypatch.setattr(main, "column_limiter", DailyLimiter(total=1, per_visitor=1))
+    monkeypatch.setattr("batchwatch.llm.make_client", lambda: None)
+    monkeypatch.setattr("batchwatch.columns.suggest_columns", lambda *a: calls.append(1) or {})
+    client = TestClient(main.app)
+    for _ in range(3):  # unfamiliar headers: only the first upload may reach Nano
+        assert client.post("/api/check", files={"file": ("s.csv", b"foo,bar\n1,2\n")}).status_code == 400
+    assert len(calls) == 1

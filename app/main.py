@@ -31,6 +31,8 @@ ROOT = Path(__file__).resolve().parent.parent
 load_dotenv(ROOT / ".env")
 _trace_lock = threading.Lock()  # one agent run at a time keeps API spend predictable
 limiter = DailyLimiter.from_env()
+# Nemotron Nano column mapping for unfamiliar stock files is also paid, so it gets its own daily cap.
+column_limiter = DailyLimiter(int(os.environ.get("COLUMNS_DAILY_LIMIT", "200")), int(os.environ.get("COLUMNS_PER_VISITOR_LIMIT", "20")))
 SAMPLES = {"riyadh": ROOT / "examples" / "riyadh_pharmacy.csv", "hospital": ROOT / "examples" / "inventory_sample.csv"}
 MAX_UPLOAD_BYTES = 2_000_000
 MAX_LINES = 20_000
@@ -96,12 +98,13 @@ def _xlsx_to_csv(raw: bytes) -> str:
     return out.getvalue()
 
 
-def _check(text: str, filename: str) -> dict:
+def _check(text: str, filename: str, visitor: str = "sample") -> dict:
     headers, rows = read_rows(text)
     if not headers:
         raise HTTPException(400, "The file is empty.")
     mapping, how = map_columns(headers), "names"
-    if any(f not in mapping for f in REQUIRED_COLUMNS) and os.environ.get("NEBIUS_API_KEY"):
+    if any(f not in mapping for f in REQUIRED_COLUMNS) and os.environ.get("NEBIUS_API_KEY") \
+            and column_limiter.take(visitor) is None:  # over the cap: fall through to the normal "columns not found" error
         try:  # an unfamiliar export: let Nemotron read the header row and three sample rows
             from batchwatch.columns import suggest_columns
             from batchwatch.llm import make_client
@@ -135,13 +138,13 @@ def _check(text: str, filename: str) -> dict:
 
 
 @app.post("/api/check")
-async def post_check(file: UploadFile = File(...)):
+async def post_check(request: Request, file: UploadFile = File(...)):
     raw = await file.read(MAX_UPLOAD_BYTES + 1)
     if len(raw) > MAX_UPLOAD_BYTES:
         raise HTTPException(400, "The file is larger than 2 MB. Split it or export only the medicines in stock.")
     name = file.filename or "stock.csv"
     text = _xlsx_to_csv(raw) if raw[:2] == b"PK" or name.lower().endswith(".xlsx") else _decode(raw)
-    return _check(text, name)
+    return _check(text, name, request.client.host if request.client else "unknown")
 
 
 @app.get("/api/check/sample")
