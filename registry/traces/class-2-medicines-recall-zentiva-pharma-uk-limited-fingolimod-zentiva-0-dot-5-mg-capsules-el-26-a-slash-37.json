@@ -1,0 +1,82 @@
+{
+  "alert_id": "class-2-medicines-recall-zentiva-pharma-uk-limited-fingolimod-zentiva-0-dot-5-mg-capsules-el-26-a-slash-37",
+  "summary": "The MHRA Class 2 recall of Fingolimod Zentiva 0.5 mg capsules (batch 4L01372H) has been echoed by Hong Kong's Drug Office, which noted the product is not registered there, and reported by the European pharma news outlet Europe Pharma Today. No other national regulators or international agencies have issued separate alerts for this batch.",
+  "findings": [
+    {
+      "country": "Hong Kong",
+      "authority": "Drug Office, Hong Kong",
+      "url": "https://www.drugoffice.gov.hk/eps/news/showNews/Fingolimod/consumer/2026-08-21/en/57999.html",
+      "date": "2026-08-21",
+      "batch_numbers": [
+        "4L01372H"
+      ],
+      "evidence_quote": "Medicines and Healthcare products Regulatory Agency (MHRA) announces that Zentiva UK Pharma Limited is recalling one batch of Fingolimod Zentiva 0.5 mg Capsules (batch number: 4L01372H) as a precautionary measure due to a potential risk of contamination with metal particles.",
+      "read_by_agent": true,
+      "quote_verified": true,
+      "batches_verified": [
+        "4L01372H"
+      ],
+      "batches_unverified": [],
+      "verified": true,
+      "date_iso": "2026-08-21",
+      "days_from_original": 1
+    },
+    {
+      "country": "International",
+      "authority": "Europe Pharma Today",
+      "url": "https://europepharmatoday.com/news/mhra-class-2-recall-fingolimod-zentiva-4l01372h-august-2026",
+      "date": "2026-08-21",
+      "batch_numbers": [
+        "4L01372H"
+      ],
+      "evidence_quote": "MHRA EL(26)A/37 (20 Aug 2026): Zentiva recalls Fingolimod 0.5 mg batch 4L01372H after shelf-life testing found a potential metal-particle risk.",
+      "read_by_agent": true,
+      "quote_verified": true,
+      "batches_verified": [
+        "4L01372H"
+      ],
+      "batches_unverified": [],
+      "verified": true,
+      "date_iso": "2026-08-21",
+      "days_from_original": 1
+    }
+  ],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "Fingolimod Zentiva 0.5 mg Capsules 4L01372H recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Fingolimod Zentiva 4L01372H recall Europe",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Fingolimod Zentiva recall EMA",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Fingolimod Zentiva recall HPRA",
+      "results": 6
+    },
+    {
+      "tool": "read",
+      "urls": [
+        "https://www.drugoffice.gov.hk/eps/news/showNews/Fingolimod/consumer/2026-08-21/en/57999.html",
+        "https://europepharmatoday.com/news/mhra-class-2-recall-fingolimod-zentiva-4l01372h-august-2026",
+        "https://firstwordpharma.com/story/7898750"
+      ],
+      "ok": 2
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 4,
+    "extract": 1
+  },
+  "llm_cost_usd": 0.0081,
+  "traced_at": "2026-10-09T19:30:11+00:00"
+}

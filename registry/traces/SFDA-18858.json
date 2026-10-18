@@ -1,0 +1,49 @@
+{
+  "alert_id": "SFDA-18858",
+  "summary": "The recall of Dopram 100 MG/5ML batches 50478 and 50293 manufactured by EUMEDICA PHARMACEUTICS FRANCE has been reported only by the Saudi Food and Drug Authority (SFDA). No other national regulators, WHO, regional agencies, or credible news sources have issued alerts or recalls for these specific batches or product.",
+  "findings": [],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "Dopram 100 MG/5ML batch 50478 50293 recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "EUMEDICA PHARMACEUTICS FRANCE Dopram recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Dopram 100 MG/5ML WHO",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "EMA Dopram recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Dopram recall Europe",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"Dopram 100 MG/5ML\" falsified",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"50478\" Dopram",
+      "results": 6
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 7,
+    "extract": 0
+  },
+  "llm_cost_usd": 0.0173,
+  "traced_at": "2026-10-10T20:09:17+00:00"
+}

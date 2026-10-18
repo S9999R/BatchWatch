@@ -1,0 +1,65 @@
+# Smart update: every 30 minutes, ask each regulator what is new and read only the new alerts with Nemotron.
+# The live registry, the run log and each source's state are published to the "data" branch, so the main
+# branch stays code-only and the web app reads the newest data from there (REGISTRY_BASE_URL).
+name: Watch regulators
+
+on:
+  schedule:
+    - cron: "17,47 * * * *"  # every 30 minutes, off the busy top of the hour
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: watch
+  cancel-in-progress: false
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check out the live data (branch "data")
+        run: |
+          if git ls-remote --exit-code --heads origin data >/dev/null; then
+            git fetch --depth 1 origin data
+            git worktree add live FETCH_HEAD
+            (cd live && git checkout -q -B data)
+          else
+            git worktree add --detach live
+            (cd live && git checkout -q --orphan data && git rm -rfq . && git clean -fdq)
+          fi
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Watch the regulators
+        env:
+          BATCHWATCH_DATA_DIR: live
+          NEBIUS_API_KEY: ${{ secrets.NEBIUS_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          NOTIFY_EMAIL_TO: ${{ secrets.NOTIFY_EMAIL_TO }}
+          NOTIFY_EMAIL_FROM: ${{ secrets.NOTIFY_EMAIL_FROM }}
+          NOTIFY_WEBHOOK_URL: ${{ secrets.NOTIFY_WEBHOOK_URL }}
+          SITE_URL: ${{ vars.SITE_URL }}
+          WATCH_DAILY_USD: ${{ vars.WATCH_DAILY_USD || '0.50' }}
+        run: python -m batchwatch.watch
+
+      - name: Publish the live data
+        run: |
+          cd live
+          git config user.name "batchwatch-bot"
+          git config user.email "batchwatch-bot@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -qm "watch: $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push -q origin data

@@ -1,0 +1,56 @@
+{
+  "alert_id": "GH-1010159",
+  "summary": "",
+  "findings": [],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "Choice Irish Cream Flavoured Drink sildenafil",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"Choice Irish Cream Flavoured Drink\" sildenafil",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"1 Africa Industries Limited\" sildenafil",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"Choice Irish Cream\" Nigeria",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"Choice Irish Cream\" NAFDAC",
+      "results": 6
+    },
+    {
+      "tool": "read",
+      "urls": [
+        "https://nafdac.gov.ng/public-alert-no-31-2026-recall-of-sexual-enhancement-product-due-to-undeclared-pharmaceutical-ingredients"
+      ],
+      "ok": 1
+    },
+    {
+      "tool": "search",
+      "query": "\"Choice Irish Cream\" WHO",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"Choice Irish Cream Flavoured Drink\" Nigeria",
+      "results": 6
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 7,
+    "extract": 1
+  },
+  "llm_cost_usd": 0.0212,
+  "traced_at": "2026-10-10T20:13:14+00:00"
+}

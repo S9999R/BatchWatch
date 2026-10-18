@@ -1,0 +1,96 @@
+{
+  "alert_id": "DRAP-79245",
+  "summary": "The falsified Darzalex batches STV1K01 and MYS7381 have been reported by the Kenyan Pharmacy and Poisons Board, the World Health Organization, and the African Medicines Agency. The WHO and African Medicines Agency alerts note that the falsified products were detected in the Maldives and Mexico, while the Kenyan advisory states that these batches have not been found in Kenya's market. No additional batches or differing product details were mentioned beyond those in the original DRAP alert.",
+  "findings": [
+    {
+      "country": "Kenya",
+      "authority": "Pharmacy and Poisons Board (Kenya)",
+      "url": "https://web.pharmacyboardkenya.org/wp-content/uploads/2026/08/Public-alert-Falsified-Darzalex.pdf",
+      "date": "2026-08-11",
+      "batch_numbers": [
+        "STV1K01",
+        "MYS7381"
+      ],
+      "evidence_quote": "Visible particulate matter was found in at least one falsified batch, STV1K01.",
+      "read_by_agent": true,
+      "quote_verified": true,
+      "batches_verified": [
+        "STV1K01",
+        "MYS7381"
+      ],
+      "batches_unverified": [],
+      "verified": true,
+      "date_iso": "2026-08-11",
+      "days_from_original": 26
+    },
+    {
+      "country": "International",
+      "authority": "World Health Organization",
+      "url": "https://www.who.int/news/item/03-07-2026-medical-product-alert-n-3-2026--falsified-darzalex-(daratumumab)",
+      "date": "2026-07-03",
+      "batch_numbers": [
+        "STV1K01",
+        "MYS7381"
+      ],
+      "evidence_quote": "The falsified products were detected in Maldives and Mexico.",
+      "read_by_agent": false,
+      "quote_verified": false,
+      "batches_verified": [],
+      "batches_unverified": [
+        "STV1K01",
+        "MYS7381"
+      ],
+      "verified": false,
+      "date_iso": "2026-07-03",
+      "days_from_original": -13
+    },
+    {
+      "country": "International",
+      "authority": "African Medicines Agency",
+      "url": "https://au-ama.africa/alerts/medical-product-alert-n3-2026-falsified-darzalex-daratumumab",
+      "date": "2026-07-03",
+      "batch_numbers": [
+        "STV1K01",
+        "MYS7381"
+      ],
+      "evidence_quote": "National Regulatory Authorities in both countries reported the incidents to WHO in May and June 2026.",
+      "read_by_agent": true,
+      "quote_verified": true,
+      "batches_verified": [],
+      "batches_unverified": [
+        "STV1K01",
+        "MYS7381"
+      ],
+      "verified": false,
+      "date_iso": "2026-07-03",
+      "days_from_original": -13
+    }
+  ],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "STV1K01 Darzalex falsified",
+      "results": 6
+    },
+    {
+      "tool": "read",
+      "urls": [
+        "https://web.pharmacyboardkenya.org/wp-content/uploads/2026/08/Public-alert-Falsified-Darzalex.pdf",
+        "https://au-ama.africa/alerts/medical-product-alert-n3-2026-falsified-darzalex-daratumumab"
+      ],
+      "ok": 2
+    },
+    {
+      "tool": "search",
+      "query": "WHO Medical Product Alert N°3/2026 falsified Darzalex",
+      "results": 6
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 2,
+    "extract": 1
+  },
+  "llm_cost_usd": 0.006,
+  "traced_at": "2026-10-10T20:11:53+00:00"
+}

@@ -1,0 +1,44 @@
+{
+  "alert_id": "SFDA-17786",
+  "summary": "No additional reports of the SACO MEDICAL fusidic acid/hydrocortisone cream recall were found in other national regulators, WHO, regional agencies, or credible news sources beyond the original Saudi SFDA alert.",
+  "findings": [],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "SACO MEDICAL fusidic acid 2% hydrocortisone cream recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "SACO MEDICAL recall international",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"Sahha Factory Company\" fusidic acid",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "SACO MEDICAL fusidic acid WHO",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"SACO MEDICAL\" recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"SACO MEDICAL\" WHO",
+      "results": 6
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 6,
+    "extract": 0
+  },
+  "llm_cost_usd": 0.0143,
+  "traced_at": "2026-10-10T20:11:00+00:00"
+}

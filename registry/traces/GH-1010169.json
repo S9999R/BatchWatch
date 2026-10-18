@@ -1,0 +1,56 @@
+{
+  "alert_id": "GH-1010169",
+  "summary": "No additional reports of falsified Sustanon 250 mg/ml Injection batch E0ZB1B were located in searches of other national regulators, WHO, regional agencies, or credible news sources beyond the original Ghana FDA alert.",
+  "findings": [],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "Sustanon 250 mg/ml Injection falsified batch E0ZB1B",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"E0ZB1B\" Sustanon falsified",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"E0ZB1B\" Sustanon",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Falsified Sustanon Ghana FDA detects",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "WHO falsified Sustanon E0ZB1B",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"E0ZB1B\" site:gov",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"E0ZB1B\" Sustanon news",
+      "results": 6
+    },
+    {
+      "tool": "read",
+      "urls": [
+        "https://fdaghana.gov.gh/fda-detects-falsified-sustanon-injection-on-ghanaian-market/"
+      ],
+      "ok": 1
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 7,
+    "extract": 1
+  },
+  "llm_cost_usd": 0.0228,
+  "traced_at": "2026-10-10T20:12:50+00:00"
+}

@@ -1,0 +1,44 @@
+{
+  "alert_id": "22021",
+  "summary": "No additional reports of the falsified Artemether/Lumefantrine 80mg/480mg (Batch BP5203) from other regulators, WHO, or credible news sources were located beyond the original NAFDAC alert.",
+  "findings": [],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "BP5203 Artemether Lumefantrine BPPL falsified",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"BP5203\" Artemether Lumefantrine",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"BP5203\" WHO",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"BP5203\" falsified",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"BP5203\" \"WHO\"",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"BP5203\" NAFDAC",
+      "results": 6
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 6,
+    "extract": 0
+  },
+  "llm_cost_usd": 0.0135,
+  "traced_at": "2026-10-09T19:32:22+00:00"
+}

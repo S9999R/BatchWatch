@@ -1,0 +1,56 @@
+{
+  "alert_id": "class-4-medicines-defect-notification-brancaster-pharma-limited-benzylpenicillin-benzathine-1-dot-2-million-iu-and-2-dot-4-million-iu-powder-for-suspension-for-injection-el-26-a-slash-30",
+  "summary": "",
+  "findings": [],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "Benzylpenicillin benzathine 1.2 Million I.U. powder for suspension for injection batch 72500107",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"72500107\" benzylpenicillin benzathine",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"72500105\" benzylpenicillin benzathine",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Brancaster Pharma Benzylpenicillin benzathine recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "WHO Benzylpenicillin benzathine 1.2 Million IU",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"72500107\" recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Brancaster Pharma Benzylpenicillin benzathine defect",
+      "results": 6
+    },
+    {
+      "tool": "read",
+      "urls": [
+        "https://www.tga.gov.au/resources/section-19a-approvals/approval-lapsed-benzylpenicillin-benzathine-12-million-iu-powder-and-solvent-suspension-injection-brancaster-pharma-uk"
+      ],
+      "ok": 1
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 7,
+    "extract": 1
+  },
+  "llm_cost_usd": 0.0244,
+  "traced_at": "2026-10-10T20:07:39+00:00"
+}

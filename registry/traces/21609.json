@@ -1,0 +1,56 @@
+{
+  "alert_id": "21609",
+  "summary": "The recall of WAP Sensual Enhancement capsules has been reported by the U.S. Food and Drug Administration (FDA) as a voluntary nationwide recall of all lots due to undeclared sildenafil, tadalafil, and flibanserin. No other national regulator or international agency has issued a specific alert for this product or its batches beyond the original NAFDAC notice.",
+  "findings": [
+    {
+      "country": "United States",
+      "authority": "U.S. Food and Drug Administration (FDA)",
+      "url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/best-supplements-best-prices-issues-voluntary-nationwide-recall-wap-sensual-enhancement-capsules-due",
+      "date": "2026-05-11",
+      "batch_numbers": [
+        "ALL"
+      ],
+      "evidence_quote": "FOR IMMEDIATE RELEASE LOS ANGELES, CA – May 11, 2026 – Best Supplements Best Prices is voluntarily recalling all lots of WAP Sensual Enhancement capsules to the consumer level. FDA analysis has found the product to contain undeclared sildenafil, tadalafil, and flibanserin.",
+      "read_by_agent": true,
+      "quote_verified": true,
+      "batches_verified": [
+        "ALL"
+      ],
+      "batches_unverified": [],
+      "verified": true,
+      "date_iso": "2026-05-11",
+      "days_from_original": -38
+    }
+  ],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "WAP Sensual Enhancement capsules sildenafil tadalafil flibanserin recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "WAP Sensual Enhancement capsules recall Health Canada",
+      "results": 6
+    },
+    {
+      "tool": "read",
+      "urls": [
+        "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/best-supplements-best-prices-issues-voluntary-nationwide-recall-wap-sensual-enhancement-capsules-due"
+      ],
+      "ok": 1
+    },
+    {
+      "tool": "search",
+      "query": "\"WAP Sensual Enhancement\" recall site:.gov OR site:.int",
+      "results": 6
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 3,
+    "extract": 1
+  },
+  "llm_cost_usd": 0.0073,
+  "traced_at": "2026-10-10T20:08:49+00:00"
+}

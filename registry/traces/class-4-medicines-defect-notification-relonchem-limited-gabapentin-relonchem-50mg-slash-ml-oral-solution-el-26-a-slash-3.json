@@ -1,0 +1,79 @@
+{
+  "alert_id": "class-4-medicines-defect-notification-relonchem-limited-gabapentin-relonchem-50mg-slash-ml-oral-solution-el-26-a-slash-31",
+  "summary": "The defect notice for Gabapentin Relonchem 50mg/ml Oral Solution (batches 09E1, 11E1, 12E1, 13E1, 14E1, 19F1, 21F1) has been reported by the UK MHRA and also echoed in a safety alert from the Hong Kong Department of Health, which reiterates the same batch numbers and advises healthcare professionals accordingly. No additional international regulator or WHO publications were found beyond these two sources.",
+  "findings": [
+    {
+      "country": "Hong Kong",
+      "authority": "Department of Health, Hong Kong",
+      "url": "https://www.drugoffice.gov.hk/eps/news/showNews/Gabapentin+Relonchem/consumer/2026-07-02/en/57733.html",
+      "date": "2026-07-02",
+      "batch_numbers": [
+        "09E1",
+        "11E1",
+        "12E1",
+        "13E1",
+        "14E1",
+        "19F1",
+        "21F1"
+      ],
+      "evidence_quote": "Medicines and Healthcare products Regulatory Agency (MHRA) announces that Relonchem Limited have informed the MHRA that particles have been observed inside some bottles of Gabapentin Relonchem Oral Solution (batch number: 09E1, 11E1, 12E1, 13E1, 14E1, 19F1, 21F1), identified through a customer complaint.",
+      "read_by_agent": true,
+      "quote_verified": true,
+      "batches_verified": [
+        "09E1",
+        "11E1",
+        "12E1",
+        "13E1",
+        "14E1",
+        "19F1",
+        "21F1"
+      ],
+      "batches_unverified": [],
+      "verified": true,
+      "date_iso": "2026-07-02",
+      "days_from_original": -5
+    }
+  ],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "Gabapentin Relonchem 50mg/ml Oral Solution particles preservative crystallisation recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"09E1\" \"Gabapentin Relonchem\"",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "WHO Gabapentin Relonchem particles",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Gabapentin Relonchem 50mg/ml Oral Solution Hong Kong",
+      "results": 6
+    },
+    {
+      "tool": "read",
+      "urls": [
+        "https://www.drugoffice.gov.hk/eps/news/showNews/Gabapentin+Relonchem/consumer/2026-07-02/en/57733.html",
+        "https://firstwordpharma.com/story/7664840"
+      ],
+      "ok": 1
+    },
+    {
+      "tool": "search",
+      "query": "WHO Gabapentin Relonchem defect notification",
+      "results": 6
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 5,
+    "extract": 1
+  },
+  "llm_cost_usd": 0.0099,
+  "traced_at": "2026-10-10T20:07:21+00:00"
+}

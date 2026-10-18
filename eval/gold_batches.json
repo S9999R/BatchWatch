@@ -1,0 +1,1837 @@
+{
+ "_about": "Hand-labelled batch numbers for eval/alerts_snapshot.jsonl (snapshot 2026-10-09). 'alert' is a unique substring of alert_id. 'batches' lists [batch_number, product keyword or null]; the keyword checks that a batch is attached to the right product in multi-product alerts. 'all': the alert covers every batch (optionally with an expiry condition). 'none_or_all': the alert names no batch numbers and either an empty list or ALL is acceptable. Without either flag and without batches, the model must return no batches and no ALL. 'status' defaults to active.",
+ "alerts": [
+  {
+   "alert": "D-0860-2026",
+   "batches": [
+    [
+     "3279",
+     null
+    ],
+    [
+     "3292",
+     null
+    ]
+   ]
+  },
+  {
+   "alert": "D-0863-2026",
+   "batches": [
+    [
+     "3161",
+     null
+    ],
+    [
+     "3245",
+     null
+    ],
+    [
+     "3260",
+     null
+    ],
+    [
+     "3298",
+     null
+    ],
+    [
+     "3299",
+     null
+    ],
+    [
+     "3300",
+     null
+    ],
+    [
+     "3301",
+     null
+    ],
+    [
+     "3302",
+     null
+    ],
+    [
+     "3305",
+     null
+    ],
+    [
+     "3306",
+     null
+    ]
+   ]
+  },
+  {
+   "alert": "D-0871-2026",
+   "batches": [
+    [
+     "RL25G04",
+     null
+    ],
+    [
+     "RL2H02",
+     null
+    ]
+   ]
+  },
+  {
+   "alert": "D-0855-2026",
+   "batches": [
+    [
+     "3161",
+     null
+    ],
+    [
+     "3245",
+     null
+    ],
+    [
+     "3260",
+     null
+    ],
+    [
+     "3298",
+     null
+    ],
+    [
+     "3299",
+     null
+    ],
+    [
+     "3300",
+     null
+    ],
+    [
+     "3301",
+     null
+    ],
+    [
+     "3302",
+     null
+    ],
+    [
+     "3305",
+     null
+    ],
+    [
+     "3306",
+     null
+    ]
+   ]
+  },
+  {
+   "alert": "D-0862-2026",
+   "batches": [
+    [
+     "3163",
+     null
+    ],
+    [
+     "3164",
+     null
+    ]
+   ]
+  },
+  {
+   "alert": "D-0856-2026",
+   "batches": [
+    [
+     "3192",
+     null
+    ],
+    [
+     "3293",
+     null
+    ],
+    [
+     "3336",
+     null
+    ]
+   ]
+  },
+  {
+   "alert": "D-0858-2026",
+   "batches": [
+    [
+     "3165",
+     null
+    ],
+    [
+     "3179",
+     null
+    ],
+    [
+     "3204",
+     null
+    ],
+    [
+     "3206",
+     null
+    ],
+    [
+     "3208",
+     null
+    ],
+    [
+     "3259",
+     null
+    ],
+    [
+     "3265",
+     null
+    ],
+    [
+     "3268",
+     null
+    ],
+    [
+     "3272",
+     null
+    ],
+    [
+     "3273",
+     null
+    ],
+    [
+     "3276",
+     null
+    ],
+    [
+     "3278",
+     null
+    ],
+    [
+     "3280",
+     null
+    ],
+    [
+     "3307",
+     null
+    ],
+    [
+     "3309",
+     null
+    ],
+    [
+     "3315",
+     null
+    ]
+   ]
+  },
+  {
+   "alert": "D-0868-2026",
+   "batches": [
+    [
+     "AP250095A",
+     null
+    ]
+   ]
+  },
+  {
+   "alert": "FDA-6e7148603e",
+   "batches": [
+    [
+     "1042188",
+     null
+    ]
+   ]
+  },
+  {
+   "alert": "D-0867-2026",
+   "batches": [
+    [
+     "BOB22321A",
+     null
+    ]
+   ]
+  },
+  {
+   "alert": "D-0861-2026",
+   "batches": [
+    [
+     "3183",
+     null
+    ]
+   ]
+  },
+  {
+   "alert": "D-0857-2026",
+   "batches": [
+    [
+     "3166",
+     null
+    ],
+    [
+     "3172",
+     null
+    ],
+    [
+     "3173",
+     null
+    ],
+    [
+     "3175",
+     null
+    ],
+    [
+     "3176",
+     null
+    ],
+    [
+     "3177",
+     null
+    ],
+    [
+     "3178",
+     null
+    ],
+    [
+     "3180",
+     null
+    ],
+    [
+     "3188",
+     null
+    ],
+    [
+     "3202",
+     null
+    ],
+    [
+     "3203",
+     null
+    ],
+    [
+     "3205",
+     null
+    ],
+    [
+     "3209",
+     null
+    ],
+    [
+     "3210",
+     null
+    ],
+    [
+     "3246",
+     null
+    ],
+    [
+     "3247",
+     null
+    ],
+    [
+     "3248",
+     null
+    ],
+    [
+     "3249",
+     null
+    ],
+    [
+     "3250",
+     null
+    ],
+    [
+     "3252",
+     null
+    ],
+    [
+     "3253",
+     null
+    ],
+    [
+     "3261",
+     null
+    ],
+    [
+     "3262",
+     null
+    ],
+    [
+     "3263",
+     null
+    ],
+    [
+     "3264",
+     null
+    ],
+    [
+     "3281",
+     null
+    ]
+   ]
+  },
+  {
+   "alert": "D-0870-2026",
+   "batches": [
+    [
+     "RL25G02",
+     null
+    ],
+    [
+     "RL25G03",
+     null
+    ],
+    [
+     "RL25G04",
+     null
+    ],
+    [
+     "RL25H02",
+     null
+    ],
+    [
+     "RL25H03",
+     null
+    ],
+    [
+     "RL25H04",
+     null
+    ],
+    [
+     "RL25K01",
+     null
+    ],
+    [
+     "RL25K02",
+     null
+    ],
+    [
+     "RL25K03",
+     null
+    ],
+    [
+     "RL25K04",
+     null
+    ],
+    [
+     "RL25M01",
+     null
+    ],
+    [
+     "RL25M02",
+     null
+    ],
+    [
+     "RL25M03",
+     null
+    ],
+    [
+     "RL25M04",
+     null
+    ],
+    [
+     "RL25N01",
+     null
+    ],
+    [
+     "RL25N02",
+     null
+    ],
+    [
+     "RL25N04",
+     null
+    ]
+   ]
+  },
+  {
+   "alert": "D-0859-2026",
+   "batches": [
+    [
+     "3171",
+     null
+    ],
+    [
+     "3174",
+     null
+    ],
+    [
+     "3275",
+     null
+    ],
+    [
+     "3304",
+     null
+    ]
+   ]
+  },
+  {
+   "alert": "D-0854-2026",
+   "batches": [
+    [
+     "2024/10/11",
+     null
+    ]
+   ]
+  },
+  {
+   "alert": "norgine-limited-movicol",
+   "batches": [
+    [
+     "487069",
+     null
+    ],
+    [
+     "474919",
+     null
+    ]
+   ]
+  },
+  {
+   "alert": "neuraxpharm-uk-limited-levetiracetam",
+   "batches": [
+    [
+     "2153678",
+     "250mg"
+    ],
+    [
+     "2184895",
+     "250mg"
+    ],
+    [
+     "2184908",
+     "500mg"
+    ],
+    [
+     "2194807",
+     "500mg"
+    ],
+    [
+     "2185161",
+     "750mg"
+    ],
+    [
+     "2194917",
+     "750mg"
+    ],
+    [
+     "231350",
+     "1000mg"
+    ],
+    [
+     "2145725",
+     "1000mg"
+    ],
+    [
+     "2154064",
+     "1000mg"
+    ],
+    [
+     "2204270",
+     "1000mg"
+    ],
+    [
+     "231175",
+     "1500mg"
+    ],
+    [
+     "231591",
+     "1500mg"
+    ],
+    [
+     "2248690",
+     "1500mg"
+    ]
+   ]
+  },
+  {
+   "alert": "b-braun-melsungen-ag-meropenem",
+   "batches": [
+    [
+     "25J00360",
+     null
+    ],
+    [
+     "25J01305",
+     null
+    ],
+    [
+     "25J02333",
+     null
+    ],
+    [
+     "25J02595",
+     null
+    ],
+    [
+     "25J02331",
+     null
+    ],
+    [
+     "25J02332",
+     null
+    ],
+    [
+     "25J02335",
+     null
+    ]
+   ]
+  },
+  {
+   "alert": "martindale-pharmaceuticals-ltd-clobazam",
+   "batches": [
+    [
+     "0162858",
+     "5mg/5ml"
+    ],
+    [
+     "0163605",
+     "5mg/5ml"
+    ],
+    [
+     "0163858",
+     "10mg/5ml"
+    ]
+   ]
+  },
+  {
+   "alert": "zentiva-pharma-uk-limited-fingolimod",
+   "batches": [
+    [
+     "4L01372H",
+     null
+    ]
+   ]
+  },
+  {
+   "alert": "tuzulby",
+   "batches": [
+    [
+     "77951",
+     "20mg"
+    ],
+    [
+     "79949",
+     "20mg"
+    ],
+    [
+     "78001",
+     "30mg"
+    ],
+    [
+     "79961",
+     "30mg"
+    ],
+    [
+     "78011",
+     "40mg"
+    ],
+    [
+     "79974",
+     "40mg"
+    ]
+   ]
+  },
+  {
+   "alert": "macarthys-laboratories",
+   "batches": [
+    [
+     "183155",
+     "18mg"
+    ],
+    [
+     "185442",
+     "18mg"
+    ],
+    [
+     "174975",
+     "27mg"
+    ],
+    [
+     "175037",
+     "27mg"
+    ],
+    [
+     "178223",
+     "27mg"
+    ],
+    [
+     "183931",
+     "27mg"
+    ],
+    [
+     "185438",
+     "27mg"
+    ],
+    [
+     "185439",
+     "27mg"
+    ],
+    [
+     "185440",
+     "27mg"
+    ],
+    [
+     "187560",
+     "27mg"
+    ],
+    [
+     "175426",
+     "36mg"
+    ],
+    [
+     "175428",
+     "36mg"
+    ],
+    [
+     "176698",
+     "36mg"
+    ],
+    [
+     "176699",
+     "36mg"
+    ],
+    [
+     "176700",
+     "36mg"
+    ],
+    [
+     "182875",
+     "36mg"
+    ],
+    [
+     "183003",
+     "36mg"
+    ],
+    [
+     "178338",
+     "54mg"
+    ],
+    [
+     "178432",
+     "54mg"
+    ],
+    [
+     "178481",
+     "54mg"
+    ],
+    [
+     "180343",
+     "54mg"
+    ],
+    [
+     "187926",
+     "54mg"
+    ],
+    [
+     "187927",
+     "54mg"
+    ],
+    [
+     "187928",
+     "54mg"
+    ],
+    [
+     "187929",
+     "54mg"
+    ],
+    [
+     "187930",
+     "54mg"
+    ]
+   ]
+  },
+  {
+   "alert": "chloraprep",
+   "batches": [],
+   "all": true,
+   "_note": "all lots with expiry up to and including 05/2029"
+  },
+  {
+   "alert": "phenoxymethylpenicillin",
+   "batches": [
+    [
+     "7124002",
+     null
+    ]
+   ]
+  },
+  {
+   "alert": "gabapentin-relonchem",
+   "batches": [
+    [
+     "09E1",
+     null
+    ],
+    [
+     "11E1",
+     null
+    ],
+    [
+     "12E1",
+     null
+    ],
+    [
+     "13E1",
+     null
+    ],
+    [
+     "14E1",
+     null
+    ],
+    [
+     "19F1",
+     null
+    ],
+    [
+     "21F1",
+     null
+    ]
+   ]
+  },
+  {
+   "alert": "flucloxacillin",
+   "batches": [
+    [
+     "1600636",
+     null
+    ]
+   ]
+  },
+  {
+   "alert": "benzylpenicillin",
+   "batches": [
+    [
+     "72500107",
+     "1.2million"
+    ],
+    [
+     "72500105",
+     "2.4million"
+    ]
+   ]
+  },
+  {
+   "alert": "cyclizine",
+   "batches": [
+    [
+     "2226016",
+     null
+    ]
+   ]
+  },
+  {
+   "alert": "mirtazapine",
+   "batches": [
+    [
+     "ET570E5012",
+     null
+    ]
+   ]
+  },
+  {
+   "alert": "ponlimsi",
+   "batches": [
+    [
+     "184472",
+     null
+    ],
+    [
+     "186711",
+     null
+    ],
+    [
+     "188656",
+     null
+    ]
+   ]
+  },
+  {
+   "alert": "22027",
+   "batches": [],
+   "none_or_all": true,
+   "_note": "watchlist; product list is an attachment, not in the text"
+  },
+  {
+   "alert": "22021",
+   "batches": [
+    [
+     "BP5203",
+     null
+    ]
+   ]
+  },
+  {
+   "alert": "22011",
+   "batches": [],
+   "none_or_all": true,
+   "_note": "counterfeit toothpaste, no batch given"
+  },
+  {
+   "alert": "22088",
+   "batches": [],
+   "_note": "safety communication on gabapentinoid co-use: must not produce ALL"
+  },
+  {
+   "alert": "22083",
+   "batches": [
+    [
+     "24L069",
+     "nitras"
+    ],
+    [
+     "569",
+     "kadin"
+    ],
+    [
+     "ACH479",
+     "acefyl"
+    ],
+    [
+     "24",
+     "loratadine"
+    ]
+   ]
+  },
+  {
+   "alert": "21968",
+   "batches": [
+    [
+     "240605",
+     null
+    ]
+   ],
+   "status": "withdrawn",
+   "_note": "clarification that alert 042/2026 was uploaded in error"
+  },
+  {
+   "alert": "21788",
+   "batches": [
+    [
+     "25770416E",
+     null
+    ]
+   ]
+  },
+  {
+   "alert": "21780",
+   "batches": [
+    [
+     "ATE-262",
+     "forzigar"
+    ],
+    [
+     "GIB405-",
+     "foziga"
+    ]
+   ]
+  },
+  {
+   "alert": "21772",
+   "batches": [],
+   "none_or_all": true,
+   "_note": "unregistered product"
+  },
+  {
+   "alert": "21664",
+   "batches": [],
+   "none_or_all": true,
+   "_note": "food import ban"
+  },
+  {
+   "alert": "21631",
+   "batches": [
+    [
+     "DFG4606A",
+     null
+    ]
+   ]
+  },
+  {
+   "alert": "21615",
+   "batches": [],
+   "all": true,
+   "_note": "two energy drinks, all batches"
+  },
+  {
+   "alert": "21609",
+   "batches": [],
+   "all": true,
+   "_note": "all lots recalled"
+  },
+  {
+   "alert": "21579",
+   "batches": [],
+   "none_or_all": true,
+   "_note": "relabelled after first review: NAFDAC relays an EU withdrawal of all levamisole medicines; whether every batch in Nigeria is affected is a judgement call, so empty or ALL are both accepted"
+  },
+  {
+   "alert": "21572",
+   "batches": [],
+   "none_or_all": true,
+   "_note": "nail polish recall, no batch numbers in text"
+  },
+  {
+   "alert": "SFDA-18858",
+   "batches": [
+    [
+     "50478",
+     null
+    ],
+    [
+     "50293",
+     null
+    ]
+   ]
+  },
+  {
+   "alert": "SFDA-19399",
+   "batches": [
+    [
+     "127778",
+     null
+    ]
+   ]
+  },
+  {
+   "alert": "SFDA-19402",
+   "batches": [
+    [
+     "104173",
+     null
+    ],
+    [
+     "96754",
+     null
+    ],
+    [
+     "125313",
+     null
+    ]
+   ]
+  },
+  {
+   "alert": "SFDA-19401",
+   "batches": [
+    [
+     "96753",
+     null
+    ],
+    [
+     "100130",
+     null
+    ],
+    [
+     "99789",
+     null
+    ],
+    [
+     "102661",
+     null
+    ],
+    [
+     "106527",
+     null
+    ],
+    [
+     "106928",
+     null
+    ],
+    [
+     "123963",
+     null
+    ],
+    [
+     "109626",
+     null
+    ],
+    [
+     "109627",
+     null
+    ],
+    [
+     "113337",
+     null
+    ],
+    [
+     "122077",
+     null
+    ],
+    [
+     "120715",
+     null
+    ],
+    [
+     "123955",
+     null
+    ]
+   ]
+  },
+  {
+   "alert": "SFDA-19400",
+   "batches": [
+    [
+     "124329",
+     null
+    ],
+    [
+     "124870",
+     null
+    ],
+    [
+     "129373",
+     null
+    ]
+   ]
+  },
+  {
+   "alert": "SFDA-19404",
+   "batches": [],
+   "_note": "batch list is in a file attached to the circular, not in the text; the model must not invent batches or say ALL"
+  },
+  {
+   "alert": "SFDA-19405",
+   "batches": [
+    [
+     "112546",
+     null
+    ],
+    [
+     "117876",
+     null
+    ],
+    [
+     "117748",
+     null
+    ],
+    [
+     "126487",
+     null
+    ],
+    [
+     "127226",
+     null
+    ],
+    [
+     "116978",
+     null
+    ],
+    [
+     "120141",
+     null
+    ],
+    [
+     "117749",
+     null
+    ],
+    [
+     "119220",
+     null
+    ],
+    [
+     "127246",
+     null
+    ],
+    [
+     "118968",
+     null
+    ],
+    [
+     "120023",
+     null
+    ],
+    [
+     "122366",
+     null
+    ],
+    [
+     "117908",
+     null
+    ],
+    [
+     "123799",
+     null
+    ],
+    [
+     "118969",
+     null
+    ],
+    [
+     "119221",
+     null
+    ]
+   ]
+  },
+  {
+   "alert": "SFDA-19406",
+   "batches": [
+    [
+     "114646",
+     null
+    ],
+    [
+     "120094",
+     null
+    ]
+   ]
+  },
+  {
+   "alert": "SFDA-19398",
+   "batches": [
+    [
+     "119362",
+     null
+    ],
+    [
+     "119497",
+     null
+    ]
+   ]
+  },
+  {
+   "alert": "SFDA-19403",
+   "batches": [
+    [
+     "97921",
+     null
+    ],
+    [
+     "102133",
+     null
+    ],
+    [
+     "126729",
+     null
+    ]
+   ]
+  },
+  {
+   "alert": "SFDA-19700",
+   "batches": [
+    [
+     "BF25008690",
+     null
+    ]
+   ],
+   "_note": "0905245271 next to it is the registration number, not a batch"
+  },
+  {
+   "alert": "SFDA-19190",
+   "batches": [
+    [
+     "2509984",
+     null
+    ]
+   ],
+   "_note": "2209258251 is the registration number"
+  },
+  {
+   "alert": "SFDA-18872",
+   "batches": [
+    [
+     "IS-340",
+     null
+    ],
+    [
+     "GTA24004",
+     null
+    ],
+    [
+     "GTA24002",
+     null
+    ]
+   ],
+   "_note": "title says three batches; the flattened table lists IS-340 in the first row and two more below"
+  },
+  {
+   "alert": "SFDA-17786",
+   "batches": [],
+   "all": true,
+   "_note": "all batches of three SACO MEDICAL products"
+  },
+  {
+   "alert": "SFDA-18838",
+   "batches": [
+    [
+     "404123A",
+     "0.7mg"
+    ],
+    [
+     "404123",
+     "0.7mg"
+    ],
+    [
+     "305521",
+     "0.18mg"
+    ],
+    [
+     "305521A",
+     "0.18mg"
+    ],
+    [
+     "402050A",
+     "0.18mg"
+    ],
+    [
+     "402050B",
+     "0.18mg"
+    ],
+    [
+     "404119",
+     "0.18mg"
+    ],
+    [
+     "405143",
+     "0.18mg"
+    ],
+    [
+     "405143A",
+     "0.18mg"
+    ]
+   ],
+   "_note": "2805257479 and 81-68-00 are registration numbers"
+  },
+  {
+   "alert": "HC-82684",
+   "batches": [
+    [
+     "24123882",
+     null
+    ]
+   ]
+  },
+  {
+   "alert": "HC-82725",
+   "batches": [
+    [
+     "650920",
+     null
+    ],
+    [
+     "650923",
+     null
+    ],
+    [
+     "650924",
+     null
+    ],
+    [
+     "650927",
+     null
+    ],
+    [
+     "651646",
+     null
+    ],
+    [
+     "651647",
+     null
+    ],
+    [
+     "653566",
+     null
+    ],
+    [
+     "653569",
+     null
+    ],
+    [
+     "654749",
+     null
+    ],
+    [
+     "657006",
+     null
+    ],
+    [
+     "657007",
+     null
+    ],
+    [
+     "658263",
+     null
+    ],
+    [
+     "659714",
+     null
+    ],
+    [
+     "659715",
+     null
+    ],
+    [
+     "661964",
+     null
+    ],
+    [
+     "661965",
+     null
+    ],
+    [
+     "663218",
+     null
+    ],
+    [
+     "663438",
+     null
+    ],
+    [
+     "663439",
+     null
+    ],
+    [
+     "665961",
+     null
+    ]
+   ]
+  },
+  {
+   "alert": "HC-82726",
+   "batches": [
+    [
+     "650921",
+     null
+    ],
+    [
+     "651648",
+     null
+    ],
+    [
+     "654750",
+     null
+    ],
+    [
+     "656546",
+     null
+    ],
+    [
+     "658261",
+     null
+    ],
+    [
+     "659716",
+     null
+    ],
+    [
+     "661963",
+     null
+    ],
+    [
+     "663440",
+     null
+    ],
+    [
+     "665341",
+     null
+    ],
+    [
+     "667133",
+     null
+    ]
+   ]
+  },
+  {
+   "alert": "HC-82720",
+   "batches": [
+    [
+     "642913",
+     null
+    ],
+    [
+     "643904",
+     null
+    ],
+    [
+     "648034",
+     null
+    ],
+    [
+     "651074",
+     null
+    ],
+    [
+     "653544",
+     null
+    ],
+    [
+     "656693",
+     null
+    ]
+   ]
+  },
+  {
+   "alert": "HC-82722",
+   "batches": [
+    [
+     "665960",
+     null
+    ],
+    [
+     "663437",
+     null
+    ],
+    [
+     "663220",
+     null
+    ],
+    [
+     "663219",
+     null
+    ],
+    [
+     "661962",
+     null
+    ],
+    [
+     "659717",
+     null
+    ],
+    [
+     "658262",
+     null
+    ],
+    [
+     "656544",
+     null
+    ],
+    [
+     "653567",
+     null
+    ],
+    [
+     "653568",
+     null
+    ],
+    [
+     "652634",
+     null
+    ],
+    [
+     "652635",
+     null
+    ],
+    [
+     "650922",
+     null
+    ]
+   ]
+  },
+  {
+   "alert": "DRAP-79320",
+   "batches": [
+    [
+     "512900",
+     "leukeran"
+    ],
+    [
+     "GST56925-C",
+     "sorafenib"
+    ],
+    [
+     "B2417",
+     "arimidex"
+    ],
+    [
+     "26ALV04004",
+     "lenvaxen"
+    ],
+    [
+     "OT0470",
+     "cyclophosphamide"
+    ],
+    [
+     "25GST016",
+     "gefimed"
+    ],
+    [
+     "C25LN03B3",
+     "lenvatinib-10"
+    ],
+    [
+     "OC0090",
+     "lenalidomide"
+    ],
+    [
+     "24250052",
+     "nintedanib"
+    ]
+   ]
+  },
+  {
+   "alert": "DRAP-79249",
+   "batches": [
+    [
+     "AVT50",
+     "20mg"
+    ],
+    [
+     "FNR06",
+     "15mg"
+    ],
+    [
+     "SGL04",
+     "15mg"
+    ]
+   ]
+  },
+  {
+   "alert": "DRAP-79245",
+   "batches": [
+    [
+     "STV1K01",
+     "400mg"
+    ],
+    [
+     "MYS7381",
+     "100mg"
+    ]
+   ]
+  },
+  {
+   "alert": "DRAP-79241",
+   "batches": [
+    [
+     "5349764",
+     "bd10ml"
+    ],
+    [
+     "S502E26",
+     "accuject"
+    ]
+   ]
+  },
+  {
+   "alert": "DRAP-79201",
+   "batches": [
+    [
+     "S-3052",
+     "neocobal"
+    ],
+    [
+     "202311G042",
+     "gammaraas"
+    ],
+    [
+     "DX-2642",
+     "kamedex"
+    ],
+    [
+     "25055",
+     "brzole"
+    ],
+    [
+     "LV-2514",
+     "metrorise"
+    ],
+    [
+     "109",
+     "murcobal"
+    ],
+    [
+     "PNO-2510",
+     "premvil"
+    ],
+    [
+     "P-673",
+     "aqua-p"
+    ],
+    [
+     "008",
+     "zyocain"
+    ],
+    [
+     "25G022",
+     "cara-lac"
+    ],
+    [
+     "20334",
+     null
+    ]
+   ],
+   "_note": "11 batches, two of them only three characters long"
+  },
+  {
+   "alert": "SAHPRA-20197",
+   "batches": [
+    [
+     "GQQ24053",
+     null
+    ],
+    [
+     "GQQ24064",
+     null
+    ],
+    [
+     "GQQ24066",
+     null
+    ],
+    [
+     "GQQ24067",
+     null
+    ]
+   ]
+  },
+  {
+   "alert": "SAHPRA-20020",
+   "batches": [],
+   "none_or_all": true,
+   "_note": "warning about recalled compounded semaglutide/tirzepatide, no batch numbers"
+  },
+  {
+   "alert": "SAHPRA-19737",
+   "batches": [],
+   "none_or_all": true,
+   "_note": "enforcement against unregistered GLP-1 products"
+  },
+  {
+   "alert": "SAHPRA-19436",
+   "batches": [],
+   "_note": "batch list is behind a 'click here' link, not in the text"
+  },
+  {
+   "alert": "SAHPRA-19407",
+   "batches": [],
+   "_note": "media advisory; batch list is a separate PDF"
+  },
+  {
+   "alert": "RW-DD-PVCT-4302-FDA-2026-Innotex-Condoms-HW40305",
+   "batches": [
+    [
+     "HW40305",
+     null
+    ]
+   ]
+  },
+  {
+   "alert": "RW-DD-PVCT-4127-FDA-2026-Motilium-Domperidone-All-batches",
+   "batches": [],
+   "all": true
+  },
+  {
+   "alert": "RW-DD-PVCT-4245-FDA-2026-SUR-EAU-Sodium-Hypoc-S241042025",
+   "batches": [
+    [
+     "S241042025",
+     null
+    ]
+   ]
+  },
+  {
+   "alert": "RW-DD-PVCT-4245-FDA-2026-SUR-EAU-Sodium-Hypoc-S240042025",
+   "batches": [
+    [
+     "S240042025",
+     null
+    ]
+   ]
+  },
+  {
+   "alert": "RW-DD-PVCT-4127-FDA-2026-Stugeron-Cinnarizine-All-batches",
+   "batches": [],
+   "all": true
+  },
+  {
+   "alert": "GH-1010169",
+   "batches": [
+    [
+     "E0ZB1B",
+     null
+    ]
+   ]
+  },
+  {
+   "alert": "GH-1010159",
+   "batches": [],
+   "none_or_all": true,
+   "_note": "enforcement round-up, no batch numbers"
+  },
+  {
+   "alert": "GH-1009661",
+   "batches": [],
+   "_note": "says none of the recalled European batches reached Ghana: must not produce batches or ALL"
+  },
+  {
+   "alert": "GH-1006431",
+   "batches": [],
+   "_note": "'underlisted batches' table is not in the text"
+  },
+  {
+   "alert": "GH-990919",
+   "batches": [],
+   "_note": "import rule for glycerin, not a recall: must not produce ALL"
+  },
+  {
+   "alert": "WHO-03-07-2026",
+   "batches": [
+    [
+     "MYS7381",
+     null
+    ],
+    [
+     "STV1K01",
+     null
+    ]
+   ]
+  },
+  {
+   "alert": "WHO-16-06-2026",
+   "batches": [
+    [
+     "AVT50",
+     null
+    ],
+    [
+     "FNR06",
+     null
+    ],
+    [
+     "SGL04",
+     null
+    ]
+   ]
+  },
+  {
+   "alert": "WHO-07-05-2026",
+   "batches": [],
+   "_note": "batches are listed in annexes, not in the text"
+  },
+  {
+   "alert": "WHO-16-03-2026",
+   "batches": [],
+   "none_or_all": true,
+   "_note": "information notice on malaria RDTs, no lot numbers"
+  },
+  {
+   "alert": "WHO-15-12-2025",
+   "batches": [
+    [
+     "FS5173",
+     null
+    ],
+    [
+     "GS4328",
+     null
+    ],
+    [
+     "LV1850",
+     null
+    ],
+    [
+     "TS2190",
+     null
+    ],
+    [
+     "GK2981",
+     null
+    ],
+    [
+     "GR6491",
+     null
+    ],
+    [
+     "GT5817",
+     null
+    ],
+    [
+     "HJ8710",
+     null
+    ],
+    [
+     "HJ8715",
+     null
+    ]
+   ],
+   "_note": "4 falsified plus 5 suspicious lot numbers"
+  }
+ ]
+}

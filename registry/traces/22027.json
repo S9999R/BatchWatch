@@ -1,0 +1,49 @@
+{
+  "alert_id": "22027",
+  "summary": "No additional reports from other national regulators, WHO, the African Medicines Agency, or credible news outlets were found regarding Mofus Nigeria Ltd products beyond the NAFDAC watchlist alert dated 2026-08-19.",
+  "findings": [],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "Mofus Nigeria Ltd falsified recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"Mofus Nigeria Ltd\" WHO",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Artemether Lumefantrine 80mg/480mg Mofus Nigeria Ltd falsified",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"Mofus Nigeria\" WHO",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"Mofus Nigeria Ltd\" \"WHO\"",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"Mofus Nigeria Ltd\" African Medicines Agency",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "site:who.int \"Mofus Nigeria\"",
+      "results": 6
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 7,
+    "extract": 0
+  },
+  "llm_cost_usd": 0.02,
+  "traced_at": "2026-10-10T20:08:02+00:00"
+}

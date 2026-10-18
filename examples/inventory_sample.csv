@@ -1,0 +1,26 @@
+item_id,product_name,strength,manufacturer,batch_number,expiry,gtin,quantity,location
+INV-001,MOVICOL Plain powder for oral solution sachets,13.7 g,Norgine,487069,02/2029,5012748615328,120,Central Store
+INV-002,Meropenem powder and solvent for solution for infusion,1 g,B. Braun,25J-00360,10/2026,,40,ICU Pharmacy
+INV-003,Xaggitin XL prolonged-release tablets,27 mg,Martindale Pharma,183931,05/2028,,60,Outpatient Pharmacy
+INV-004,Artemether/Lumefantrine tablets,80/480 mg,Bandaram Pharma Packleh (BPPL),BP5203,09/2027,,300,Kano Depot
+INV-005,Acefyl cough syrup,,Nabiqasim Industries,ach479,,,85,Central Store
+INV-006,Sporidex suspension,125 mg/5 ml,Ranbaxy,DFG4606A,,,200,Paediatric Ward
+INV-007,Fingolimod Zentiva capsules,0.5 mg,Zentiva,4L01372H,11/2027,,28,Neurology
+INV-008,Clear Eyes Redness Relief eye drops,15 ml,Medtech Products,RL25K03,09/2027,,48,Retail Pharmacy
+INV-009,Ulmicort inhalation suspension,0.5 mg/ml,Legency Remedies,25770416E,05/2027,,30,Respiratory Clinic
+INV-010,Meropenem powder and solvent for solution for infusion,1 g,B. Braun,25JO1305,01/2027,,25,ICU Pharmacy
+INV-011,Gabapentin Relonchem oral solution,50 mg/ml,Relonchem,O9E1,10/2026,,12,Neurology
+INV-012,ChloraPrep applicator,1 ml,Becton Dickinson UK,2470123,03/2028,,500,Theatre Store
+INV-013,ChloraPrep applicator,1 ml,Becton Dickinson UK,2599001,08/2029,,500,Theatre Store
+INV-014,Loratadine tablets,10 mg,Getz Pharma,24,12/2027,,400,Central Store
+INV-015,MOVICOL Plain powder for oral solution sachets,13.7 g,Norgine,474920,06/2028,5012748615328,60,Central Store
+INV-016,Levetiracetam Neuraxpharm granules for oral solution in sachet,500 mg,Neuraxpharm,2153678,09/2027,,30,Neurology
+INV-017,Paracetamol tablets,500 mg,Emzor,3279,04/2028,,2000,Central Store
+INV-018,Gabapentin capsules,300 mg,Pfizer,GB3001,07/2027,,250,Neurology
+INV-019,Deleject disposable needle 23G,,Deleject,240605,,,1000,Central Store
+INV-020,Amoxicillin capsules,500 mg,Beecham,24L069,02/2028,,900,Central Store
+INV-021,Ceftriaxone powder for injection,1 g,Roche,C2301,03/2028,,150,ICU Pharmacy
+INV-022,Metformin tablets,500 mg,Emzor,MF77821,11/2027,,1500,Outpatient Pharmacy
+INV-023,Oral rehydration salts sachets,20.5 g,Fidson,ORS2207,08/2027,,800,Paediatric Ward
+INV-024,Insulin glargine pen,100 IU/ml,Sanofi,5F1234,01/2027,,90,Diabetes Clinic
+INV-025,Kadin 2 tablets,2 mg,FYNK Pharma,569,,,100,Central Store

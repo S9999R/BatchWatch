@@ -1,0 +1,82 @@
+{
+  "alert_id": "21615",
+  "summary": "The confiscation of Bel Ice Vodka Energy Drink and Cody’s Vody Energy Mix (all batches) was reported by Ghana’s Food and Drugs Authority (FDA) in news outlets such as Graphic Online and ModernGhana. No other national regulators, WHO, or regional agencies have issued additional alerts about these specific products or batches beyond the original NAFDAC notice.",
+  "findings": [
+    {
+      "country": "Ghana",
+      "authority": "Food and Drugs Authority (FDA) Ghana",
+      "url": "https://www.modernghana.com/news/1493575/fda-seizes-boxes-of-banned-alcoholic-energy-drinks.html",
+      "date": "Sat, 16 May 2026",
+      "batch_numbers": [
+        "ALL"
+      ],
+      "evidence_quote": "According to the FDA, the confiscated products included Bel Ice Vodka Energy Drink and Cody’s Vody Energy Mix, both of which are prohibited from being sold or distributed in Ghana.",
+      "read_by_agent": true,
+      "quote_verified": true,
+      "batches_verified": [
+        "ALL"
+      ],
+      "batches_unverified": [],
+      "verified": true,
+      "date_iso": null,
+      "days_from_original": null
+    },
+    {
+      "country": "Ghana",
+      "authority": "Food and Drugs Authority (FDA) Ghana",
+      "url": "https://www.graphic.com.gh/news/general-news/fda-warns-ghanaians-after-confiscating-banned-vodka-energy-drinks.html",
+      "date": null,
+      "batch_numbers": [
+        "ALL"
+      ],
+      "evidence_quote": "The seized products included Bel Ice Vodka Energy Drink and Cody's Vody Energy Mix, both of which have been banned from the Ghanaian market.",
+      "read_by_agent": true,
+      "quote_verified": true,
+      "batches_verified": [],
+      "batches_unverified": [
+        "ALL"
+      ],
+      "verified": false,
+      "date_iso": null,
+      "days_from_original": null
+    }
+  ],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "Bel Ice Vodka Energy Drink confiscated Ghana",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Ghana Food and Drugs Authority confiscates Bel Ice Vodka Energy Drink",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Ghana FDA Bel Ice Vodka Energy Drink confiscated",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "site:fdaghana.gov.gh Bel Ice Vodka Energy Drink confiscated",
+      "results": 6
+    },
+    {
+      "tool": "read",
+      "urls": [
+        "https://www.graphic.com.gh/news/general-news/fda-warns-ghanaians-after-confiscating-banned-vodka-energy-drinks.html",
+        "https://www.modernghana.com/news/1493575/fda-seizes-boxes-of-banned-alcoholic-energy-drinks.html",
+        "https://fdaghana.gov.gh/fda-engages-stakeholders-on-the-implementation-of-site-verification-for-frozen-animal-products-2-2-2"
+      ],
+      "ok": 3
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 4,
+    "extract": 1
+  },
+  "llm_cost_usd": 0.0113,
+  "traced_at": "2026-10-10T20:09:05+00:00"
+}

@@ -1,0 +1,39 @@
+{
+  "alert_id": "RW-DD-PVCT-4245-FDA-2026-SUR-EAU-Sodium-Hypoc-S241042025",
+  "summary": "No additional reports of the SUR EAU/Sodium Hypochlorite Solution recall (batch S241042025) were found from other national regulators, WHO, regional agencies, or credible news sources beyond the original Rwanda FDA alert.",
+  "findings": [],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "SUR EAU Sodium Hypochlorite Solution S241042025 recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"S241042025\" \"SUR EAU\"",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Supersleek Ltd SUR EAU recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Recall DD/PVCT/4245/FDA/2026 SUR EAU",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"DD/PVCT/4245/FDA/2026\"",
+      "results": 6
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 5,
+    "extract": 0
+  },
+  "llm_cost_usd": 0.0125,
+  "traced_at": "2026-10-10T20:14:23+00:00"
+}

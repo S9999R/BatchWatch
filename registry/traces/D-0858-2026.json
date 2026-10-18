@@ -1,0 +1,29 @@
+{
+  "alert_id": "D-0858-2026",
+  "summary": "No reports of the recalled Walgreens Lubricant Eye Drops or the specific batch numbers have been found from other national regulators, WHO, regional agencies, or credible international news sources beyond the U.S. FDA alert and domestic media coverage.",
+  "findings": [],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "Walgreens Lubricant Eye Drops recall sterility Sterling Pharmaceutical Services LLC batches 3165 3179 3204 3206 3208 3259 3265 3268 3272 3273 3276 3278 3280 3307 3309 3315",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Sterling Pharmaceutical Services eye drops recall international",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Walgreens Lubricant Eye Drops recall WHO",
+      "results": 6
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 3,
+    "extract": 0
+  },
+  "llm_cost_usd": 0.006,
+  "traced_at": "2026-10-10T20:05:14+00:00"
+}

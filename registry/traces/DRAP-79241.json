@@ -1,0 +1,49 @@
+{
+  "alert_id": "DRAP-79241",
+  "summary": "No other regulator, WHO, regional agency, or credible news source has reported the BD 10 mL syringe batch 5349764 or the Accuject Auto‑Disable syringe batch S502E26 beyond the original DRAP alert.",
+  "findings": [],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "BD 10ML Syringe batch 5349764 recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Accuject Auto-Disable Syringe 5ml S502E26 recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"5349764\" BD syringe",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"5349764\" falsified",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"5349764\" WHO",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"Accuject Auto-Disable Syringe 5ml\" \"S502E26\"",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "WHO BD 10ML Syringe 5349764",
+      "results": 6
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 7,
+    "extract": 0
+  },
+  "llm_cost_usd": 0.0196,
+  "traced_at": "2026-10-10T20:12:09+00:00"
+}

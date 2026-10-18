@@ -1,0 +1,56 @@
+{
+  "alert_id": "SFDA-19399",
+  "summary": "The recall of Penopen 250 mg Tab batch 127778 has been reported only by the Saudi Food and Drug Authority (SFDA). No other national regulator, WHO, regional agency, or credible news source has issued a corresponding alert for this product or batch.",
+  "findings": [],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "Penopen 250 mg Tab batch 127778 recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"Penopen 250 mg\" \"127778\"",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Remedica Penopen recall",
+      "results": 6
+    },
+    {
+      "tool": "read",
+      "urls": [
+        "https://www.tga.gov.au/resources/section-19a-approvals/approval-lapsed-penopen-phenoxymethylpenicillin-250mg5ml-powder-oral-solution-cyprus"
+      ],
+      "ok": 1
+    },
+    {
+      "tool": "search",
+      "query": "\"127778\" Penopen",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Penopen 250 mg WHO",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"Penopen\" recall Remedica",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"Penopen\" \"127778\" recall",
+      "results": 6
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 7,
+    "extract": 1
+  },
+  "llm_cost_usd": 0.0228,
+  "traced_at": "2026-10-10T20:09:30+00:00"
+}

@@ -1,0 +1,49 @@
+{
+  "alert_id": "SFDA-19402",
+  "summary": "No additional reports of Lorivan 2mg Tab batches 104173, 96754, or 125313 were found from other national regulators, WHO, regional agencies, or credible news sources beyond the original SFDA recall.",
+  "findings": [],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "Lorivan 2mg Tab Remedica batches 104173 96754 125313 recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"Lorivan\" \"Remedica\" 104173",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"Lorivan 2mg\" recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Remedica Lorivan recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"104173\" Lorivan",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "WHO Lorivan 2mg recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"104173\" \"Lorivan\"",
+      "results": 6
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 7,
+    "extract": 0
+  },
+  "llm_cost_usd": 0.0181,
+  "traced_at": "2026-10-10T20:09:39+00:00"
+}

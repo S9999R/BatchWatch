@@ -1,0 +1,740 @@
+{
+  "summary": {
+    "model": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B",
+    "alerts": 90,
+    "alerts_fully_correct": 90,
+    "batches_gold": 340,
+    "batches_correct": 340,
+    "batches_extra": 0,
+    "batches_missed": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "product_attachment_correct": "91/91",
+    "escalated_to_fallback": 9,
+    "cost_usd": 0.0764,
+    "calls_by_model": null,
+    "median_latency_s": null
+  },
+  "per_alert": {
+    "D-0860-2026": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "D-0863-2026": {
+      "tp": 10,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "D-0871-2026": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "D-0855-2026": {
+      "tp": 10,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "D-0862-2026": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "D-0856-2026": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "D-0858-2026": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "D-0868-2026": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "FDA-6e7148603e": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "D-0867-2026": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "D-0861-2026": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "D-0857-2026": {
+      "tp": 26,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "D-0870-2026": {
+      "tp": 17,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "D-0859-2026": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "D-0854-2026": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "class-3-medicines-recall-norgine-limited-movicol-plain-13-dot-7g-powder-for-oral-solution-el-26-a-slash-41": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "class-4-medicines-defect-notification-neuraxpharm-uk-limited-levetiracetam-neuraxpharm-granules-for-oral-solution-in-sachet-el-26-a-slash-40": {
+      "tp": 13,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 13,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "class-4-medicines-defect-notification-b-braun-melsungen-ag-meropenem-1000-mg-powder-and-solvent-for-solution-for-infusion-el-26-a-slash-39": {
+      "tp": 7,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "class-4-medicines-defect-notification-martindale-pharmaceuticals-ltd-clobazam-martindale-pharma-5-mg-slash-5-ml-and-10-mg-slash-5-ml-oral-suspension-150ml-el-26-a-slash-38": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 3,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "class-2-medicines-recall-zentiva-pharma-uk-limited-fingolimod-zentiva-0-dot-5-mg-capsules-el-26-a-slash-37": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "class-4-medicines-defect-notification-neuraxpharm-uk-ltd-tuzulby-prolonged-release-chewable-tablets-el-26-a-slash-36": {
+      "tp": 6,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 6,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "class-4-medicines-defect-notification-macarthys-laboratories-ltd-t-slash-a-martindale-pharma-xaggitin-xl-prolonged-release-tablets-el-26-a-slash-35": {
+      "tp": 26,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 26,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "class-2-medicines-recall-beckton-dickson-uk-ltd-chloraprep-1ml-applicator-el-26-a-slash-34": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "class-2-medicines-recall-bristol-laboratories-limited-phenoxymethylpenicillin-250-mg-slash-5ml-sugar-free-oral-solution-bp-el-26-a-slash-33": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "class-4-medicines-defect-notification-relonchem-limited-gabapentin-relonchem-50mg-slash-ml-oral-solution-el-26-a-slash-31": {
+      "tp": 7,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "class-3-medicines-recall-flamingo-pharma-uk-ltd-flucloxacillin-capsules-bp-500mg-el-26-a-slash-32": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "class-4-medicines-defect-notification-brancaster-pharma-limited-benzylpenicillin-benzathine-1-dot-2-million-iu-and-2-dot-4-million-iu-powder-for-suspension-for-injection-el-26-a-slash-30": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 2,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "class-3-medicines-recall-orbit-pharma-limited-cyclizine-lactate-50-mg-slash-ml-solution-for-injection-el-26-a-slash-29": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "class-4-medicines-defect-notification-cadila-pharmaceuticals-limited-mirtazapine-30mg-tablets-el-26-a-slash-28": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "class-4-medicines-defect-notification-teva-uk-ltd-ponlimsi-denosumab-60mg-solution-for-injection-in-pre-filled-syringe-el-26-a-slash-27": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "22027": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "22021": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "22011": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "22088": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "22083": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 4,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "21968": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "21788": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "21780": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 2,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "21772": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "21664": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "21631": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "21615": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "21609": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "21579": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "21572": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "SFDA-18858": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "SFDA-19399": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "SFDA-19402": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "SFDA-19401": {
+      "tp": 13,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "SFDA-19400": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "SFDA-19404": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "SFDA-19405": {
+      "tp": 17,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "SFDA-19406": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "SFDA-19398": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "SFDA-19403": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "SFDA-19700": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "SFDA-19190": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "SFDA-18872": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "SFDA-17786": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "SFDA-18838": {
+      "tp": 9,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 9,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "HC-82684": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "HC-82725": {
+      "tp": 20,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "HC-82726": {
+      "tp": 10,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "HC-82720": {
+      "tp": 6,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "HC-82722": {
+      "tp": 13,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "DRAP-79320": {
+      "tp": 9,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 9,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "DRAP-79249": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 3,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "DRAP-79245": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 2,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "DRAP-79241": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 2,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "DRAP-79201": {
+      "tp": 11,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 10,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "SAHPRA-20197": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "SAHPRA-20020": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "SAHPRA-19737": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "SAHPRA-19436": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "SAHPRA-19407": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "GH-1010169": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "GH-1010159": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "GH-1009661": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "GH-1006431": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "GH-990919": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "WHO-03-07-2026-medical-product-alert-n-3-2026--falsified-darzalex-(daratumumab)": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "WHO-16-06-2026-medical-product-alert-n-2-2026--falsified-jakavi-(ruxolitinib)": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "WHO-07-05-2026-medical-product-alert-n-1-2026--substandard-accupaque-(iohexol)--omni": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "WHO-16-03-2026-medical-product-alert-n-1-2026--who-information-notice-for-in-vitro-d": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "WHO-15-12-2025-medical-product-alert-n-7-2025--falsified-ibrance-(palbociclib)": {
+      "tp": 9,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "RW-DD-PVCT-4302-FDA-2026-Innotex-Condoms-HW40305": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "RW-DD-PVCT-4127-FDA-2026-Motilium-Domperidone-All-batches": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "RW-DD-PVCT-4245-FDA-2026-SUR-EAU-Sodium-Hypoc-S241042025": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "RW-DD-PVCT-4245-FDA-2026-SUR-EAU-Sodium-Hypoc-S240042025": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    },
+    "RW-DD-PVCT-4127-FDA-2026-Stugeron-Cinnarizine-All-batches": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "product_checked": 0,
+      "product_wrong": 0,
+      "issues": []
+    }
+  }
+}

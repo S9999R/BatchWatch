@@ -1,0 +1,47 @@
+{
+  "alert_id": "D-0863-2026",
+  "summary": "The recall of AvKare Carboxymethylcellulose Sodium Ophthalmic Solution 0.5% (lots 3161, 3245, 3260, 3298‑3300, 3301, 3302, 3305, 3306) has been reported only by U.S. sources (FDA, AvKare recall page, and news outlets). No equivalent alerts from other national regulators, WHO, or regional agencies were located in the searches.",
+  "findings": [],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "AvKare Carboxymethylcellulose Sodium Ophthalmic Solution 0.5% recall 3161 3245 3260 3298 3299 3300 3301 3302 3305 3306",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Carboxymethylcellulose Sodium Ophthalmic Solution 0.5% recall WHO",
+      "results": 6
+    },
+    {
+      "tool": "read",
+      "urls": [
+        "https://avkare.com/recall",
+        "https://www.aol.com/articles/fda-announces-massive-eye-drop-190815000.html"
+      ],
+      "ok": 2
+    },
+    {
+      "tool": "search",
+      "query": "\"AvKare\" \"Carboxymethylcellulose Sodium Ophthalmic Solution\" recall Canada",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Health Canada AvKare carboxymethylcellulose ophthalmic solution recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Health Canada AvKare recall carboxymethylcellulose",
+      "results": 6
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 5,
+    "extract": 1
+  },
+  "llm_cost_usd": 0.0219,
+  "traced_at": "2026-10-10T20:04:48+00:00"
+}

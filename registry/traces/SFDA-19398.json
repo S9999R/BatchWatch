@@ -1,0 +1,54 @@
+{
+  "alert_id": "SFDA-19398",
+  "summary": "",
+  "findings": [],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "Carvidex 25mg Tab 119362 119497 recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"Carvidex\" 25mg Tab 119362",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Carvidex 25mg Remedica",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"119362\" Carvidex",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Carvidex recall Europe",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"119362\" \"Carvidex\"",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"Carvidex\" \"119362\"",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Carvidex 25mg WHO",
+      "results": 6
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 8,
+    "extract": 0
+  },
+  "llm_cost_usd": 0.0207,
+  "traced_at": "2026-10-10T20:10:38+00:00"
+}

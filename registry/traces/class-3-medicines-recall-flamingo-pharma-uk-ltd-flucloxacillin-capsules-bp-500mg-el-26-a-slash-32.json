@@ -1,0 +1,54 @@
+{
+  "alert_id": "class-3-medicines-recall-flamingo-pharma-uk-ltd-flucloxacillin-capsules-bp-500mg-el-26-a-slash-32",
+  "summary": "",
+  "findings": [],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "Flucloxacillin Capsules BP 500mg batch 1600636 Flamingo Pharma",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"1600636\" Flucloxacillin",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Flucloxacillin Capsules BP 500mg Flamingo Pharma recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Flucloxacillin Capsules BP 500mg Flamingo Pharma WHO",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"1600636\" Flucloxacillin WHO",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Flucloxacillin Capsules BP 500mg falsified",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Flucloxacillin Capsules BP 500mg Flamingo Pharma Europe",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Flucloxacillin Capsules BP 500mg Flamingo Pharma Africa",
+      "results": 6
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 8,
+    "extract": 0
+  },
+  "llm_cost_usd": 0.029,
+  "traced_at": "2026-10-10T20:07:38+00:00"
+}

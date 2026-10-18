@@ -1,0 +1,95 @@
+{
+  "alert_id": "class-4-medicines-defect-notification-martindale-pharmaceuticals-ltd-clobazam-martindale-pharma-5-mg-slash-5-ml-and-10-mg-slash-5-ml-oral-suspension-150ml-el-26-a-slash-38",
+  "summary": "The MHRA (UK) issued a Class 4 defect notice for Martindale Pharmaceuticals' Clobazam oral suspension due to an incorrect linear barcode on cartons for batches 0162858, 0163605, and 0163858. The same information has been reproduced by the Hong Kong Drug Office and the Polish medicine‑tracking site Lekoskop, confirming the affected batches and stating there is no product‑quality risk and no recall.",
+  "findings": [
+    {
+      "country": "International",
+      "authority": "Lekoskop (medicine tracking service)",
+      "url": "https://www.lekoskop.pl/uk/changes/50148-clobazam-martindale-pharma-5-mg-5-ml-oral-suspension-150ml-medicines-recall",
+      "date": "2026-09-17",
+      "batch_numbers": [
+        "0162858",
+        "0163605",
+        "0163858"
+      ],
+      "evidence_quote": "Affected batches: 0162858 (05/2028), 0163605 (07/2028), 0163858 (07/2028)",
+      "read_by_agent": true,
+      "quote_verified": true,
+      "batches_verified": [
+        "0162858",
+        "0163605",
+        "0163858"
+      ],
+      "batches_unverified": [],
+      "verified": true,
+      "date_iso": "2026-09-17",
+      "days_from_original": 0
+    },
+    {
+      "country": "Hong Kong",
+      "authority": "Drug Office, Hong Kong",
+      "url": "https://www.drugoffice.gov.hk/eps/news/showNews/Medicines/consumer/2026-09-18/en/58260.html",
+      "date": "2026-09-18",
+      "batch_numbers": [
+        "0162858",
+        "0163605",
+        "0163858"
+      ],
+      "evidence_quote": "Martindale Pharmaceuticals has informed the MHRA of an error with the linear barcode of certain batches of Clobazam Martindale Pharma 5 mg/5 mL Oral Suspension 150ml (batch number: 0162858, 0163605) and Clobazam Martindale Pharma 10 mg/5 mL Oral Suspension 150ml (batch number: 0163858).",
+      "read_by_agent": true,
+      "quote_verified": true,
+      "batches_verified": [
+        "0162858",
+        "0163605",
+        "0163858"
+      ],
+      "batches_unverified": [],
+      "verified": true,
+      "date_iso": "2026-09-18",
+      "days_from_original": 1
+    }
+  ],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "Clobazam Martindale Pharma 5 mg/5 mL Oral Suspension batch 0162858",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"0162858\" \"Clobazam\"",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Martindale Pharmaceuticals Clobazam batch 0162858 recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"Clobazam Martindale\" barcode",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Clobazam Martindale batch 0162858 WHO",
+      "results": 6
+    },
+    {
+      "tool": "read",
+      "urls": [
+        "https://www.lekoskop.pl/uk/changes/50148-clobazam-martindale-pharma-5-mg-5-ml-oral-suspension-150ml-medicines-recall",
+        "https://www.drugoffice.gov.hk/eps/news/showNews/Medicines/consumer/2026-09-18/en/58260.html",
+        "https://www.dispensingdoctor.org/news/alert-martindale-clobazam-oral-suspension-150ml"
+      ],
+      "ok": 3
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 5,
+    "extract": 1
+  },
+  "llm_cost_usd": 0.0204,
+  "traced_at": "2026-10-10T20:06:46+00:00"
+}

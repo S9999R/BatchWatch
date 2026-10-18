@@ -1,0 +1,66 @@
+{
+  "alert_id": "class-2-medicines-recall-bristol-laboratories-limited-phenoxymethylpenicillin-250-mg-slash-5ml-sugar-free-oral-solution-bp-el-26-a-slash-33",
+  "summary": "The recall of batch 7124002 of Phenoxymethylpenicillin 250 mg/5ml Sugar free Oral Solution BP by Bristol Laboratories Limited has been reported by the UK MHRA and also noted in a safety alert from Hong Kong's Drug Office, which states that the product is not registered there but references the MHRA recall. No other national regulators, WHO, or regional agencies have issued separate alerts for this batch.",
+  "findings": [
+    {
+      "country": "Hong Kong",
+      "authority": "Drug Office, Hong Kong",
+      "url": "https://www.drugoffice.gov.hk/eps/news/showNews/Phenoxymethylpenicillin/consumer/2026-07-10/en/57773.html",
+      "date": "2026-07-10",
+      "batch_numbers": [
+        "7124002"
+      ],
+      "evidence_quote": "Medicines and Healthcare products Regulatory Agency (MHRA) announces that Bristol Laboratories Limited is recalling one batch of Phenoxymethylpenicillin 250 mg/5ml Sugar free Oral Solution BP (batch number: 7124002) due to product labelling issues.",
+      "read_by_agent": true,
+      "quote_verified": true,
+      "batches_verified": [
+        "7124002"
+      ],
+      "batches_unverified": [],
+      "verified": true,
+      "date_iso": "2026-07-10",
+      "days_from_original": 1
+    }
+  ],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "Phenoxymethylpenicillin 250 mg/5ml Sugar free Oral Solution BP batch 7124002",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"Phenoxymethylpenicillin 250 mg/5ml\" \"7124002\" recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "WHO phenoxymethylpenicillin 250 mg/5ml batch 7124002",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"Bristol Laboratories Limited\" \"Phenoxymethylpenicillin\" recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"Bristol Laboratories Limited\" phenoxymethylpenicillin recall international",
+      "results": 6
+    },
+    {
+      "tool": "read",
+      "urls": [
+        "https://www.drugoffice.gov.hk/eps/news/showNews/Phenoxymethylpenicillin/consumer/2026-07-10/en/57773.html"
+      ],
+      "ok": 1
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 5,
+    "extract": 1
+  },
+  "llm_cost_usd": 0.0122,
+  "traced_at": "2026-10-10T20:07:06+00:00"
+}

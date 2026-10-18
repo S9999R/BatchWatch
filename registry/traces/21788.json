@@ -1,0 +1,54 @@
+{
+  "alert_id": "21788",
+  "summary": "No other national regulators, WHO, regional agencies, or credible news outlets have reported the suspected counterfeit Pulmicort® (Budesonide) Inhalation Suspension with batch 25770416E or the product 'Ulmicort 0.5 mg/ml Inhalation Suspension' beyond the original NAFDAC alert.",
+  "findings": [],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "Pulmicort 0.5 mg/ml Inhalation Suspension batch 25770416E counterfeit",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Legency Remedies PVT Ltd Pulmicort batch 25770416E",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"Ulmicort 0.5 mg/ml\" \"25770416E\"",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "NAFDAC Pulmicort counterfeit",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "WHO falsified Pulmicort",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"Ulmicort\" falsified",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"Ulmicort\" \"25770416E\"",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "site:who.int Ulmicort",
+      "results": 6
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 8,
+    "extract": 0
+  },
+  "llm_cost_usd": 0.03,
+  "traced_at": "2026-10-10T20:08:32+00:00"
+}

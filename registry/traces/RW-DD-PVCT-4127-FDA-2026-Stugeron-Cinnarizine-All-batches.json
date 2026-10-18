@@ -1,0 +1,56 @@
+{
+  "alert_id": "RW-DD-PVCT-4127-FDA-2026-Stugeron-Cinnarizine-All-batches",
+  "summary": "",
+  "findings": [],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "Stugeron Cinnarizine 25 mg ASFIN Pharma Pakistan recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "ASFIN Pharma Stugeron recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"DD/PVCT/4127/FDA/2026\"",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Stugeron recall Rwanda FDA",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Stugeron falsified",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "ASFIN Pharma Stugeron recall Africa",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Stugeron recall Hong Kong",
+      "results": 6
+    },
+    {
+      "tool": "read",
+      "urls": [
+        "https://www.info.gov.hk/gia/general/201603/22/P201603220826.htm"
+      ],
+      "ok": 1
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 7,
+    "extract": 1
+  },
+  "llm_cost_usd": 0.0249,
+  "traced_at": "2026-10-10T20:14:40+00:00"
+}

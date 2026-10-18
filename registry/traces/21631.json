@@ -1,0 +1,39 @@
+{
+  "alert_id": "21631",
+  "summary": "No additional reports of the Sporidex Suspension 125 mg/5 mL recall (batch DFG4606A) were located from other national regulators, WHO, regional agencies, or credible news sources beyond the NAFDAC alert.",
+  "findings": [],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "Sporidex Suspension 125 mg/5 ml DFG4606A recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"Sporidex\" \"DFG4606A\" WHO",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Ranbaxy Sporidex suspension recall DFG4606A",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "WHO Sporidex suspension recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"Sporidex\" recall Sun Pharma",
+      "results": 6
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 5,
+    "extract": 0
+  },
+  "llm_cost_usd": 0.0057,
+  "traced_at": "2026-10-10T20:08:35+00:00"
+}

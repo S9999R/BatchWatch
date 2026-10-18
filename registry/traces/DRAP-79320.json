@@ -1,0 +1,54 @@
+{
+  "alert_id": "DRAP-79320",
+  "summary": "No additional reports of the same products or batch numbers were found outside the original DRAP alert. Searches of regulator websites, WHO alerts, and credible news sources returned only the DRAP notice or unrelated information.",
+  "findings": [],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "Leukeran-2mg Tablet batch 512900 falsified",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"512900\" Leukeran",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"GST56925-C\" falsified",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"Sarafenib\" GST56925-C",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "WHO \"Leukeran\" 512900",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"B2417\" Arimidex",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"512900\" WHO",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"Sarafenib\" recall",
+      "results": 6
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 8,
+    "extract": 0
+  },
+  "llm_cost_usd": 0.0207,
+  "traced_at": "2026-10-10T20:11:57+00:00"
+}

@@ -1,0 +1,70 @@
+{
+  "alert_id": "WHO-03-07-2026-medical-product-alert-n-3-2026--falsified-darzalex-(daratumumab)",
+  "summary": "The falsified DARZALEX batches MYS7381 and STV1K01 have been referenced in national alerts from Kenya's Pharmacy and Poisons Board (August 2026) and Pakistan's Drug Regulatory Authority (July 2026). Both alerts repeat the WHO information that the batches were detected in the Maldives and Mexico, contain visible particulate matter in batch STV1K01, and are not genuine according to Janssen.",
+  "findings": [
+    {
+      "country": "Pakistan",
+      "authority": "Drug Regulatory Authority of Pakistan (DRAP)",
+      "url": "https://www.dra.gov.pk/wp-content/uploads/2026/07/37.-Rapid-Alert-dazalex.pdf",
+      "date": "2026-07-16",
+      "batch_numbers": [
+        "MYS7381",
+        "STV1K01"
+      ],
+      "evidence_quote": "WHO has also reported the presence of visible particulate matter in one falsified batch (STV1K01), indicating a potential risk of contamination.",
+      "read_by_agent": true,
+      "quote_verified": true,
+      "batches_verified": [
+        "MYS7381",
+        "STV1K01"
+      ],
+      "batches_unverified": [],
+      "verified": true,
+      "date_iso": "2026-07-16",
+      "days_from_original": 13
+    },
+    {
+      "country": "Kenya",
+      "authority": "Pharmacy and Poisons Board",
+      "url": "https://web.pharmacyboardkenya.org/wp-content/uploads/2026/08/Public-alert-Falsified-Darzalex.pdf",
+      "date": "2026-08-11",
+      "batch_numbers": [
+        "MYS7381",
+        "STV1K01"
+      ],
+      "evidence_quote": "Visible particulate matter was found in at least one falsified batch, STV1K01.",
+      "read_by_agent": true,
+      "quote_verified": true,
+      "batches_verified": [
+        "MYS7381",
+        "STV1K01"
+      ],
+      "batches_unverified": [],
+      "verified": true,
+      "date_iso": "2026-08-11",
+      "days_from_original": 39
+    }
+  ],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "DARZALEX daratumumab MYS7381 STV1K01 falsified",
+      "results": 6
+    },
+    {
+      "tool": "read",
+      "urls": [
+        "https://web.pharmacyboardkenya.org/wp-content/uploads/2026/08/Public-alert-Falsified-Darzalex.pdf",
+        "https://www.dra.gov.pk/wp-content/uploads/2026/07/37.-Rapid-Alert-dazalex.pdf"
+      ],
+      "ok": 2
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 1,
+    "extract": 1
+  },
+  "llm_cost_usd": 0.0035,
+  "traced_at": "2026-10-10T20:13:26+00:00"
+}

@@ -1,0 +1,49 @@
+{
+  "alert_id": "D-0871-2026",
+  "summary": "No evidence was found that the Clear Eyes Redness Relief recall (batches RL25G04, RL2H02) has been reported by any regulator outside the United States, WHO, or regional agencies. All located sources refer only to the FDA recall and subsequent U.S. news coverage.",
+  "findings": [],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "Clear Eyes Redness Relief RL25G04 RL2H02 recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"RL25G04\" \"Clear Eyes\" recall international",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "WHO Clear Eyes Redness Relief recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Medtech Products Inc Clear Eyes recall Canada",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"RL25G04\" \"Clear Eyes\" Europe recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"Clear Eyes\" WHO recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Clear Eyes recall Europe",
+      "results": 6
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 7,
+    "extract": 0
+  },
+  "llm_cost_usd": 0.0137,
+  "traced_at": "2026-10-10T20:04:48+00:00"
+}

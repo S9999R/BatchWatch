@@ -1,0 +1,9 @@
+{
+  "name": "BatchWatch: is this medicine recalled?",
+  "short_name": "BatchWatch",
+  "start_url": "/#check",
+  "display": "standalone",
+  "background_color": "#f4f9f6",
+  "theme_color": "#15803d",
+  "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}

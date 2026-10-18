@@ -1,0 +1,57 @@
+{
+  "alert_id": "22088",
+  "summary": "The UK Medicines and Healthcare products Regulatory Agency (MHRA) issued a drug safety update on 8 January 2026 calling for strengthened warnings on gabapentinoids, benzodiazepines and z‑drugs due to risks of addiction, dependence, withdrawal and tolerance. This aligns with the NAFDAC alert about increased drug‑poisoning risk when gabapentinoids are used concurrently with opioids or benzodiazepines, though the MHRA communication does not reference specific batches.",
+  "findings": [
+    {
+      "country": "United Kingdom",
+      "authority": "Medicines and Healthcare products Regulatory Agency (MHRA)",
+      "url": "https://www.gov.uk/drug-safety-update/improving-information-supplied-with-gabapentinoids-pregabalin-slash-gabapentin-benzodiazepines-and-z-drugs",
+      "date": "8 January 2026",
+      "batch_numbers": [],
+      "evidence_quote": "The MHRA has reviewed the warnings regarding addiction, dependence, withdrawal, and tolerance for gabapentin, pregabalin, benzodiazepines, and z-drugs.",
+      "read_by_agent": true,
+      "quote_verified": true,
+      "batches_verified": [],
+      "batches_unverified": [],
+      "verified": true,
+      "date_iso": "2026-01-08",
+      "days_from_original": -222
+    }
+  ],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "NAFDAC Public Alert No: 039/2026 gabapentinoids opioid benzodiazepine safety communication",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "gabapentinoids opioid benzodiazepine drug poisoning warning MHRA EMA",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "EMA gabapentinoids opioid benzodiazepine warning 2026",
+      "results": 6
+    },
+    {
+      "tool": "read",
+      "urls": [
+        "https://www.gov.uk/drug-safety-update/improving-information-supplied-with-gabapentinoids-pregabalin-slash-gabapentin-benzodiazepines-and-z-drugs"
+      ],
+      "ok": 1
+    },
+    {
+      "tool": "search",
+      "query": "WHO Global Surveillance and Monitoring System gabapentinoids opioid benzodiazepine",
+      "results": 6
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 4,
+    "extract": 1
+  },
+  "llm_cost_usd": 0.0112,
+  "traced_at": "2026-10-10T20:08:11+00:00"
+}

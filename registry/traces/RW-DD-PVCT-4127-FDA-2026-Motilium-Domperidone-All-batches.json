@@ -1,0 +1,63 @@
+{
+  "alert_id": "RW-DD-PVCT-4127-FDA-2026-Motilium-Domperidone-All-batches",
+  "summary": "Besides the Rwanda FDA recall of all batches of Motilium® (Domperidone) 10 mg from ASPIN Pharma, the Philippine FDA issued a circular reclassifying all domperidone products as prescription‑only and recalling existing over‑the‑counter stock. No other specific batch‑level reports from other regulators or agencies were located in the searched sources.",
+  "findings": [
+    {
+      "country": "Philippines",
+      "authority": "Philippine Food and Drug Administration (FDA)",
+      "url": "https://www.fda.gov.ph/fda-circular-no-2024-001-recall-and-withdrawal-of-the-classification-and-registration-of-domperidone-as-over-the-counter-drug",
+      "date": "2026-10-01",
+      "batch_numbers": [],
+      "evidence_quote": "All currently registered Domperidone as OTC drug shall be reclassified as Prescription drug.",
+      "read_by_agent": true,
+      "quote_verified": true,
+      "batches_verified": [],
+      "batches_unverified": [],
+      "verified": true,
+      "date_iso": "2026-10-01",
+      "days_from_original": 2
+    }
+  ],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "Motilium Domperidone 10 mg ASFIN Pharma Pakistan recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "ASFIN Pharma Motilium recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"ASFIN Pharma\" Motilium recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "ASFIN Pharma Motilium Rwanda recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "ASPIN Pharma Motilium recall",
+      "results": 6
+    },
+    {
+      "tool": "read",
+      "urls": [
+        "https://monitoring.rwandafda.gov.rw/recalls",
+        "https://www.fda.gov.ph/fda-circular-no-2024-001-recall-and-withdrawal-of-the-classification-and-registration-of-domperidone-as-over-the-counter-drug"
+      ],
+      "ok": 2
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 5,
+    "extract": 1
+  },
+  "llm_cost_usd": 0.0182,
+  "traced_at": "2026-10-10T20:14:13+00:00"
+}

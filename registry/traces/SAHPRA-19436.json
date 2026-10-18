@@ -1,0 +1,70 @@
+{
+  "alert_id": "SAHPRA-19436",
+  "summary": "Beyond the original SAHPRA recall, Nigeria's NAFDAC issued a public alert referencing the same Citro-Soda Regular recall, noting that all batches with batch numbers starting with 'C' and expiring on or before November 2027 are affected. No other international regulator or credible news source reported additional distinct findings beyond these alerts.",
+  "findings": [
+    {
+      "country": "Nigeria",
+      "authority": "National Agency for Food and Drug Administration and Control (NAFDAC)",
+      "url": "https://nafdac.gov.ng/public-alert-no-025-2026-alert-on-the-recall-specific-batches-of-antacid-citro-soda-regular-in-south-africa",
+      "date": "2026-05-20",
+      "batch_numbers": [
+        "All batches starting with the letter 'C'"
+      ],
+      "evidence_quote": "Batch Number: All batches starting with the letter 'C'. Expiry Dates: On or before November 2027.",
+      "read_by_agent": true,
+      "quote_verified": false,
+      "batches_verified": [],
+      "batches_unverified": [
+        "All batches starting with the letter 'C'"
+      ],
+      "verified": false,
+      "date_iso": "2026-05-20",
+      "days_from_original": 57
+    }
+  ],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "Citro-Soda Regular recall foreign material Adcock Ingram",
+      "results": 6
+    },
+    {
+      "tool": "read",
+      "urls": [
+        "https://nafdac.gov.ng/public-alert-no-025-2026-alert-on-the-recall-specific-batches-of-antacid-citro-soda-regular-in-south-africa"
+      ],
+      "ok": 0
+    },
+    {
+      "tool": "search",
+      "query": "IOL Citro Soda recall affected batches March 2026",
+      "results": 6
+    },
+    {
+      "tool": "read",
+      "urls": [
+        "https://iol.co.za/news/south-africa/2026-03-24-citro-soda-recall-check-if-your-batch-is-affected"
+      ],
+      "ok": 1
+    },
+    {
+      "tool": "search",
+      "query": "NAFDAC Citro Soda recall South Africa",
+      "results": 6
+    },
+    {
+      "tool": "read",
+      "urls": [
+        "https://nafdac.gov.ng/public-alert-no-025-2026-alert-on-the-recall-specific-batches-of-antacid-citro-soda-regular-in-south-africa"
+      ],
+      "ok": 1
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 3,
+    "extract": 3
+  },
+  "llm_cost_usd": 0.0112,
+  "traced_at": "2026-10-10T20:12:45+00:00"
+}

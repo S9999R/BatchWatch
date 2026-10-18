@@ -1,0 +1,48 @@
+{
+  "alert_id": "21664",
+  "summary": "The only reports located are repetitions of the NAFDAC Public Alert No. 034/2026 regarding the Niger Republic's import ban on Bulmex Parboiled Rice from India due to metallic contamination. No other national regulator, WHO, regional agency, or independent credible news source has issued a separate alert or notice about this product or any specific batches.",
+  "findings": [],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "Bulmex Parboiled Rice metallic contamination import ban",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Niger Republic bans Bulmex Parboiled Rice metallic contamination",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Niger Republic Ministry of Trade and Industry Bulmex Parboiled Rice ban",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"Bulmex Parboiled Rice\" Niger Republic Ministry of Trade and Industry",
+      "results": 6
+    },
+    {
+      "tool": "read",
+      "urls": [
+        "https://www.wansom.ai/briefly/news/niger-republic-bans-bulmex-parboiled-rice-from-india-over-metallic-contamination-2026-07-12_38af2d38-c76f-417c-be43-6fa2d28f86ff",
+        "https://saharareporters.com/2026/07/30/nafdac-raises-alarm-over-indian-rice-brand-having-metallic-contamination-sensitises",
+        "https://thepreviewmedia.com/nafdac-alerts-on-bulmex-rice-banned-in-niger-over-iron-contamination"
+      ],
+      "ok": 3
+    },
+    {
+      "tool": "search",
+      "query": "Niger Republic Ministry of Trade and Industry ban Bulmex Parboiled Rice",
+      "results": 6
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 5,
+    "extract": 1
+  },
+  "llm_cost_usd": 0.0117,
+  "traced_at": "2026-10-10T20:08:34+00:00"
+}

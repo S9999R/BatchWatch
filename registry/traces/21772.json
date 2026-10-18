@@ -1,0 +1,29 @@
+{
+  "alert_id": "21772",
+  "summary": "No additional reports of Menofix capsules being marketed, recalled, or flagged as falsified were found outside of the NAFDAC alert for Nigeria. Searches of WHO, other national regulators, and reputable news sources returned only repetitions of the Nigerian alert or unrelated content.",
+  "findings": [],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "Menofix capsules falsified recall PureEve",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Menofix capsules WHO falsified",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "PureEve Menofix capsules other country alert",
+      "results": 6
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 3,
+    "extract": 0
+  },
+  "llm_cost_usd": 0.0034,
+  "traced_at": "2026-10-10T20:08:21+00:00"
+}

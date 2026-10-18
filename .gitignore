@@ -1,0 +1,18 @@
+# secrets
+.env
+
+# python
+.venv/
+__pycache__/
+*.pyc
+
+# experiment outputs
+data/*
+!data/.gitkeep
+
+# live data written by batchwatch.watch (published from the "data" branch, not main)
+registry/alerts.jsonl
+registry/runs.jsonl
+registry/watch_state.json
+registry/*.tmp
+live/

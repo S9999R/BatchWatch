@@ -1,0 +1,39 @@
+{
+  "alert_id": "SAHPRA-20020",
+  "summary": "No other national regulators, WHO, regional agencies, or credible news outlets have reported recalls or warnings concerning iDEXIS Semaglutide, iDEXIS Tirzepatide, or their combination beyond the original SAHPRA alert from July 2026.",
+  "findings": [],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "iDEXIS Semaglutide recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "iDEXIS semaglutide tirzepatide recall international",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"iDEXIS\" semaglutide",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "SAHPRA iDEXIS recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "iDEXIS semaglutide WHO",
+      "results": 6
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 5,
+    "extract": 0
+  },
+  "llm_cost_usd": 0.0072,
+  "traced_at": "2026-10-10T20:12:25+00:00"
+}

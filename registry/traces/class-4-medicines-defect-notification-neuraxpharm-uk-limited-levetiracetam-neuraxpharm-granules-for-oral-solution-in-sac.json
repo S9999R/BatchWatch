@@ -1,0 +1,85 @@
+{
+  "alert_id": "class-4-medicines-defect-notification-neuraxpharm-uk-limited-levetiracetam-neuraxpharm-granules-for-oral-solution-in-sachet-el-26-a-slash-40",
+  "summary": "The MHRA Class 4 Medicines Defect Notification for Levetiracetam Neuraxpharm granules for oral solution in sachet has also been issued by the Hong Kong Department of Health on 2026-10-02, which lists the exact same batch numbers. No other national regulator, WHO, or regional agency alerts were located for this product.",
+  "findings": [
+    {
+      "country": "Hong Kong",
+      "authority": "Department of Health, Hong Kong",
+      "url": "https://www.drugoffice.gov.hk/eps/news/showNews/Levetiracetam/consumer/2026-10-02/en/58412.html",
+      "date": "2026-10-02",
+      "batch_numbers": [
+        "2153678",
+        "2184895",
+        "2184908",
+        "2194807",
+        "2185161",
+        "2194917",
+        "231350",
+        "2145725",
+        "2154064",
+        "2204270",
+        "231175",
+        "231591",
+        "2248690"
+      ],
+      "evidence_quote": "- Levetiracetam Neuraxpharm 250mg granules for oral solution in sachet (batch number: 2153678, 2184895)",
+      "read_by_agent": true,
+      "quote_verified": true,
+      "batches_verified": [
+        "2153678",
+        "2184895",
+        "2184908",
+        "2194807",
+        "2185161",
+        "2194917",
+        "231350",
+        "2145725",
+        "2154064",
+        "2204270",
+        "231175",
+        "231591",
+        "2248690"
+      ],
+      "batches_unverified": [],
+      "verified": true,
+      "date_iso": "2026-10-02",
+      "days_from_original": 1
+    }
+  ],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "Levetiracetam Neuraxpharm granules for oral solution sachet batch 2153678",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"2153678\" Levetiracetam Neuraxpharm",
+      "results": 6
+    },
+    {
+      "tool": "read",
+      "urls": [
+        "https://www.drugoffice.gov.hk/eps/news/showNews/Levetiracetam/consumer/2026-10-02/en/58412.html"
+      ],
+      "ok": 1
+    },
+    {
+      "tool": "search",
+      "query": "Levetiracetam Neuraxpharm granules sachet WHO",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Levetiracetam Neuraxpharm granules sachet FDA",
+      "results": 6
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 4,
+    "extract": 1
+  },
+  "llm_cost_usd": 0.0131,
+  "traced_at": "2026-10-10T20:06:30+00:00"
+}

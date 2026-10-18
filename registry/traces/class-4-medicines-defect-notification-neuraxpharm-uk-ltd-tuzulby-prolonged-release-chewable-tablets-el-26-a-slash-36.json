@@ -1,0 +1,71 @@
+{
+  "alert_id": "class-4-medicines-defect-notification-neuraxpharm-uk-ltd-tuzulby-prolonged-release-chewable-tablets-el-26-a-slash-36",
+  "summary": "The MHRA Class 4 defect notice for Tuzulby prolonged-release chewable tablets (batches 77951, 79949, 78001, 79961, 78011, 79974) has been echoed by the Hong Kong Department of Health, which issued a safety alert on 24 July 2026 listing the same batches and the missing epistaxis safety information. No other international regulator or agency has yet published a separate alert for this product.",
+  "findings": [
+    {
+      "country": "Hong Kong",
+      "authority": "Department of Health",
+      "url": "https://www.drugoffice.gov.hk/eps/news/showNews/Tuzulby/healthcare_providers/2026-07-24/en/57834.html",
+      "date": "2026-07-24",
+      "batch_numbers": [
+        "77951",
+        "79949",
+        "78001",
+        "79961",
+        "78011",
+        "79974"
+      ],
+      "evidence_quote": "Tuzulby 20 mg prolonged-release chewable tablets (batch number: 77951, 79949); Tuzulby 30 mg prolonged-release chewable tablets (batch number: 78001, 79961); Tuzulby 40 mg prolonged-release chewable tablets (batch number: 78011, 79974)",
+      "read_by_agent": true,
+      "quote_verified": true,
+      "batches_verified": [
+        "77951",
+        "79949",
+        "78001",
+        "79961",
+        "78011",
+        "79974"
+      ],
+      "batches_unverified": [],
+      "verified": true,
+      "date_iso": "2026-07-24",
+      "days_from_original": 1
+    }
+  ],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "Tuzulby prolonged-release chewable tablets batch 77951",
+      "results": 6
+    },
+    {
+      "tool": "read",
+      "urls": [
+        "https://www.drugoffice.gov.hk/eps/news/showNews/Tuzulby/healthcare_providers/2026-07-24/en/57834.html"
+      ],
+      "ok": 1
+    },
+    {
+      "tool": "search",
+      "query": "Tuzulby prolonged-release chewable tablets EMA",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Tuzulby WHO alert",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"Tuzulby\" \"77951\"",
+      "results": 6
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 4,
+    "extract": 1
+  },
+  "llm_cost_usd": 0.013,
+  "traced_at": "2026-10-10T20:06:47+00:00"
+}

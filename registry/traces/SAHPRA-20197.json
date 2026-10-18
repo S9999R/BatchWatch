@@ -1,0 +1,72 @@
+{
+  "alert_id": "SAHPRA-20197",
+  "summary": "The recall of Enalapril 10 mg Arya batches GQQ24053, GQQ24064, GQQ24066, GQQ24067 has been reported by SAHPRA and subsequently echoed by the African Medicines Agency (AMA) as a repost of the SAHPRA alert. No other national regulators, WHO, or credible news outlets have issued separate alerts for these specific batches.",
+  "findings": [
+    {
+      "country": "International",
+      "authority": "African Medicines Agency",
+      "url": "https://au-ama.africa/alerts/recall-enalapril-10mg-arya",
+      "date": "16 August 2026",
+      "batch_numbers": [
+        "GQQ24053",
+        "GQQ24064",
+        "GQQ24066",
+        "GQQ24067"
+      ],
+      "evidence_quote": "The South African Health Products Regulatory Authority (SAHPRA) has initiated the recall of four batches of Enalapril 10mg Arya, a medicine commonly used to treat high blood pressure (hypertension), following the identification of out-of-specification results during post-marketing surveillance inspections.",
+      "read_by_agent": true,
+      "quote_verified": true,
+      "batches_verified": [],
+      "batches_unverified": [
+        "GQQ24053",
+        "GQQ24064",
+        "GQQ24066",
+        "GQQ24067"
+      ],
+      "verified": false,
+      "date_iso": "2026-08-16",
+      "days_from_original": 0
+    }
+  ],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "Enalapril 10mg Arya GQQ24053 GQQ24064 GQQ24066 GQQ24067 recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "WHO Enalapril 10mg Arya recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "African Medicines Agency Enalapril 10mg Arya recall",
+      "results": 6
+    },
+    {
+      "tool": "read",
+      "urls": [
+        "https://au-ama.africa/alerts/recall-enalapril-10mg-arya"
+      ],
+      "ok": 1
+    },
+    {
+      "tool": "search",
+      "query": "Enalapril Arya recall FDA",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "site:who.int Enalapril Arya recall",
+      "results": 2
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 5,
+    "extract": 1
+  },
+  "llm_cost_usd": 0.0075,
+  "traced_at": "2026-10-10T20:12:18+00:00"
+}

@@ -1,0 +1,80 @@
+{
+  "alert_id": "WHO-16-06-2026-medical-product-alert-n-2-2026--falsified-jakavi-(ruxolitinib)",
+  "summary": "The falsified JAKAVI (ruxolitinib) batches AVT50, FNR06, and SGL04 have been reported by Pakistan's Drug Regulatory Authority (DRAP) and echoed by the African Medicines Agency, confirming detection in Iran, the Russian Federation, and Türkiye. No additional countries or new batch information emerged beyond the original WHO alert.",
+  "findings": [
+    {
+      "country": "Pakistan",
+      "authority": "Drug Regulatory Authority of Pakistan (DRAP)",
+      "url": "https://www.dra.gov.pk/safety_info/product_recalls/recall_alerts/38-rapid-alert-falsified-jakavi-ruxolitinib-tablets",
+      "date": "2026-07-16",
+      "batch_numbers": [
+        "AVT50",
+        "FNR06",
+        "SGL04"
+      ],
+      "evidence_quote": "Novartis has confirmed that the above-mentioned batch numbers are not valid. Laboratory analysis of a sample from batch AVT50 confirmed the absence of the declared active ingredient (ruxolitinib).",
+      "read_by_agent": true,
+      "quote_verified": true,
+      "batches_verified": [
+        "AVT50",
+        "FNR06",
+        "SGL04"
+      ],
+      "batches_unverified": [],
+      "verified": true,
+      "date_iso": "2026-07-16",
+      "days_from_original": 30
+    },
+    {
+      "country": "International",
+      "authority": "African Medicines Agency",
+      "url": "https://au-ama.africa/alerts/medical-product-alert-n2-2026-falsified-jakavi-ruxolitinib",
+      "date": "2026-06-16",
+      "batch_numbers": [
+        "AVT50",
+        "FNR06",
+        "SGL04"
+      ],
+      "evidence_quote": "This WHO Medical Product Alert refers to three batches of falsified JAKAVI (ruxolitinib). These falsified products have been detected in the Islamic Republic of Iran, the Russian Federation and Türkiye and reported to WHO in May 2026.",
+      "read_by_agent": true,
+      "quote_verified": true,
+      "batches_verified": [],
+      "batches_unverified": [
+        "AVT50",
+        "FNR06",
+        "SGL04"
+      ],
+      "verified": false,
+      "date_iso": "2026-06-16",
+      "days_from_original": 0
+    }
+  ],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "JAKAVI ruxolitinib falsified batch AVT50 FNR06 SGL04",
+      "results": 6
+    },
+    {
+      "tool": "read",
+      "urls": [
+        "https://www.dra.gov.pk/safety_info/product_recalls/recall_alerts/38-rapid-alert-falsified-jakavi-ruxolitinib-tablets"
+      ],
+      "ok": 1
+    },
+    {
+      "tool": "read",
+      "urls": [
+        "https://au-ama.africa/alerts/medical-product-alert-n2-2026-falsified-jakavi-ruxolitinib"
+      ],
+      "ok": 1
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 1,
+    "extract": 2
+  },
+  "llm_cost_usd": 0.0053,
+  "traced_at": "2026-10-10T20:13:32+00:00"
+}

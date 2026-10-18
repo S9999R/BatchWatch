@@ -1,0 +1,98 @@
+{
+  "alert_id": "WHO-07-05-2026-medical-product-alert-n-1-2026--substandard-accupaque-(iohexol)--omni",
+  "summary": "The substandard ACCUPAQUE, OMNIPAQUE and VISIPAQUE batches have been reported by Ireland's HPRA (recall of specific batches), Nigeria's NAFDAC (which disseminated the WHO alert), and the African Medicines Agency (which republished the WHO alert). No other national regulator or agency has issued distinct information beyond these sources.",
+  "findings": [
+    {
+      "country": "Nigeria",
+      "authority": "National Agency for Food and Drug Administration and Control (NAFDAC)",
+      "url": "https://nafdac.gov.ng/public-alert-no-26-2026-who-alert-on-substandard-accupaque-iohexol-omnipaque-iohexol-and-visipaque-iodixanol-in-all-who-regions",
+      "date": null,
+      "batch_numbers": [],
+      "evidence_quote": "The defect involves metallic particulate matter present on the inner surface of polypropylene (plastic) bottles. Visipaque is not registered.",
+      "read_by_agent": false,
+      "quote_verified": false,
+      "batches_verified": [],
+      "batches_unverified": [],
+      "verified": false,
+      "date_iso": null,
+      "days_from_original": null
+    },
+    {
+      "country": "International",
+      "authority": "African Medicines Agency",
+      "url": "https://au-ama.africa/alerts/medical-product-alert-n1-2026-substandard-accupaque-iohexol-omnipaque-iohexol-and-visipaque-iodixanol",
+      "date": null,
+      "batch_numbers": [],
+      "evidence_quote": "The defect involves the presence of metallic particulate matter, either adhered to or embedded within the inner surface of polypropylene bottles.",
+      "read_by_agent": false,
+      "quote_verified": false,
+      "batches_verified": [],
+      "batches_unverified": [],
+      "verified": false,
+      "date_iso": null,
+      "days_from_original": null
+    },
+    {
+      "country": "Ireland",
+      "authority": "Health Products Regulatory Authority (HPRA)",
+      "url": "https://www.hpra.ie/safety-information/safety-notices/article/omnipaque-350-mg-i-ml-solution-for-injection--pa-0735-006-020-and-visipaque-320-mg-l-ml-solution-for-injection--pa-0735-009-013--batch-recall",
+      "date": "2026-03-23",
+      "batch_numbers": [
+        "17413362",
+        "17230467"
+      ],
+      "evidence_quote": "Batch number: 17413362 Expiry Date: 15.10.2028",
+      "read_by_agent": true,
+      "quote_verified": false,
+      "batches_verified": [
+        "17413362",
+        "17230467"
+      ],
+      "batches_unverified": [],
+      "verified": false,
+      "date_iso": "2026-03-23",
+      "days_from_original": -45
+    }
+  ],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "ACCUPAQUE Omnipaque Visipaque particulate matter polypropylene bottle recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "HPRA Accupaque Omnipaque Visipaque particulate matter polypropylene",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "HPRA Accupaque particulate matter polypropylene",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "HPRA medical product alert accupaque omnipaque visipaque",
+      "results": 6
+    },
+    {
+      "tool": "read",
+      "urls": [
+        "https://www.hpra.ie/safety-information/safety-notices/article/omnipaque-350-mg-i-ml-solution-for-injection--pa-0735-006-020-and-visipaque-320-mg-l-ml-solution-for-injection--pa-0735-009-013--batch-recall"
+      ],
+      "ok": 1
+    },
+    {
+      "tool": "search",
+      "query": "NAFDAC Accupaque Omnipaque Visipaque particulate matter",
+      "results": 6
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 5,
+    "extract": 1
+  },
+  "llm_cost_usd": 0.0143,
+  "traced_at": "2026-10-10T20:13:50+00:00"
+}

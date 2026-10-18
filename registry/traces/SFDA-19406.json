@@ -1,0 +1,56 @@
+{
+  "alert_id": "SFDA-19406",
+  "summary": "",
+  "findings": [],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "Clonotril 0.5mg Tab 114646 120094 recall",
+      "results": 2
+    },
+    {
+      "tool": "search",
+      "query": "Clonotril 0.5mg Tab Remedica recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Remedica Clonotril recall Cyprus",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Cyprus Ministry of Health Clonotril recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"114646\" \"Clonotril\"",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "WHO Clonotril recall",
+      "results": 6
+    },
+    {
+      "tool": "read",
+      "urls": [
+        "https://www.eof.gr/en/%CE%B1%CE%BD%CE%AC%CE%BA%CE%BB%CE%B7%CF%83%CE%B7-%CF%80%CE%B1%CF%81%CF%84%CE%AF%CE%B4%CF%89%CE%BD-%CF%84%CF%89%CE%BD-%CF%86%CE%B1%CF%81%CE%BC%CE%B1%CE%BA%CE%B5%CF%85%CF%84%CE%B9%CE%BA%CF%8E%CE%BD-3"
+      ],
+      "ok": 1
+    },
+    {
+      "tool": "search",
+      "query": "EOF recall Clonotril 2mg batch",
+      "results": 6
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 7,
+    "extract": 1
+  },
+  "llm_cost_usd": 0.0179,
+  "traced_at": "2026-10-10T20:10:29+00:00"
+}

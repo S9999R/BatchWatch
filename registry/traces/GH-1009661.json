@@ -1,0 +1,123 @@
+{
+  "alert_id": "GH-1009661",
+  "summary": "The Nestlé baby food cereulide contamination has been reported by multiple international sources, including foodwatch, EFSA, and WHO, indicating recalls in over 70 countries worldwide. These reports detail specific batch numbers recalled in European nations such as Finland, Denmark, Sweden, France, Hungary, the Czech Republic, Poland, and Belgium/Luxembourg, while noting that the alert originated from FDA Ghana.",
+  "findings": [
+    {
+      "country": "International",
+      "authority": "foodwatch",
+      "url": "https://www.foodwatch.org/en/toxin-in-baby-milk-foodwatch-takes-legal-action-against-companies",
+      "date": null,
+      "batch_numbers": [],
+      "evidence_quote": "Since early December 2025, recalls of powdered infant and follow-on formula have multiplied across the EU after potential contamination with the toxin cereulide.",
+      "read_by_agent": true,
+      "quote_verified": true,
+      "batches_verified": [],
+      "batches_unverified": [],
+      "verified": true,
+      "date_iso": null,
+      "days_from_original": null
+    },
+    {
+      "country": "Multiple European countries",
+      "authority": "Food Safety News",
+      "url": "https://www.foodsafetynews.com/2025/12/nestle-recalls-infant-formula-in-europe",
+      "date": null,
+      "batch_numbers": [
+        "53030346AB",
+        "52820346AD",
+        "52960346AB",
+        "52860346BA",
+        "52820346AB",
+        "52870346BB",
+        "53020346BB",
+        "53030346BA",
+        "52850346AF",
+        "52860346AA",
+        "52870346AD"
+      ],
+      "evidence_quote": "In Finland and Denmark, the company recalled one batch of NAN Sensilac 1 800-gram infant formula powder. The affected batch has the best before date of October 2027, and batch number 53030346AB.",
+      "read_by_agent": true,
+      "quote_verified": true,
+      "batches_verified": [
+        "53030346AB",
+        "52820346AD",
+        "52960346AB",
+        "52860346BA",
+        "52820346AB",
+        "52870346BB",
+        "53020346BB",
+        "53030346BA",
+        "52850346AF",
+        "52860346AA",
+        "52870346AD"
+      ],
+      "batches_unverified": [],
+      "verified": true,
+      "date_iso": null,
+      "days_from_original": null
+    },
+    {
+      "country": "International",
+      "authority": "European Food Safety Authority (EFSA)",
+      "url": "https://www.efsa.europa.eu/en/news/precautionary-global-recall-infant-nutrition-products-following-detection-bacillus-cereus",
+      "date": null,
+      "batch_numbers": [],
+      "evidence_quote": "Multi-country recalls of several infant nutrition products are ongoing following the detection of cereulide, a toxin produced by the bacterium Bacillus cereus, which can cause nausea, vomiting and diarrhoea.",
+      "read_by_agent": false,
+      "quote_verified": false,
+      "batches_verified": [],
+      "batches_unverified": [],
+      "verified": false,
+      "date_iso": null,
+      "days_from_original": null
+    },
+    {
+      "country": "International",
+      "authority": "World Health Organization (WHO)",
+      "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON596",
+      "date": "2026-02-25",
+      "batch_numbers": [],
+      "evidence_quote": "Since 10 December 2025, and as of 25 February 2026, 99 countries and territories have been identified as having received batches of infant formula products subject to recall due to contamination with cereulide toxin.",
+      "read_by_agent": false,
+      "quote_verified": false,
+      "batches_verified": [],
+      "batches_unverified": [],
+      "verified": false,
+      "date_iso": "2026-02-25",
+      "days_from_original": 48
+    }
+  ],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "Nestlé baby food cereulide toxin recall Europe",
+      "results": 6
+    },
+    {
+      "tool": "read",
+      "urls": [
+        "https://www.foodwatch.org/en/toxin-in-baby-milk-foodwatch-takes-legal-action-against-companies"
+      ],
+      "ok": 1
+    },
+    {
+      "tool": "search",
+      "query": "EFSA cereulide infant formula recall global",
+      "results": 6
+    },
+    {
+      "tool": "read",
+      "urls": [
+        "https://www.foodsafetynews.com/2025/12/nestle-recalls-infant-formula-in-europe"
+      ],
+      "ok": 1
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 2,
+    "extract": 2
+  },
+  "llm_cost_usd": 0.0095,
+  "traced_at": "2026-10-10T20:13:06+00:00"
+}

@@ -1,0 +1,44 @@
+{
+  "alert_id": "SFDA-18872",
+  "summary": "No additional reports were found for the Gentacan injection batches IS-340, GTA24004, and GTA24002 beyond the Saudi FDA recall. Searches of international regulators, WHO, regional agencies, and news sources returned only the original SFDA alert.",
+  "findings": [],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "Gentacan IS-340 GTA24004 GTA24002 recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"IS-340\" Gentacan",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Wadi Altanfeez Gentacan recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Shivam Enterprises Gentacan recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"IS-340\" \"Gentacan\"",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"IS-340\" Gentamicin",
+      "results": 6
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 6,
+    "extract": 0
+  },
+  "llm_cost_usd": 0.0163,
+  "traced_at": "2026-10-10T20:10:58+00:00"
+}

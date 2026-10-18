@@ -1,0 +1,56 @@
+{
+  "alert_id": "SAHPRA-19407",
+  "summary": "",
+  "findings": [],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "Citro-Soda recall Adcock Ingram safety concern",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Citro-Soda recall international",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "WHO Citro-Soda recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Citro-Soda recall Botswana",
+      "results": 6
+    },
+    {
+      "tool": "read",
+      "urls": [
+        "https://www.facebook.com/medicinesregulatoryauthority/posts/public-alert-recall-of-adcock-ingram-citro-soda-products-the-botswana-medicine-r/1458648852941677"
+      ],
+      "ok": 0
+    },
+    {
+      "tool": "search",
+      "query": "Botswana Medicines Regulatory Authority Citro-Soda recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Botswana Medicine Regulatory Authority Citro-Soda recall batch C",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Botswana Medicine Regulatory Authority Citro-Soda recall PUBLIC ALERT",
+      "results": 6
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 7,
+    "extract": 1
+  },
+  "llm_cost_usd": 0.0176,
+  "traced_at": "2026-10-10T20:12:56+00:00"
+}

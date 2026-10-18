@@ -1,0 +1,56 @@
+{
+  "alert_id": "class-3-medicines-recall-orbit-pharma-limited-cyclizine-lactate-50-mg-slash-ml-solution-for-injection-el-26-a-slash-29",
+  "summary": "The recall of Orbit Pharma Limited's Cyclizine Lactate 50 mg/ml Solution for injection (batch 2226016) has been reported by the Hong Kong Drug Office, which reproduces the MHRA announcement and notes that the product is not registered in Hong Kong. No other international regulator or agency has issued a separate alert for this batch.",
+  "findings": [
+    {
+      "country": "Hong Kong",
+      "authority": "Drug Office, Department of Health",
+      "url": "https://www.drugoffice.gov.hk/eps/news/showNews/The+United+Kingdom/consumer/2026-06-17/en/57619.html",
+      "date": "2026-06-17",
+      "batch_numbers": [
+        "2226016"
+      ],
+      "evidence_quote": "Medicines and Healthcare products Regulatory Agency (MHRA) announces that Orbit Pharma Limited is recalling one batch of Cyclizine Lactate 50 mg/ml Solution for injection (batch number: 2226016) as a precautionary measure due to Good Manufacturing Practice (GMP) deficiencies identified at the manufacturing site.",
+      "read_by_agent": true,
+      "quote_verified": true,
+      "batches_verified": [
+        "2226016"
+      ],
+      "batches_unverified": [],
+      "verified": true,
+      "date_iso": "2026-06-17",
+      "days_from_original": 1
+    }
+  ],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "Cyclizine Lactate 50 mg/ml Solution for injection batch 2226016 recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"Cyclizine Lactate\" \"2226016\" recall",
+      "results": 6
+    },
+    {
+      "tool": "read",
+      "urls": [
+        "https://www.drugoffice.gov.hk/eps/news/showNews/The+United+Kingdom/consumer/2026-06-17/en/57619.html"
+      ],
+      "ok": 1
+    },
+    {
+      "tool": "search",
+      "query": "Cyclizine Lactate 2226016 WHO",
+      "results": 6
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 3,
+    "extract": 1
+  },
+  "llm_cost_usd": 0.0061,
+  "traced_at": "2026-10-10T20:07:37+00:00"
+}

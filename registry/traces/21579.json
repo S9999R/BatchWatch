@@ -1,0 +1,90 @@
+{
+  "alert_id": "21579",
+  "summary": "The levamisole-containing medicines withdrawal has been reported by the European Medicines Agency (EMA) and its Pharmacovigilance Risk Assessment Committee (PRAC), endorsed by the Italian Medicines Agency (AIFA), and noted by the Belgian Federal Agency for Medicines and Health Products (FAMHP). These sources confirm the EU-wide recommendation to withdraw marketing authorisations due to leukoencephalopathy risk, but they do not specify particular batch numbers.",
+  "findings": [
+    {
+      "country": "International",
+      "authority": "European Medicines Agency (EMA)",
+      "url": "https://www.ema.europa.eu/en/news/ema-recommends-withdrawal-marketing-authorisations-levamisole-medicines",
+      "date": null,
+      "batch_numbers": [],
+      "evidence_quote": "EMA’s safety committee (PRAC) recommended that medicines containing levamisole be withdrawn from the EU market. This follows an EU-wide review which concluded that the benefits of these medicines no longer outweigh their risks for the treatment of parasitic worm infections in adults and children.",
+      "read_by_agent": true,
+      "quote_verified": true,
+      "batches_verified": [],
+      "batches_unverified": [],
+      "verified": true,
+      "date_iso": null,
+      "days_from_original": null
+    },
+    {
+      "country": "Belgium",
+      "authority": "Federal Agency for Medicines and Health Products (FAMHP)",
+      "url": "https://www.famhp.be/en/news/prac_february_2026_prac_recommends_the_withdrawal_of_medicines_containing_levamisole",
+      "date": "2026-03-05",
+      "batch_numbers": [],
+      "evidence_quote": "During its February 2026 meeting, the Pharmacovigilance Risk Assessment Committee of the European Medicines Agency recommended the withdrawal of medicines containing levamisole from the EU market.",
+      "read_by_agent": true,
+      "quote_verified": true,
+      "batches_verified": [],
+      "batches_unverified": [],
+      "verified": true,
+      "date_iso": "2026-03-05",
+      "days_from_original": -95
+    },
+    {
+      "country": "International",
+      "authority": "Italian Medicines Agency (AIFA)",
+      "url": "https://www.aifa.gov.it/en/-/levamisolo-confermata-a-livello-europeo-raccomandazione-prac-ritiro-mercato-ue",
+      "date": "2026-03-25",
+      "batch_numbers": [],
+      "evidence_quote": "On 25 March 2026, the Co-ordination Group for Mutual Recognition and Decentralised Procedures - Human (CMDh) endorsed the recommendation made by EMA’s safety committee (PRAC) to withdraw medicines containing levamisole from the European Union (EU) market due to the risk of leukoencephalopathy.",
+      "read_by_agent": true,
+      "quote_verified": true,
+      "batches_verified": [],
+      "batches_unverified": [],
+      "verified": true,
+      "date_iso": "2026-03-25",
+      "days_from_original": -75
+    }
+  ],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "Levamisole-containing medicines withdrawal AIFA",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Levamisole withdrawal Italy AIFA",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "AIFA levamisole withdrawal",
+      "results": 6
+    },
+    {
+      "tool": "read",
+      "urls": [
+        "https://www.aifa.gov.it/en/-/levamisolo-confermata-a-livello-europeo-raccomandazione-prac-ritiro-mercato-ue"
+      ],
+      "ok": 1
+    },
+    {
+      "tool": "read",
+      "urls": [
+        "https://www.ema.europa.eu/en/news/ema-recommends-withdrawal-marketing-authorisations-levamisole-medicines",
+        "https://www.famhp.be/en/news/prac_february_2026_prac_recommends_the_withdrawal_of_medicines_containing_levamisole"
+      ],
+      "ok": 2
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 3,
+    "extract": 2
+  },
+  "llm_cost_usd": 0.0091,
+  "traced_at": "2026-10-10T20:08:53+00:00"
+}

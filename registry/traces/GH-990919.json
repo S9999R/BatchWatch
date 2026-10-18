@@ -1,0 +1,111 @@
+{
+  "alert_id": "GH-990919",
+  "summary": "The falsified propylene glycol contaminated with ethylene glycol (EG) and diethylene glycol (DEG) has been reported by Pakistan's Drug Regulatory Authority (DRAP) in March 2024 and echoed in a WHO Medical Product Alert in April 2024. Related incidents in 2024 have also been noted in Kenya and South Africa, although those reports did not specify batch numbers.",
+  "findings": [
+    {
+      "country": "Kenya",
+      "authority": "USP‑PMDA Joint Workshop (PDF)",
+      "url": "https://www.pmda.go.jp/files/000270494.pdf",
+      "date": null,
+      "batch_numbers": [],
+      "evidence_quote": "2024: DEG contamination of cough syrups in Kenya.",
+      "read_by_agent": true,
+      "quote_verified": true,
+      "batches_verified": [],
+      "batches_unverified": [],
+      "verified": true,
+      "date_iso": null,
+      "days_from_original": null
+    },
+    {
+      "country": "International",
+      "authority": "World Health Organization",
+      "url": "https://www.who.int/news/item/15-04-2024-medical-product-alert-n-1-2024--falsified-(contaminated)-usp-ep-propylene-glycol",
+      "date": "15 April 2024",
+      "batch_numbers": [],
+      "evidence_quote": "This WHO Alert refers to falsified DOW USP/EP PROPYLENE GLYCOL detected in Pakistan.",
+      "read_by_agent": true,
+      "quote_verified": true,
+      "batches_verified": [],
+      "batches_unverified": [],
+      "verified": true,
+      "date_iso": "2024-04-15",
+      "days_from_original": 71
+    },
+    {
+      "country": "Pakistan",
+      "authority": "Drug Regulatory Authority of Pakistan (DRAP)",
+      "url": "https://www.dra.gov.pk/safety_info/product_recalls/recall_alerts/rapid-alert-contaminated-propylene-glycol-identified-and-confiscated-2",
+      "date": "8th March 2024",
+      "batch_numbers": [
+        "C815L44R41",
+        "C815L44R52",
+        "C815N3OR41"
+      ],
+      "evidence_quote": "Two samples were collected from separate containers which were labelled as Propylene Glycol, Batch# C815L44R41 and Batch# C815L44R52.",
+      "read_by_agent": true,
+      "quote_verified": true,
+      "batches_verified": [
+        "C815L44R41",
+        "C815L44R52",
+        "C815N3OR41"
+      ],
+      "batches_unverified": [],
+      "verified": true,
+      "date_iso": "2024-03-08",
+      "days_from_original": 33
+    }
+  ],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "DEG EG glycerin propylene glycol impurity alert WHO",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "propylene glycol DEG EG contamination Kenya 2024",
+      "results": 6
+    },
+    {
+      "tool": "read",
+      "urls": [
+        "https://www.pmda.go.jp/files/000270494.pdf"
+      ],
+      "ok": 1
+    },
+    {
+      "tool": "read",
+      "urls": [
+        "https://www.who.int/news/item/15-04-2024-medical-product-alert-n-1-2024--falsified-(contaminated)-usp-ep-propylene-glycol"
+      ],
+      "ok": 1
+    },
+    {
+      "tool": "read",
+      "urls": [
+        "https://cdn.who.int/media/docs/default-source/substandard-and-falsified/n1_2024_propylene.pdf?sfvrsn=8e55115f_8"
+      ],
+      "ok": 0
+    },
+    {
+      "tool": "search",
+      "query": "DRAP propylene glycol batch falsified WHO alert April 2024 batch numbers",
+      "results": 6
+    },
+    {
+      "tool": "read",
+      "urls": [
+        "https://www.dra.gov.pk/safety_info/product_recalls/recall_alerts/rapid-alert-contaminated-propylene-glycol-identified-and-confiscated-2"
+      ],
+      "ok": 1
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 3,
+    "extract": 4
+  },
+  "llm_cost_usd": 0.02,
+  "traced_at": "2026-10-10T20:13:40+00:00"
+}

@@ -1,0 +1,54 @@
+{
+  "alert_id": "SFDA-19190",
+  "summary": "",
+  "findings": [],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "CEVITIL 1 g effervescent tablet batch 2509984 recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"CEVITIL\" batch 2509984",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "EIPICO CEVITIL recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "CEVITIL recall WHO",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "EIPICO CEVITIL recall Egypt",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"CEVITIL\" \"2509984\" WHO",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Egypt Drug Authority CEVITIL recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "WHO CEVITIL",
+      "results": 6
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 8,
+    "extract": 0
+  },
+  "llm_cost_usd": 0.0203,
+  "traced_at": "2026-10-10T20:10:58+00:00"
+}

@@ -1,0 +1,51 @@
+{
+  "alert_id": "D-0854-2026",
+  "summary": "The only publicly available report of the Menow Sunscreen Pressed Powder recall comes from the U.S. FDA (via the HMP Global Learning Network article), which details a Class II recall for lot 2024/10/11 due to cGMP deviations. No additional reports from other national regulators, WHO, regional agencies, or credible news outlets were identified in the searches.",
+  "findings": [],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "MENOW SUNSCREEN PRESSED POWDER SPF35 PA+++ batch 2024/10/11",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"MENOW SUNSCREEN PRESSED POWDER\" recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Menow sunscreen recalled WHO",
+      "results": 6
+    },
+    {
+      "tool": "read",
+      "urls": [
+        "https://www.hmpgloballearningnetwork.com/site/pln/news/menow-sunscreen-pressed-powder-recalled-due-cgmp-deviations"
+      ],
+      "ok": 1
+    },
+    {
+      "tool": "search",
+      "query": "Shantou Qiwei Industrial Co recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"Menow Sunscreen Pressed Powder\" Health Canada",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Menow sunscreen WHO",
+      "results": 6
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 6,
+    "extract": 1
+  },
+  "llm_cost_usd": 0.0208,
+  "traced_at": "2026-10-10T20:06:23+00:00"
+}

@@ -1,0 +1,57 @@
+{
+  "alert_id": "22083",
+  "summary": "The Drug Regulatory Authority of Pakistan (DRAP) issued a recall alert on 14 April 2026 for four products matching those named in the NAFDAC alert: Nitras tablets (batch 24L069), Kadin 2 tablets (batch 569), Loratadine tablets (batch 24), and ACEFYL cough syrup (batch ACH479). The DRAP notice cites substandard or adulterated quality based on assay, dissolution, and contamination tests, and advises healthcare professionals and consumers to stop use and report adverse events.",
+  "findings": [
+    {
+      "country": "Pakistan",
+      "authority": "Drug Regulatory Authority of Pakistan (DRAP)",
+      "url": "https://www.dra.gov.pk/safety_info/product_recalls/recall_alerts/23-recall-alert-class-ii-drug-products-provincial-reports",
+      "date": "14 April, 2026",
+      "batch_numbers": [
+        "24L069",
+        "569",
+        "24",
+        "ACH479"
+      ],
+      "evidence_quote": "Tablet Nitras Each sustained release tablet contains: Glycerin Trinitrate .... 2.6 mg (Reg # 056007) | 24L069 | M/s Caraway Pharmaceuticals.... The Sample is declared as “sub‑standard” on the basis of Assay & Dissolution Test.",
+      "read_by_agent": true,
+      "quote_verified": true,
+      "batches_verified": [
+        "24L069",
+        "569",
+        "24",
+        "ACH479"
+      ],
+      "batches_unverified": [],
+      "verified": true,
+      "date_iso": "2026-04-14",
+      "days_from_original": -126
+    }
+  ],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "NITRAS tablet 24L069 recalled DRAP",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"24L069\" Nitras recall",
+      "results": 6
+    },
+    {
+      "tool": "read",
+      "urls": [
+        "https://www.dra.gov.pk/safety_info/product_recalls/recall_alerts/23-recall-alert-class-ii-drug-products-provincial-reports"
+      ],
+      "ok": 1
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 2,
+    "extract": 1
+  },
+  "llm_cost_usd": 0.0042,
+  "traced_at": "2026-10-09T19:29:10+00:00"
+}

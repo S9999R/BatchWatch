@@ -1,0 +1,85 @@
+{
+  "alert_id": "D-0856-2026",
+  "summary": "The recall of Reliable-1 Laboratories' Sodium Chloride Hypertonicity Ophthalmic Solution 5% (lots 3192, 3293, 3336) has been reported by U.S.-based safety tracking sites and news outlets, confirming the same batches are affected. No additional international regulator reports were found beyond these U.S. sources.",
+  "findings": [
+    {
+      "country": "United States",
+      "authority": "EyeDropSafety.org",
+      "url": "https://www.eyedropsafety.org",
+      "date": "2026-09-21",
+      "batch_numbers": [
+        "3192",
+        "3293",
+        "3336"
+      ],
+      "evidence_quote": "* Reliable -1 Laboratories, Sodium Chloride Hypertonicity Ophthalmic Solution, 5%, Sterile, 0.5 FL OZ (15 ML), NDC 69618-077-55 Lot #3192, Exp Date 01/312027; 3293, 3336 Exp Date 06/30/2027",
+      "read_by_agent": true,
+      "quote_verified": true,
+      "batches_verified": [
+        "3192",
+        "3293",
+        "3336"
+      ],
+      "batches_unverified": [],
+      "verified": true,
+      "date_iso": "2026-09-21",
+      "days_from_original": -9
+    },
+    {
+      "country": "United States",
+      "authority": "Yahoo News",
+      "url": "https://www.yahoo.com/news/us/articles/millions-bottles-eye-drops-recalled-145602620.html",
+      "date": null,
+      "batch_numbers": [
+        "3192",
+        "3293",
+        "3336"
+      ],
+      "evidence_quote": "* Reliable-1 Laboratories Sodium Chloride Hypertonicity Ophthalmic Solution 5%, Sterile, 0.5 fl oz (15 mL)",
+      "read_by_agent": true,
+      "quote_verified": false,
+      "batches_verified": [
+        "3192",
+        "3293",
+        "3336"
+      ],
+      "batches_unverified": [],
+      "verified": false,
+      "date_iso": null,
+      "days_from_original": null
+    }
+  ],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "Reliable-1 Laboratories Sodium Chloride Hypertonicity Ophthalmic Solution 5% batch 3192 3293 3336 recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"3192\" \"Reliable-1\" Sodium Chloride Hypertonicity Ophthalmic Solution recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"Reliable-1 Laboratories\" \"Sodium Chloride Hypertonicity Ophthalmic Solution\" recall",
+      "results": 6
+    },
+    {
+      "tool": "read",
+      "urls": [
+        "https://www.wthr.com/article/news/nation-world/eye-drop-recall-brands-sterility-concerns/507-119b9bda-fc48-4380-9cbc-0e9e97a03387",
+        "https://www.eyedropsafety.org",
+        "https://www.yahoo.com/news/us/articles/millions-bottles-eye-drops-recalled-145602620.html"
+      ],
+      "ok": 2
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 3,
+    "extract": 1
+  },
+  "llm_cost_usd": 0.0148,
+  "traced_at": "2026-10-10T20:05:10+00:00"
+}

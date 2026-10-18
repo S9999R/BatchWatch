@@ -1,0 +1,154 @@
+{
+  "alert_id": "WHO-15-12-2025-medical-product-alert-n-7-2025--falsified-ibrance-(palbociclib)",
+  "summary": "Falsified IBRANCE (palbociclib) batches FS5173, GS4328, LV1850, TS2190, GK2981, GR6491, GT5817, HJ8710, and HJ8715 have been reported by Kenya's Pharmacy and Poisons Board and Lebanon's Ministry of Public Health, and the African Medicines Agency has shared the WHO alert. The alerts confirm the same batch numbers and note detection in Côte d’Ivoire, Egypt, Lebanon, Libya, and Türkiye.",
+  "findings": [
+    {
+      "country": "Lebanon",
+      "authority": "Ministry of Public Health",
+      "url": "https://www.moph.gov.lb/userfiles/files/Quality%26Safety/PharmacovigilanceSystemInLebanon/Medical%20Product%20Alert%20N%C2%B07-2025%2C%20Falsified%20IBRANCE%20(palbociclib).pdf",
+      "date": "2025-12-15",
+      "batch_numbers": [
+        "FS5173",
+        "GS4328",
+        "LV1850",
+        "TS2190",
+        "GK2981",
+        "GR6491",
+        "GT5817",
+        "HJ8710",
+        "HJ8715"
+      ],
+      "evidence_quote": "Falsified lot numbers: The following lot numbers are NOT valid for genuine IBRANCE and any IBRANCE product with these lot numbers should be treated as falsified: FS5173, GS4328, LV1850, and TS2190. Suspicious lot numbers: (likely to be falsified if combined with any indicator below): GK2981, GR6491, GT5817, HJ8710, and HJ8715.",
+      "read_by_agent": true,
+      "quote_verified": true,
+      "batches_verified": [
+        "FS5173",
+        "GS4328",
+        "LV1850",
+        "TS2190",
+        "GK2981",
+        "GR6491",
+        "GT5817",
+        "HJ8710",
+        "HJ8715"
+      ],
+      "batches_unverified": [],
+      "verified": true,
+      "date_iso": "2025-12-15",
+      "days_from_original": 0
+    },
+    {
+      "country": "Kenya",
+      "authority": "Pharmacy and Poisons Board",
+      "url": "https://web.pharmacyboardkenya.org/wp-content/uploads/2026/01/Public-Alert-on-Falsified-Ibrance-Batches.pdf",
+      "date": "2025-12-24",
+      "batch_numbers": [
+        "FS5173",
+        "GS4328",
+        "LV1850",
+        "TS2190",
+        "GK2981",
+        "GR6491",
+        "GT5817",
+        "HJ8710",
+        "HJ8715"
+      ],
+      "evidence_quote": "The confirmed falsified batch numbers are as follows: FS5173, GS4328, LV1850, and TS2190. In addition, the following batch numbers are considered suspicious and likely to be falsified: GK2981, GR6491, GT5817, HJ8710, and HJ8715.",
+      "read_by_agent": true,
+      "quote_verified": true,
+      "batches_verified": [
+        "FS5173",
+        "GS4328",
+        "LV1850",
+        "TS2190",
+        "GK2981",
+        "GR6491",
+        "GT5817",
+        "HJ8710",
+        "HJ8715"
+      ],
+      "batches_unverified": [],
+      "verified": true,
+      "date_iso": "2025-12-24",
+      "days_from_original": 9
+    },
+    {
+      "country": "International",
+      "authority": "African Medicines Agency",
+      "url": "https://au-ama.africa/alerts/medical-product-alert-n6-2025-falsified-simulect-basiliximab-for-injectionmedical-product-alert-n7-2025",
+      "date": "2025-12-15",
+      "batch_numbers": [
+        "FS5173",
+        "GS4328",
+        "LV1850",
+        "TS2190",
+        "GK2981",
+        "GR6491",
+        "GT5817",
+        "HJ8710",
+        "HJ8715"
+      ],
+      "evidence_quote": "This WHO Medical Product Alert refers to nine lots of falsified IBRANCE (palbociclib). These falsified products have been detected in Cote d’Ivoire, Egypt, Lebanon, Libya and Türkiye and were reported to WHO in November 2025.",
+      "read_by_agent": true,
+      "quote_verified": true,
+      "batches_verified": [],
+      "batches_unverified": [
+        "FS5173",
+        "GS4328",
+        "LV1850",
+        "TS2190",
+        "GK2981",
+        "GR6491",
+        "GT5817",
+        "HJ8710",
+        "HJ8715"
+      ],
+      "verified": false,
+      "date_iso": "2025-12-15",
+      "days_from_original": 0
+    }
+  ],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "IBRANCE palbociclib FS5173 falsified",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "FS5173 IBRANCE Kenya",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Falsified IBRANCE Lebanon batch FS5173",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "ZAMRA falsified IBRANCE",
+      "results": 6
+    },
+    {
+      "tool": "read",
+      "urls": [
+        "https://web.pharmacyboardkenya.org/wp-content/uploads/2026/01/Public-Alert-on-Falsified-Ibrance-Batches.pdf",
+        "https://www.moph.gov.lb/userfiles/files/Quality%26Safety/PharmacovigilanceSystemInLebanon/Medical%20Product%20Alert%20N%C2%B07-2025%2C%20Falsified%20IBRANCE%20(palbociclib).pdf",
+        "https://au-ama.africa/alerts/medical-product-alert-n6-2025-falsified-simulect-basiliximab-for-injectionmedical-product-alert-n7-2025"
+      ],
+      "ok": 3
+    },
+    {
+      "tool": "search",
+      "query": "FS5173 Egypt IBRANCE",
+      "results": 6
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 5,
+    "extract": 1
+  },
+  "llm_cost_usd": 0.0174,
+  "traced_at": "2026-10-10T20:14:03+00:00"
+}

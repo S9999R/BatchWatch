@@ -1,0 +1,66 @@
+{
+  "alert_id": "D-0867-2026",
+  "summary": "The recall of Olanzapine Tablets USP 5 mg, lot BOB22321A, has been reported by the California State Board of Pharmacy in addition to the original FDA alert. No other national regulator, WHO, regional agency, or credible news source has published a separate alert for this product or batch.",
+  "findings": [
+    {
+      "country": "United States (California)",
+      "authority": "California State Board of Pharmacy",
+      "url": "https://www.pharmacy.ca.gov/about/recall_alerts/082826_macleods.pdf",
+      "date": "2026-08-28",
+      "batch_numbers": [
+        "BOB22321A"
+      ],
+      "evidence_quote": "Macleods Pharmaceuticals Limited is initiating a Retail/ Pharmacy level Recall of Olanzapine tablets USP 5 mg.",
+      "read_by_agent": true,
+      "quote_verified": true,
+      "batches_verified": [
+        "BOB22321A"
+      ],
+      "batches_unverified": [],
+      "verified": true,
+      "date_iso": "2026-08-28",
+      "days_from_original": -33
+    }
+  ],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "Olanzapine Tablets USP 5 mg BOB22321A recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "BOB22321A olanzapine recall Europe",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Olanzapine tablets USP 5 mg BOB22321A Canada recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "BOB22321A MHRA",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Olanzapine recall Health Canada",
+      "results": 6
+    },
+    {
+      "tool": "read",
+      "urls": [
+        "https://www.pharmacy.ca.gov/about/recall_alerts/082826_macleods.pdf"
+      ],
+      "ok": 1
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 5,
+    "extract": 1
+  },
+  "llm_cost_usd": 0.0143,
+  "traced_at": "2026-10-10T20:05:36+00:00"
+}

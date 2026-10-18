@@ -1,0 +1,114 @@
+{
+  "alert_id": "HC-82725",
+  "summary": "The recall of PMS-Carvedilol 25 mg tablets due to N-nitroso-carvedilol impurity has been referenced by Hong Kong's Drug Office, which confirms that the affected lots have not been imported into Hong Kong. No other national regulator, WHO, or regional agency has issued a separate alert for this product or batches. The Hong Kong notice essentially repeats the Health Canada information and adds a local reassurance.",
+  "findings": [
+    {
+      "country": "Hong Kong",
+      "authority": "Drug Office, Department of Health, Hong Kong",
+      "url": "https://www.drugoffice.gov.hk/eps/news/showNews/PMS-Carvedilol/consumer/2026-10-06/en/58453.html",
+      "date": "2026-10-06",
+      "batch_numbers": [
+        "650920",
+        "650923",
+        "650924",
+        "650927",
+        "651646",
+        "651647",
+        "653566",
+        "653569",
+        "654749",
+        "657006",
+        "657007",
+        "658263",
+        "659714",
+        "659715",
+        "661964",
+        "661965",
+        "663218",
+        "663438",
+        "663439",
+        "665961"
+      ],
+      "evidence_quote": "Health Canada announces that Pharmascience Inc. is recalling 20 lots of PMS-CARVEDILOL 25 mg Tablet (lot number: 650920, 650923, 650924, 650927, 651646, 651647, 653566, 653569, 654749, 657006, 657007, 658263, 659714, 659715, 661964, 661965, 663218, 663438, 663439, 665961) from retailers because the impurity, N-nitroso-carvedilol, may be out of specification in the affected lots.",
+      "read_by_agent": true,
+      "quote_verified": true,
+      "batches_verified": [
+        "650920",
+        "650923",
+        "650924",
+        "650927",
+        "651646",
+        "651647",
+        "653566",
+        "653569",
+        "654749",
+        "657006",
+        "657007",
+        "658263",
+        "659714",
+        "659715",
+        "661964",
+        "661965",
+        "663218",
+        "663438",
+        "663439",
+        "665961"
+      ],
+      "batches_unverified": [],
+      "verified": true,
+      "date_iso": "2026-10-06",
+      "days_from_original": 0
+    }
+  ],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "PMS-Carvedilol 25 mg tablets batch 650920 falsified",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"650920\" carvedilol recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"650923\" carvedilol",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Pharmascience carvedilol recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"650920\" \"Pharmascience\"",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"PMS-Carvedilol\" 25 mg",
+      "results": 6
+    },
+    {
+      "tool": "read",
+      "urls": [
+        "https://www.drugoffice.gov.hk/eps/news/showNews/PMS-Carvedilol/consumer/2026-10-06/en/58453.html"
+      ],
+      "ok": 1
+    },
+    {
+      "tool": "search",
+      "query": "\"PMS-Carvedilol\" WHO",
+      "results": 6
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 7,
+    "extract": 1
+  },
+  "llm_cost_usd": 0.023,
+  "traced_at": "2026-10-10T20:11:26+00:00"
+}

@@ -1,0 +1,74 @@
+{
+  "alert_id": "class-2-medicines-recall-beckton-dickson-uk-ltd-chloraprep-1ml-applicator-el-26-a-slash-34",
+  "summary": "The MHRA recall of Beckton Dickson UK Ltd's ChloraPrep 1mL applicator (ALL batches) has been mirrored by a US FDA nationwide recall of specific lots (4032183 and 4073005) due to fungal contamination, and an NHS Supply Chain safety alert that extends the MHRA recall to cover all lots with expiry dates up to and including May 2029.",
+  "findings": [
+    {
+      "country": "International",
+      "authority": "NHS Supply Chain",
+      "url": "https://www.supplychain.nhs.uk/icn/safety-alert-becton-dickinson-chloraprep-2-1ml-and-chloraprep-frepp-2-1-5ml-applicators",
+      "date": null,
+      "batch_numbers": [
+        "All Lots with an expiry date up to and including 05/2029"
+      ],
+      "evidence_quote": "The Medicines and Healthcare products Regulatory Agency (MHRA) has issued an updated Class 2 Medicines Recall EL(26) A/34 regarding Becton Dickinson UK Ltd (BD) ChloraPrep 2% 1ml Applicators, extending the scope to include all Lot numbers with an expiry date up to and including 05/2029.",
+      "read_by_agent": true,
+      "quote_verified": true,
+      "batches_verified": [
+        "All Lots with an expiry date up to and including 05/2029"
+      ],
+      "batches_unverified": [],
+      "verified": true,
+      "date_iso": null,
+      "days_from_original": null
+    },
+    {
+      "country": "United States",
+      "authority": "U.S. Food and Drug Administration (FDA)",
+      "url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/bd-issues-nationwide-recall-specific-lots-chlorapreptm-clear-single-sterile-1-ml-and-frepptm-clear",
+      "date": "2026-06-06",
+      "batch_numbers": [
+        "4032183",
+        "4073005"
+      ],
+      "evidence_quote": "BD (Becton, Dickinson and Company) is voluntarily recalling lot 4032183 of ChloraPrep™ Clear 1 mL Single Sterile and lot 4073005 of FREPP™ Clear 1.5 mL applicators with paper lidding to the consumer level. These products are being recalled due to fungal contamination under certain environmental conditions allowing the growth of Aspergillus penicillioides.",
+      "read_by_agent": true,
+      "quote_verified": true,
+      "batches_verified": [
+        "4032183",
+        "4073005"
+      ],
+      "batches_unverified": [],
+      "verified": true,
+      "date_iso": "2026-06-06",
+      "days_from_original": -37
+    }
+  ],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "ChloraPrep 1mL applicator recall Beckton Dickson UK Ltd",
+      "results": 6
+    },
+    {
+      "tool": "read",
+      "urls": [
+        "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/bd-issues-nationwide-recall-specific-lots-chlorapreptm-clear-single-sterile-1-ml-and-frepptm-clear",
+        "https://www.supplychain.nhs.uk/icn/safety-alert-becton-dickinson-chloraprep-2-1ml-and-chloraprep-frepp-2-1-5ml-applicators",
+        "https://patient.info/doctor/drug-device-alert/class-2-medicines-recall-beckton-dickson-uk-ltd-chloraprep-1ml-applicator-el-26-a-slash-34"
+      ],
+      "ok": 3
+    },
+    {
+      "tool": "search",
+      "query": "ChloraPrep recall WHO",
+      "results": 6
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 2,
+    "extract": 1
+  },
+  "llm_cost_usd": 0.0077,
+  "traced_at": "2026-10-10T20:07:00+00:00"
+}

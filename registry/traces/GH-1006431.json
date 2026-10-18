@@ -1,0 +1,123 @@
+{
+  "alert_id": "GH-1006431",
+  "summary": "The Paradenk suppositories have been reported in recalls by the Rwanda Food and Drugs Authority (all batches), the Kenya Pharmacy and Poisons Board (specific batches listed), and Azerbaijan's Analytical Expertise Center (Para-Denk 125 Suppos). All citations cite packaging damage/leakages as the reason.",
+  "findings": [
+    {
+      "country": "Rwanda",
+      "authority": "Rwanda Food and Drugs Authority",
+      "url": "https://monitoring.rwandafda.gov.rw/recalls?cls=III",
+      "date": "09/07/2025",
+      "batch_numbers": [
+        "ALL BATCHES"
+      ],
+      "evidence_quote": "packaging damages (leakages) in some batches of its Para-Denk suppositories",
+      "read_by_agent": true,
+      "quote_verified": true,
+      "batches_verified": [
+        "ALL BATCHES"
+      ],
+      "batches_unverified": [],
+      "verified": true,
+      "date_iso": "2025-07-09",
+      "days_from_original": -8
+    },
+    {
+      "country": "Kenya",
+      "authority": "Pharmacy and Poisons Board",
+      "url": "https://web.pharmacyboardkenya.org/para-denk-250mg",
+      "date": "9th July 2025",
+      "batch_numbers": [
+        "28426",
+        "28579",
+        "26906",
+        "27286",
+        "27339",
+        "27342",
+        "27846",
+        "27836",
+        "28422",
+        "28424",
+        "28420",
+        "28458",
+        "27670",
+        "27672",
+        "27291",
+        "27343",
+        "27674",
+        "27821",
+        "27822"
+      ],
+      "evidence_quote": "The product is being recalled due to packaging damage, causing leakages in some batches of the suppositories.",
+      "read_by_agent": true,
+      "quote_verified": true,
+      "batches_verified": [
+        "28426",
+        "28579",
+        "26906",
+        "27286",
+        "27339",
+        "27342",
+        "27846",
+        "27836",
+        "28422",
+        "28424",
+        "28420",
+        "28458",
+        "27670",
+        "27672",
+        "27291",
+        "27343",
+        "27674",
+        "27821",
+        "27822"
+      ],
+      "batches_unverified": [],
+      "verified": true,
+      "date_iso": "2025-07-09",
+      "days_from_original": -8
+    },
+    {
+      "country": "International",
+      "authority": "Analytical Expertise Center (AEM) under the Ministry of Health, Azerbaijan",
+      "url": "https://pharma.az/en/news/a-decision-has-been-made-to-voluntarily-recall-two-medicinal-products",
+      "date": "July 23, 2025",
+      "batch_numbers": [],
+      "evidence_quote": "“Para-Denk 125 Suppos”, rectal suppositories, The reason for the recall is packaging defects (leakages).",
+      "read_by_agent": true,
+      "quote_verified": false,
+      "batches_verified": [],
+      "batches_unverified": [],
+      "verified": false,
+      "date_iso": "2025-07-23",
+      "days_from_original": 6
+    }
+  ],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "PARADENK SUPPOSITORIES falsified recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"Para-Denk\" suppository recall",
+      "results": 6
+    },
+    {
+      "tool": "read",
+      "urls": [
+        "https://monitoring.rwandafda.gov.rw/recalls?cls=III",
+        "https://web.pharmacyboardkenya.org/para-denk-250mg",
+        "https://pharma.az/en/news/a-decision-has-been-made-to-voluntarily-recall-two-medicinal-products"
+      ],
+      "ok": 3
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 2,
+    "extract": 1
+  },
+  "llm_cost_usd": 0.0069,
+  "traced_at": "2026-10-10T20:13:19+00:00"
+}

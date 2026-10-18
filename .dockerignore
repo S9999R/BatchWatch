@@ -1,0 +1,12 @@
+.env
+.venv
+.git
+**/__pycache__
+data/
+live/
+registry/alerts.jsonl
+registry/runs.jsonl
+registry/watch_state.json
+eval/predictions_*.jsonl
+experiments/
+.claude/

@@ -1,0 +1,29 @@
+{
+  "alert_id": "D-0861-2026",
+  "summary": "Beyond the FDA recall notice, searches of international regulators, WHO, regional agencies, and reputable news outlets did not locate any additional reports of Major LubriFresh P.M. Nighttime Ointment (batch 3183) being recalled or flagged elsewhere. The available information appears limited to U.S.-based sources.",
+  "findings": [],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "Major LubriFresh P.M. Nighttime Ointment batch 3183 recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"Major LubriFresh P.M.\" recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"LubriFresh P.M.\" WHO",
+      "results": 6
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 3,
+    "extract": 0
+  },
+  "llm_cost_usd": 0.0051,
+  "traced_at": "2026-10-10T20:05:31+00:00"
+}

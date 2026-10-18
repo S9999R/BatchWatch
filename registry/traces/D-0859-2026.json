@@ -1,0 +1,54 @@
+{
+  "alert_id": "D-0859-2026",
+  "summary": "",
+  "findings": [],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "Reliable-1 Laboratories Lubricating Tears Sterile 0.5 FL OZ batch 3171 3174 3275 3304 recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Reliable-1 Laboratories Lubricating Tears recall international",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"Reliable-1 Laboratories\" Lubricating Tears WHO",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"Reliable-1 Laboratories\" Lubricating Tears recall Canada",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"Reliable-1 Laboratories\" Lubricating Tears MHRA",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"Reliable-1 Laboratories\" Lubricating Tears recall Europe",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "WHO Reliable-1 Laboratories Lubricating Tears",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"Reliable-1 Laboratories\" Lubricating Tears Health Canada",
+      "results": 6
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 8,
+    "extract": 0
+  },
+  "llm_cost_usd": 0.032,
+  "traced_at": "2026-10-10T20:06:10+00:00"
+}

@@ -1,0 +1,51 @@
+{
+  "alert_id": "HC-82684",
+  "summary": "The recall of PMS-FAMPRIDINE 10 mg Tablet (lot 24123882) due to possible foreign material particles was reported by Health Canada and also referenced by Hong Kong's Drug Office, which noted the lot number was updated from 24123884 to 24123882 on 6 October 2026. No other national regulators, WHO, or regional agencies have issued separate alerts for this product or batch.",
+  "findings": [
+    {
+      "country": "International (Hong Kong)",
+      "authority": "Hong Kong Drug Office",
+      "url": "https://www.drugoffice.gov.hk/eps/news/showNews/FAMPRIDINE/consumer/2026-09-29/en/58396.html",
+      "date": "2026-10-07",
+      "batch_numbers": [
+        "24123882"
+      ],
+      "evidence_quote": "On 6 Oct 2026, Health Canada updated the recall announcement to change the lot number to 24123882 instead of 24123884.",
+      "read_by_agent": true,
+      "quote_verified": true,
+      "batches_verified": [
+        "24123882"
+      ],
+      "batches_unverified": [],
+      "verified": true,
+      "date_iso": "2026-10-07",
+      "days_from_original": 1
+    }
+  ],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "PMS-FAMPRIDINE 10 mg Tablet batch 24123882",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "PHARMASCIENCE INC PMS-FAMPRIDINE recall foreign material",
+      "results": 6
+    },
+    {
+      "tool": "read",
+      "urls": [
+        "https://www.drugoffice.gov.hk/eps/news/showNews/FAMPRIDINE/consumer/2026-09-29/en/58396.html"
+      ],
+      "ok": 1
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 2,
+    "extract": 1
+  },
+  "llm_cost_usd": 0.0038,
+  "traced_at": "2026-10-10T20:11:10+00:00"
+}

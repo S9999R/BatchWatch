@@ -1,0 +1,56 @@
+{
+  "alert_id": "SFDA-19405",
+  "summary": "",
+  "findings": [],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "Credanil 100/10mg Tab recall batches 112546 117876",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Credanil 100/10mg Remedica recall Europe",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"Credanil 100/10\" Remedica",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"Credanil 100/10\" \"112546\"",
+      "results": 6
+    },
+    {
+      "tool": "read",
+      "urls": [
+        "https://www.bomra.co.bw/voluntary-recall-of-specified-batches-of-medicines-manufactured-by-remedica-limited"
+      ],
+      "ok": 1
+    },
+    {
+      "tool": "search",
+      "query": "Credanil 100/10 Botswana recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"Credanil 100/10\" recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Credanil 100/10 WHO",
+      "results": 6
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 7,
+    "extract": 1
+  },
+  "llm_cost_usd": 0.0245,
+  "traced_at": "2026-10-10T20:10:17+00:00"
+}

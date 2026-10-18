@@ -1,0 +1,49 @@
+{
+  "alert_id": "HC-82720",
+  "summary": "Only the original Health Canada recall for PDP-DIPHENHYDRAMINE 25 MG CAPSULE (batches 642913, 643904, 648034, 651074, 653544, 656693) was located. No other national regulator, WHO, regional agency, or credible news source reported the same product or batches.",
+  "findings": [],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "PDP-DIPHENHYDRAMINE 25 MG CAPSULE batches 642913 643904 648034 651074 653544 656693",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"642913\" diphenhydramine recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Pendopharm diphenhydramine recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"PDP-DIPHENHYDRAMINE\" recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"642913\" \"diphenhydramine\"",
+      "results": 4
+    },
+    {
+      "tool": "search",
+      "query": "WHO diphenhydramine impurity recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"PDP-DIPHENHYDRAMINE\" WHO",
+      "results": 6
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 7,
+    "extract": 0
+  },
+  "llm_cost_usd": 0.019,
+  "traced_at": "2026-10-10T20:11:33+00:00"
+}

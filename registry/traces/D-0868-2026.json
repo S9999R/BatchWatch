@@ -1,0 +1,34 @@
+{
+  "alert_id": "D-0868-2026",
+  "summary": "The FDA recall of Exenatide Injection, USP, 250 mcg/mL, lot AP250095A (manufactured by Amneal Pharmaceuticals) has been reported only in U.S. sources. No other national regulator, WHO, regional agency, or credible news outlet has issued a separate alert for this product or batch outside the United States.",
+  "findings": [],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "Exenatide Injection USP 250 mcg/mL 1.2 mL prefilled pen Amneal Pharmaceuticals AP250095A recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "AP250095A Exenatide recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Exenatide Injection AP250095A recall Europe",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "AP250095A CDSCO",
+      "results": 6
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 4,
+    "extract": 0
+  },
+  "llm_cost_usd": 0.0068,
+  "traced_at": "2026-10-10T20:05:21+00:00"
+}

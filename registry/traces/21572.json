@@ -1,0 +1,103 @@
+{
+  "alert_id": "21572",
+  "summary": "The recall of Impala gel nail polish products due to the prohibited substance TPO has been reported by Brazil's health regulator ANVISA and summarized by the GlobalCosIng compliance platform. Both sources confirm that all batches of the five listed Impala gel nail polish products are affected.",
+  "findings": [
+    {
+      "country": "International",
+      "authority": "GlobalCosIng (CIRS Group)",
+      "url": "https://globalcosing.chemradar.com/news/detail/fgcel5ekuu4g",
+      "date": null,
+      "batch_numbers": [
+        "Plus, Gel Esmalte Impala Gel",
+        "Esmalte Gel Impala Gel Plus",
+        "Gel Plus Impala Esmalte Gel",
+        "Esmalte Gel Plus Impala",
+        "Topcoat Gel Impala Gel Plus Clear"
+      ],
+      "evidence_quote": "On March 16, 2026, the Brazilian Health Regulatory Agency (Anvisa) announced the recall of all batches of five types of gel nail polishes containing TPO.",
+      "read_by_agent": true,
+      "quote_verified": true,
+      "batches_verified": [],
+      "batches_unverified": [
+        "Plus, Gel Esmalte Impala Gel",
+        "Esmalte Gel Impala Gel Plus",
+        "Gel Plus Impala Esmalte Gel",
+        "Esmalte Gel Plus Impala",
+        "Topcoat Gel Impala Gel Plus Clear"
+      ],
+      "verified": false,
+      "date_iso": null,
+      "days_from_original": null
+    },
+    {
+      "country": "Brazil",
+      "authority": "Agência Nacional de Vigilância Sanitária (ANVISA)",
+      "url": "https://agenciabrasil.ebc.com.br/saude/noticia/2026-03/anvisa-recolhe-esmaltes-em-gel-com-substancia-proibida",
+      "date": "2026-03-16",
+      "batch_numbers": [
+        "Plus, Gel Esmalte Impala Gel",
+        "Esmalte Gel Impala Gel Plus",
+        "Gel Plus Impala Esmalte Gel",
+        "Esmalte Gel Plus Impala",
+        "Topcoat Gel Impala Gel Plus Clear"
+      ],
+      "evidence_quote": "A Agência Nacional de Vigilncia Sanitária (Anvisa) determinou nesta segunda-feira (16) o recolhimento de esmaltes em gel da marca Impala, fabricados pela empresa Laboratório Avamiller de Cosméticos Ltda.",
+      "read_by_agent": true,
+      "quote_verified": true,
+      "batches_verified": [
+        "Esmalte Gel Impala Gel Plus",
+        "Gel Plus Impala Esmalte Gel",
+        "Esmalte Gel Plus Impala",
+        "Topcoat Gel Impala Gel Plus Clear"
+      ],
+      "batches_unverified": [
+        "Plus, Gel Esmalte Impala Gel"
+      ],
+      "verified": false,
+      "date_iso": "2026-03-16",
+      "days_from_original": -84
+    }
+  ],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "Impala Gel nail polish TPO recall ANVISA",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"Impala Gel\" TPO ANVISA recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "ANVISA recall Impala gel nail polish TPO",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "ANVISA Impala gel nail polish recall TPO",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "ANVISA recall Impala gel nail polish TPO March 2026",
+      "results": 6
+    },
+    {
+      "tool": "read",
+      "urls": [
+        "https://agenciabrasil.ebc.com.br/saude/noticia/2026-03/anvisa-recolhe-esmaltes-em-gel-com-substancia-proibida",
+        "https://globalcosing.chemradar.com/news/detail/fgcel5ekuu4g"
+      ],
+      "ok": 2
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 5,
+    "extract": 1
+  },
+  "llm_cost_usd": 0.0164,
+  "traced_at": "2026-10-10T20:09:16+00:00"
+}

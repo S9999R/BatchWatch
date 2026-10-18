@@ -1,0 +1,44 @@
+{
+  "alert_id": "HC-82726",
+  "summary": "No other regulator or international agency has reported the same Pro Doc carvedilol 25 mg batches (650921, 651648, 654750, 656546, 658261, 659716, 661963, 663440, 665341, 667133) outside of the Health Canada alert.",
+  "findings": [],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "Carvedilol 25 mg tablets batches 650921 651648 654750 656546 658261 659716 661963 663440 665341 667133",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Pro Doc Ltée carvedilol recall batches",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"650921\" carvedilol Pro Doc",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"Pro Doc\" carvedilol recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"650921\" Pro Doc carvedilol",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"650921\" carvedilol WHO",
+      "results": 6
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 6,
+    "extract": 0
+  },
+  "llm_cost_usd": 0.018,
+  "traced_at": "2026-10-10T20:11:33+00:00"
+}

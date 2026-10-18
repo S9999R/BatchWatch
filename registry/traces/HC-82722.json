@@ -1,0 +1,38 @@
+{
+  "alert_id": "HC-82722",
+  "summary": "The carvedilol 25 mg tablets with batches 665960, 663437, 663220, 663219, 661962, 659717, 658262, 656544, 653567, 653568, 652634, 652635, 650922 have been reported only in the Health Canada recall. No other national regulator, WHO, regional agency, or credible news source has identified these specific batches outside of Canada.",
+  "findings": [],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "Carvedilol 25 mg tablets batch 665960 falsified",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Sanis carvedilol 25 mg recall",
+      "results": 6
+    },
+    {
+      "tool": "read",
+      "urls": [
+        "https://www.hmpgloballearningnetwork.com/site/pln/news/fda-issues-class-ii-recall-carvedilol-tablets-due-nitrosamine-contamination"
+      ],
+      "ok": 1
+    },
+    {
+      "tool": "read",
+      "urls": [
+        "https://www.hmpgloballearningnetwork.com/site/pln/news/fda-issues-class-ii-recall-carvedilol-tablets-due-nitrosamine-contamination"
+      ],
+      "ok": 1
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 2,
+    "extract": 2
+  },
+  "llm_cost_usd": 0.0094,
+  "traced_at": "2026-10-10T20:11:39+00:00"
+}

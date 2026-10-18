@@ -1,0 +1,56 @@
+{
+  "alert_id": "SFDA-19400",
+  "summary": "",
+  "findings": [],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "Imipramine 25mg Tab Remedica 124329 124870 129373 recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"124329\" \"Imipramine\" Remedica",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "REMEDICA Imipramine recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"Imipramine 25mg\" \"Remedica\" 124329",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "SFDA Imipramine 25mg Remedica recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "WHO Imipramine 25mg Remedica recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Remedica Imipramine recall Europe",
+      "results": 6
+    },
+    {
+      "tool": "read",
+      "urls": [
+        "https://en.philenews.com/local/remedica-recall-seven-medicines-no-alternative"
+      ],
+      "ok": 1
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 7,
+    "extract": 1
+  },
+  "llm_cost_usd": 0.0258,
+  "traced_at": "2026-10-10T20:09:58+00:00"
+}

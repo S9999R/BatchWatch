@@ -1,0 +1,81 @@
+{
+  "alert_id": "class-4-medicines-defect-notification-b-braun-melsungen-ag-meropenem-1000-mg-powder-and-solvent-for-solution-for-infusion-el-26-a-slash-39",
+  "summary": "The MHRA (UK) issued a Class 4 defect notification for B. Braun Meropenem 1000 mg batches 25J00360, 25J01305, 25J02333, 25J02595, 25J02331, 25J02332, 25J02335 due to incorrect sodium content and strength information in the Patient Information Leaflet. The Hong Kong Department of Health reproduced the alert on 24 September 2026, confirming that those batches had not been imported into Hong Kong. No other national regulator, WHO, or regional agency reports were located.",
+  "findings": [
+    {
+      "country": "Hong Kong",
+      "authority": "Department of Health (Hong Kong)",
+      "url": "https://www.drugoffice.gov.hk/eps/news/showNews/Meropenem/pharmaceutical_trade/2026-09-24/en/58333.html",
+      "date": "2026-09-24",
+      "batch_numbers": [
+        "25J00360",
+        "25J01305",
+        "25J02333",
+        "25J02595",
+        "25J02331",
+        "25J02332",
+        "25J02335"
+      ],
+      "evidence_quote": "As confirmed by B. Braun, the affected batches in the above MHRA’s announcement have not been imported into Hong Kong.",
+      "read_by_agent": true,
+      "quote_verified": true,
+      "batches_verified": [
+        "25J00360",
+        "25J01305",
+        "25J02333",
+        "25J02595",
+        "25J02331",
+        "25J02332",
+        "25J02335"
+      ],
+      "batches_unverified": [],
+      "verified": true,
+      "date_iso": "2026-09-24",
+      "days_from_original": 1
+    }
+  ],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "Meropenem 1000 mg B. Braun 25J00360 25J01305 25J02333 25J02595 25J02331 25J02332 25J02335 recall",
+      "results": 6
+    },
+    {
+      "tool": "read",
+      "urls": [
+        "https://www.lekoskop.pl/uk/changes/50147-meropenem-1000-mg-powder-and-solvent-for-solution-for-infusion-medicines-recall",
+        "https://www.drugoffice.gov.hk/eps/news/showNews/Meropenem/pharmaceutical_trade/2026-09-24/en/58333.html"
+      ],
+      "ok": 1
+    },
+    {
+      "tool": "search",
+      "query": "Meropenem B. Braun 25J00360 EMA",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Meropenem B. Braun 25J00360 Canada recall",
+      "results": 6
+    },
+    {
+      "tool": "read",
+      "urls": [
+        "https://www.lekoskop.pl/uk/changes/50147-meropenem-1000-mg-powder-and-solvent-for-solution-for-infusion-medicines-recall"
+      ],
+      "ok": 1
+    },
+    {
+      "tool": "search",
+      "query": "Meropenem 25J00360 WHO",
+      "results": 6
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 4,
+    "extract": 2
+  },
+  "llm_cost_usd": 0.0139,
+  "traced_at": "2026-10-10T20:06:40+00:00"
+}

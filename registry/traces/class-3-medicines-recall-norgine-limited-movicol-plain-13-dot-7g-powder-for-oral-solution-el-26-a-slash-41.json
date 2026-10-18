@@ -1,0 +1,58 @@
+{
+  "alert_id": "class-3-medicines-recall-norgine-limited-movicol-plain-13-dot-7g-powder-for-oral-solution-el-26-a-slash-41",
+  "summary": "The recall of MOVICOL Plain 13.7g powder for oral solution (batches 487069 and 474919) issued by the UK MHRA has also been reported by Hong Kong's Drug Office, which notes that the product is not registered there. No other national regulator, WHO, or regional agency has issued a separate alert for these batches.",
+  "findings": [
+    {
+      "country": "Hong Kong",
+      "authority": "Drug Office, Hong Kong",
+      "url": "https://www.drugoffice.gov.hk/eps/news/showNews/MOVICOL/consumer/2026-10-06/en/58454.html",
+      "date": "2026-10-06",
+      "batch_numbers": [
+        "487069",
+        "474919"
+      ],
+      "evidence_quote": "Medicines and Healthcare products Regulatory Agency (MHRA) announces that Norgine Limited is recalling 2 batches of MOVICOL Plain 13.7g powder for oral solution (macrogol 3350, sodium chloride, sodium hydrogen carbonate, potassium chloride) (batch number: 487069, 474919) as a precautionary measure due to some units containing the incorrect amounts of active ingredients.",
+      "read_by_agent": true,
+      "quote_verified": true,
+      "batches_verified": [
+        "487069",
+        "474919"
+      ],
+      "batches_unverified": [],
+      "verified": true,
+      "date_iso": "2026-10-06",
+      "days_from_original": 1
+    }
+  ],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "MOVICOL Plain 13.7g powder for oral solution batch 487069 474919 recall",
+      "results": 6
+    },
+    {
+      "tool": "read",
+      "urls": [
+        "https://www.drugoffice.gov.hk/eps/news/showNews/MOVICOL/consumer/2026-10-06/en/58454.html"
+      ],
+      "ok": 1
+    },
+    {
+      "tool": "search",
+      "query": "MOVICOL Plain 13.7g powder for oral solution WHO recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "MOVICOL Plain 13.7g recall Australia",
+      "results": 6
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 3,
+    "extract": 1
+  },
+  "llm_cost_usd": 0.006,
+  "traced_at": "2026-10-10T20:06:17+00:00"
+}

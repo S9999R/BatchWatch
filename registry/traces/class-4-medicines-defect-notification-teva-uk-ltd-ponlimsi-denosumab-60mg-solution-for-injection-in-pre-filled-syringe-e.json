@@ -1,0 +1,51 @@
+{
+  "alert_id": "class-4-medicines-defect-notification-teva-uk-ltd-ponlimsi-denosumab-60mg-solution-for-injection-in-pre-filled-syringe-el-26-a-slash-27",
+  "summary": "The labelling error affecting Ponlimsi (denosumab) batches 184472, 186711, 188656 was also reported by Hong Kong's Drug Office on 2026-06-05, which reproduced the UK MHRA alert and noted that the product is not registered in Hong Kong. No other international regulator or credible source has issued a separate alert for these batches.",
+  "findings": [
+    {
+      "country": "Hong Kong",
+      "authority": "Drug Office, Department of Health",
+      "url": "https://www.drugoffice.gov.hk/eps/news/showNews/Ponlimsi/consumer/2026-06-05/en/57593.html",
+      "date": "2026-06-05",
+      "batch_numbers": [
+        "184472",
+        "186711",
+        "188656"
+      ],
+      "evidence_quote": "The carton states “For application to the skin” when the product is licensed for subcutaneous use.",
+      "read_by_agent": true,
+      "quote_verified": true,
+      "batches_verified": [
+        "184472",
+        "186711",
+        "188656"
+      ],
+      "batches_unverified": [],
+      "verified": true,
+      "date_iso": "2026-06-05",
+      "days_from_original": 1
+    }
+  ],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "Ponlimsi Denosumab 60mg batch 184472 186711 188656",
+      "results": 6
+    },
+    {
+      "tool": "read",
+      "urls": [
+        "https://www.drugoffice.gov.hk/eps/news/showNews/Ponlimsi/consumer/2026-06-05/en/57593.html",
+        "https://www.lekoskop.pl/uk/changes/50159-ponlimsi-denosumab-60mg-solution-for-injection-in-pre-filled-syringe-medicines-recall"
+      ],
+      "ok": 1
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 1,
+    "extract": 1
+  },
+  "llm_cost_usd": 0.0033,
+  "traced_at": "2026-10-10T20:07:46+00:00"
+}

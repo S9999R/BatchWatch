@@ -1,0 +1,49 @@
+{
+  "alert_id": "RW-DD-PVCT-4302-FDA-2026-Innotex-Condoms-HW40305",
+  "summary": "No additional reports of Innotex Condoms batch HW40305 were found outside the Rwanda FDA recall alert dated 2026-10-01. Searches of regulator websites, WHO, and news sources did not yield any other mentions of this product or batch.",
+  "findings": [],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "Innotex Condoms HW40305 recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"HW40305\" condom",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "Guillin HBM Health Protection Inc. HW40305",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"Innotex Condoms\" HW40305",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"Innotex\" condom recall",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"HW40305\" condom WHO",
+      "results": 6
+    },
+    {
+      "tool": "search",
+      "query": "\"DD/PVCT/4302/FDA/2026\"",
+      "results": 6
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 7,
+    "extract": 0
+  },
+  "llm_cost_usd": 0.0213,
+  "traced_at": "2026-10-10T20:14:10+00:00"
+}

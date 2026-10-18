@@ -1,0 +1,66 @@
+{
+  "alert_id": "WHO-09-12-2025-medical-product-alert-n-6-2025--falsified-simulect-(basiliximab)-for-",
+  "summary": "The falsified SIMULECT (basiliximab) batch SFYD2 has been reported by Pakistan's Drug Regulatory Authority and highlighted in a Voice of Healthcare news article, both noting detection in Rwanda, Bulgaria, and Türkiye. No additional countries or batches beyond those in the original WHO alert were identified.",
+  "findings": [
+    {
+      "country": "International",
+      "authority": "Voice of Healthcare (VOH Network)",
+      "url": "https://vohnetwork.com/news/policy/who-warns-falsified-simulect-basiliximab-injections-detected-in-global-supply-chains",
+      "date": null,
+      "batch_numbers": [
+        "SFYD2"
+      ],
+      "evidence_quote": "The counterfeit product has been identified in Rwanda, Bulgaria, and Türkiye, following reports to WHO in December 2024 and November 2025.",
+      "read_by_agent": true,
+      "quote_verified": true,
+      "batches_verified": [
+        "SFYD2"
+      ],
+      "batches_unverified": [],
+      "verified": true,
+      "date_iso": null,
+      "days_from_original": null
+    },
+    {
+      "country": "Pakistan",
+      "authority": "Drug Regulatory Authority of Pakistan",
+      "url": "https://www.dra.gov.pk/safety_info/product_recalls/recall_alerts/121-rapid-alert-falsified-simulect-basiliximab-for-injection-identified-in-the-who-african-and-european-regions",
+      "date": "2025-12-10",
+      "batch_numbers": [
+        "SFYD2"
+      ],
+      "evidence_quote": "The falsified product shows batch number SFYD2, which is not a valid batch number for SIMULECT.",
+      "read_by_agent": true,
+      "quote_verified": false,
+      "batches_verified": [
+        "SFYD2"
+      ],
+      "batches_unverified": [],
+      "verified": false,
+      "date_iso": "2025-12-10",
+      "days_from_original": 1
+    }
+  ],
+  "steps": [
+    {
+      "tool": "search",
+      "query": "SFYD2 basiliximab falsified",
+      "results": 6
+    },
+    {
+      "tool": "read",
+      "urls": [
+        "https://www.dra.gov.pk/safety_info/product_recalls/recall_alerts/121-rapid-alert-falsified-simulect-basiliximab-for-injection-identified-in-the-who-african-and-european-regions",
+        "https://vohnetwork.com/news/policy/who-warns-falsified-simulect-basiliximab-injections-detected-in-global-supply-chains"
+      ],
+      "ok": 2
+    }
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "tavily_calls": {
+    "search": 1,
+    "extract": 1
+  },
+  "llm_cost_usd": 0.0026,
+  "traced_at": "2026-10-10T20:35:19+00:00"
+}

@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>BatchWatch</title>
+  <meta name="description" content="Is this medicine recalled? BatchWatch reads recall and falsified-medicine alerts from 10 drug regulators with NVIDIA Nemotron and checks a pack or a stock list in seconds.">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0c1512" media="(prefers-color-scheme: dark)">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="styles.css?v=41">
+  <link rel="alternate" type="application/atom+xml" title="BatchWatch alerts" href="/feed.xml">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icon.svg">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+</head>
+<body>
+  <a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+
+  <header class="topbar">
+    <div class="wrap bar">
+      <a class="brand" href="#check" aria-label="BatchWatch">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9"/><path d="M13 7h6v6h6v6h-6v6h-6v-6H7v-6h6z"/></svg>
+        <span class="brand-name">BatchWatch</span>
+      </a>
+      <nav class="nav" aria-label="Sections" data-i18n-aria="nav_label">
+        <a href="#check" data-view="check" data-i18n="nav_check">Check</a>
+        <a href="#alerts" data-view="alerts"><span data-i18n="nav_alerts">Alerts</span><span class="nav-badge" id="new-badge" hidden></span></a>
+        <a href="#how" data-view="how" data-i18n="nav_how">How it works</a>
+      </nav>
+      <div class="bar-end">
+        <button class="live" id="live-btn" type="button" aria-expanded="false" aria-controls="live-pop">
+          <span class="live-dot" aria-hidden="true"></span><span id="live-text" data-i18n="live_loading">Checking…</span><span id="live-short" class="live-short" aria-hidden="true"></span>
+        </button>
+        <button class="lang" id="lang-btn" type="button" lang="ar" aria-label="العربية">ع</button>
+      </div>
+    </div>
+    <div class="wrap live-pop-wrap">
+      <div class="live-pop" id="live-pop" hidden></div>
+    </div>
+  </header>
+
+  <main id="main" class="wrap" tabindex="-1">
+    <!-- ================= CHECK ================= -->
+    <section id="view-check" class="view" aria-labelledby="check-title">
+      <div class="check-grid" id="check-grid" data-mode="pack">
+        <div class="check-left">
+          <div class="hero">
+            <p class="eyebrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 5-3 8-7 10c-4-2-7-5-7-10V6z M9 12l2 2 4-4"/></svg><span data-i18n="hero_eyebrow">Medicine safety check</span></p>
+            <h1 id="check-title" tabindex="-1" data-i18n="check_title">Is this medicine recalled?</h1>
+            <p class="lede" data-i18n="check_lede">A batch recalled in one country is often still on shelves in another. BatchWatch reads recall and counterfeit alerts from 10 regulators with NVIDIA Nemotron and checks a pack or a whole stock list in seconds.</p>
+            <ul class="trust" aria-label="Why you can trust the answer" data-i18n-aria="trust_label">
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18 M5 21V10 M19 21V10 M9 21v-7 M15 21v-7 M3 10l9-6 9 6z"/></svg><span data-i18n="trust_sources">Alerts from 10 official drug regulators</span></li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4h6v3H9z M7 5H5v16h14V5h-2 M8 13l3 3 5-5"/></svg><span data-i18n="trust_verified">Every batch number checked against the regulator's own text</span></li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a4 4 0 1 0 0-8a4 4 0 0 0 0 8z M4 21c0-4 3.5-7 8-7s8 3 8 7 M12 15v4 M10 17h4"/></svg><span data-i18n="trust_pharmacist">The pharmacist always makes the final decision</span></li>
+            </ul>
+          </div>
+
+          <div class="segmented" role="tablist" aria-label="What to check" data-i18n-aria="mode_label">
+            <button role="tab" id="tab-pack" aria-controls="panel-pack" aria-selected="true" data-mode="pack">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7l8-4 8 4v10l-8 4-8-4z M4 7l8 4 8-4 M12 11v10"/></svg><span data-i18n="mode_pack">One pack</span>
+            </button>
+            <button role="tab" id="tab-stock" aria-controls="panel-stock" aria-selected="false" data-mode="stock" tabindex="-1">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h10l4 4v12H5z M15 4v4h4 M8 12h8 M8 16h8"/></svg><span data-i18n="mode_stock">Stock list</span>
+            </button>
+          </div>
+
+          <!-- one pack -->
+          <div class="panel" id="panel-pack" role="tabpanel" aria-labelledby="tab-pack">
+            <form id="pack-form" autocomplete="off" novalidate>
+              <label class="field-label" for="pack-batch" data-i18n="batch_label">Batch or lot number on the pack</label>
+              <div class="search-row">
+                <input id="pack-batch" name="batch" dir="ltr" spellcheck="false" autocapitalize="characters" autocorrect="off" enterkeyhint="search">
+                <button class="btn btn-primary" type="submit" data-i18n="check_btn">Check</button>
+              </div>
+              <div class="pack-tools">
+                <button class="btn btn-scan" id="scan-btn" type="button">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8V5h3 M17 5h3v3 M20 16v3h-3 M7 19H4v-3 M8 9h2v2H8z M14 9h2v2h-2z M8 13h2v2H8z M13 13h3v3"/></svg>
+                  <span class="long" data-i18n="scan_btn">Scan the pack</span><span class="short" data-i18n="scan_short">Scan</span>
+                </button>
+                <label class="btn btn-soft" for="scan-file">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h4l2-2h4l2 2h4v12H4z M12 10a3.5 3.5 0 1 0 0 7a3.5 3.5 0 0 0 0-7z"/></svg>
+                  <span class="long" data-i18n="photo_btn">Photo of the code</span><span class="short" data-i18n="photo_short">Photo</span>
+                </label>
+                <input id="scan-file" type="file" accept="image/*" hidden>
+              </div>
+              <button class="link-btn" id="more-btn" type="button" aria-expanded="false" aria-controls="more-fields" data-i18n="more_btn">Add the product name or barcode number</button>
+              <div id="more-fields" class="more-fields" hidden>
+                <label><span data-i18n="f_product">Product name</span><input id="pack-product" name="product" placeholder="MOVICOL"></label>
+                <label><span data-i18n="f_gtin">Barcode number (GTIN)</span><input id="pack-gtin" name="gtin" dir="ltr" inputmode="numeric" spellcheck="false" placeholder="05012748615328"></label>
+                <label><span data-i18n="f_expiry">Expiry</span><input id="pack-expiry" name="expiry" dir="ltr" placeholder="2029-02-28"></label>
+              </div>
+            </form>
+            <div id="scan-reader" class="scan-reader" hidden></div>
+            <div class="demo" id="pack-demo">
+              <span data-i18n="demo_label">Try a demo:</span>
+              <button class="chip" type="button" data-batch="104173"><bdi class="mono">104173</bdi> <em data-i18n="demo_lorivan">Lorivan · SFDA</em></button>
+              <button class="chip" type="button" data-batch="AVT50"><bdi class="mono">AVT50</bdi> <em data-i18n="demo_jakavi">falsified Jakavi</em></button>
+              <button class="chip" type="button" data-batch="25JO1305"><bdi class="mono">25JO1305</bdi> <em data-i18n="demo_lookalike">look-alike</em></button>
+              <button class="chip" type="button" data-code="sample" data-i18n="demo_barcode">Demo barcode</button>
+            </div>
+            <p class="privacy"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 5-3 8-7 10c-4-2-7-5-7-10V6z"/></svg><span data-i18n="privacy_pack">Barcodes are read on this device. No image is uploaded.</span></p>
+          </div>
+
+          <!-- stock list -->
+          <div class="panel" id="panel-stock" role="tabpanel" aria-labelledby="tab-stock" hidden>
+            <label class="dropzone" id="dropzone" for="file-input">
+              <input id="file-input" type="file" accept=".csv,.txt,.xlsx,text/csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4 M7 9l5-5 5 5 M4 16v4h16v-4"/></svg>
+              <span class="dz-title" data-i18n="dz_title">Choose your stock file</span>
+              <span class="dz-hint" data-i18n="dz_hint">CSV or Excel, as your pharmacy system exports it. Arabic or English column names. It needs a product and a batch column.</span>
+            </label>
+            <div class="stock-tools">
+              <span data-i18n="demo_label">Try a demo:</span>
+              <button class="chip" type="button" data-sample="riyadh" data-i18n="sample_riyadh">A Riyadh pharmacy</button>
+              <button class="chip" type="button" data-sample="hospital" data-i18n="sample_hospital">A hospital store</button>
+            </div>
+            <label class="keep">
+              <input type="checkbox" id="keep-stock">
+              <span data-i18n="keep_stock">Keep my list on this device and re-check it when new alerts arrive</span>
+            </label>
+            <div id="saved-banner" class="saved-banner" hidden></div>
+            <div id="stock-error" class="notice notice-error" role="alert" hidden></div>
+            <p class="privacy"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 5-3 8-7 10c-4-2-7-5-7-10V6z"/></svg><span data-i18n="privacy_stock">Your file is checked in memory and never stored on the server.</span> <a href="/api/sample.csv" download data-i18n="template">Template</a></p>
+          </div>
+        </div>
+
+        <div class="check-right">
+          <div id="pack-result"></div>
+          <div id="stock-result" hidden></div>
+          <div id="intro" class="intro"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ALERTS ================= -->
+    <section id="view-alerts" class="view" aria-labelledby="alerts-title" hidden>
+      <div class="hero hero-small">
+        <h1 id="alerts-title" tabindex="-1" data-i18n="alerts_title">Alerts</h1>
+        <p class="lede" data-i18n="alerts_lede">Every recall and counterfeit alert BatchWatch has read, with the batch numbers, the regulator's instruction and where else it was flagged.</p>
+      </div>
+      <div id="new-since"></div>
+      <div class="search-row">
+        <label class="sr-only" for="alert-search" data-i18n="search_label">Search alerts</label>
+        <input id="alert-search" type="search" spellcheck="false" autocomplete="off" data-i18n-ph="search_ph" placeholder="Batch number, product or maker">
+      </div>
+      <div class="filters" id="filters"></div>
+      <p class="result-count" id="alert-count" aria-live="polite"></p>
+      <div class="alert-list" id="alert-list"></div>
+    </section>
+
+    <!-- ================= HOW ================= -->
+    <section id="view-how" class="view" aria-labelledby="how-title" hidden>
+      <div class="hero hero-small">
+        <h1 id="how-title" tabindex="-1" data-i18n="how_title">How BatchWatch knows</h1>
+        <p class="lede" data-i18n="how_lede">Regulators publish recalls as web pages, PDFs and tables, each in its own format. BatchWatch watches ten of them, reads every new alert with NVIDIA Nemotron, checks its own reading, and measures the result.</p>
+      </div>
+      <div id="how-body"></div>
+    </section>
+  </main>
+
+  <div class="sticky-bar" id="sticky-bar" hidden>
+    <button class="btn btn-primary" id="next-scan" type="button" data-i18n="next_scan">Scan next pack</button>
+    <button class="btn btn-soft" id="next-type" type="button" data-i18n="next_type">Type a batch</button>
+  </div>
+  <div class="toast" id="toast" role="status" hidden></div>
+  <p class="sr-only" id="sr-status" aria-live="polite"></p>
+
+  <footer class="wrap footer">
+    <p data-i18n="footer">BatchWatch is a prototype built for the Nebius × NVIDIA Global AI Hackathon. Alerts are summarised from public regulator notices; read the original notice before acting. A pharmacist decides.</p>
+    <p class="footer-links"><a href="/feed.xml" data-i18n="feed">Alert feed (Atom)</a> · <a href="/api/docs" data-i18n="api">API</a></p>
+  </footer>
+
+  <script src="i18n.js?v=41"></script>
+  <script src="app.js?v=41"></script>
+</body>
+</html>
