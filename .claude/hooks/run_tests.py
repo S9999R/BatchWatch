@@ -1,7 +1,8 @@
 """PostToolUse hook: after a .py file is edited, run the offline test suite (no API key needed).
 
 Uses the first Python that has the project's dependencies: the macOS/Linux venv, the Windows venv, then
-the system Python. If none has them, it stays silent rather than failing every edit.
+the system Python. In a git worktree (which has no .venv of its own) it also tries the main checkout's venv.
+If none has them, it stays silent rather than failing every edit.
 Exit code 2 sends the failing test output back to Claude.
 """
 import json
@@ -15,8 +16,14 @@ if not path.endswith(".py"):
     sys.exit(0)
 
 root = os.environ.get("CLAUDE_PROJECT_DIR") or os.getcwd()
-candidates = [os.path.join(root, ".venv", "bin", "python"), os.path.join(root, ".venv", "Scripts", "python.exe"),
-              shutil.which("python3"), shutil.which("python")]
+try:  # the main checkout is the parent of the shared .git directory
+    common = subprocess.run(["git", "rev-parse", "--path-format=absolute", "--git-common-dir"],
+                            cwd=root, capture_output=True, text=True).stdout.strip()
+except OSError:
+    common = ""
+roots = [root] + ([os.path.dirname(common)] if common else [])
+candidates = [os.path.join(r, ".venv", sub) for r in roots for sub in ("bin/python", "Scripts/python.exe")]
+candidates += [shutil.which("python3"), shutil.which("python")]
 
 
 def usable(p: str | None) -> bool:
