@@ -25,7 +25,7 @@ from batchwatch.gs1 import parse_gs1
 from batchwatch.match import REQUIRED_COLUMNS, lookup_pack, map_columns, match_inventory, parse_inventory, read_rows
 from batchwatch.notify import atom_feed
 from batchwatch.pipeline import SEED
-from batchwatch.trace import trace_cached
+from batchwatch.trace import run_trace, trace_cached
 
 ROOT = Path(__file__).resolve().parent.parent
 load_dotenv(ROOT / ".env")
@@ -239,12 +239,14 @@ def _sse(event: str, data: dict) -> str:
 
 
 @app.post("/api/trace/{alert_id}")
-def post_trace(alert_id: str, request: Request):
+def post_trace(alert_id: str, request: Request, fresh: bool = Query(False)):
     """Run the cross-border agent (Nemotron + Tavily) and stream its steps as server-sent events.
-    A saved trace is returned at once and free; only a new run counts against the daily limit."""
+    A saved trace is returned at once and free; only a new run counts against the daily limit.
+    fresh=1 runs the agent again over a saved trace, so a visitor can watch it work live. That run is
+    capped like any new one and is not saved, so the evaluation's traces stay as measured."""
     entry = _entry(alert_id)
     saved = store.trace(alert_id)
-    if saved:
+    if saved and not fresh:
         return StreamingResponse(iter([_sse("done", {"trace": decorate_trace(saved, entry.get("source", ""))})]), media_type="text/event-stream")
     visitor = request.client.host if request.client else "unknown"
     refusal = limiter.take(visitor)
@@ -254,8 +256,9 @@ def post_trace(alert_id: str, request: Request):
 
     def work() -> None:
         try:
+            step = lambda ev: events.put(("step", ev))
             with _trace_lock:
-                result = store.trace(alert_id) or trace_cached(entry, on_step=lambda ev: events.put(("step", ev)))
+                result = run_trace(entry, on_step=step) if fresh else store.trace(alert_id) or trace_cached(entry, on_step=step)
             store.forget_trace(alert_id)
             events.put(("done", {"trace": decorate_trace(result, entry.get("source", ""))}))
         except SystemExit as e:  # missing API keys: nothing was spent
