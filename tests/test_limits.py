@@ -60,6 +60,21 @@ def test_new_trace_is_capped_but_cached_trace_is_free(monkeypatch):
     assert client.get("/api/limits").json()["used_today"] == 1
 
 
+def test_fresh_run_over_a_saved_trace_is_capped_and_not_saved(monkeypatch):
+    live, saved_runs = [], []
+    monkeypatch.setattr(main, "limiter", DailyLimiter(total=1, per_visitor=1))
+    monkeypatch.setattr(main, "store", FakeStore())
+    monkeypatch.setattr(main, "run_trace", lambda entry, on_step=None: live.append(entry["alert_id"]) or {"findings": []})
+    monkeypatch.setattr(main, "trace_cached", lambda entry, on_step=None: saved_runs.append(1) or {"findings": []})
+    client = TestClient(main.app)
+
+    r = client.post("/api/trace/cached-one?fresh=1")
+    assert r.status_code == 200 and "event: done" in r.text
+    assert live == ["cached-one"] and saved_runs == []       # ran live, nothing written over the saved trace
+    assert client.post("/api/trace/cached-one?fresh=1").status_code == 429  # costs money, so it is capped
+    assert client.post("/api/trace/cached-one").status_code == 200          # the saved trace stays free
+
+
 def test_nano_column_mapping_is_capped(monkeypatch):
     calls = []
     monkeypatch.setenv("NEBIUS_API_KEY", "test")

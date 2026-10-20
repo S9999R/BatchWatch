@@ -27,6 +27,10 @@
     if (!m) return s;
     return new Date(`${m[1]}T00:00:00Z`).toLocaleDateString(locale(), { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" });
   }
+  function fmtDayMonth(d) {
+    const m = /^(\d{4}-\d{2}-\d{2})/.exec(String(d || ""));
+    return m ? new Date(`${m[1]}T00:00:00Z`).toLocaleDateString(locale(), { day: "numeric", month: "short", timeZone: "UTC" }) : "";
+  }
   function fmtTime(iso8601) {
     const d = new Date(iso8601);
     return isNaN(d) ? "" : d.toLocaleString(locale(), { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" });
@@ -103,6 +107,7 @@
     warn: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4L2.5 20h19z M12 10v4 M12 17v.01"/></svg>`,
     chip: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10H7z M9 3v4 M15 3v4 M9 17v4 M15 17v4 M3 9h4 M3 15h4 M17 9h4 M17 15h4"/></svg>`,
     flag: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4 M5 4h11l-2 4 2 4H5"/></svg>`,
+    lock: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 11h12v9H6z M8.5 11V8a3.5 3.5 0 0 1 7 0v3"/></svg>`,
   };
   const sevIcon = (sev) => ICON[sev === "stop" ? "stop" : sev === "check" ? "check" : sev === "info" ? "info" : "off"];
   const badge = (m, scope) => `<span class="badge s-${sevOf(m, scope)}">${sevIcon(sevOf(m, scope))}${esc(t(`st_${statusKey(m, scope)}`))}</span>`;
@@ -192,7 +197,10 @@
   function liveState() {
     const run = statusData && statusData.last_run;
     if (!statusData) return { state: "idle", text: t("live_offline"), short: "" };
-    if (!run || !run.finished) return { state: "idle", text: statusData.alerts_as_of ? t("live_asof", fmtDate(statusData.alerts_as_of)) : t("live_offline"), short: "" };
+    if (!run || !run.finished) {  // no scheduled check yet: the phone still shows how fresh the alerts are
+      const asof = statusData.alerts_as_of;
+      return { state: "idle", text: asof ? t("live_asof", fmtDate(asof)) : t("live_offline"), short: asof ? fmtDayMonth(asof) : "" };
+    }
     const h = hoursSince(run.finished);
     if (run.out_of_credit) return { state: "stale", text: t("live_credit", ago(run.finished)), short: agoShort(run.finished) };
     if (h <= 2) return { state: "live", text: t("live_checked", ago(run.finished)), short: agoShort(run.finished) };
@@ -209,15 +217,17 @@
     const s = statusData;
     if (!s) { $("#live-pop").innerHTML = `<p>${esc(t("live_offline"))}</p>`; return; }
     const run = s.last_run;
-    const rows = s.sources.map((x) => `<tr><td>${esc(where(x.name))}</td><td>${x.last_error ? `<span class="s-check">${esc(t("live_error"))}</span>` : x.last_checked ? esc(ago(x.last_checked)) : "–"}</td></tr>`).join("");
+    // the per-regulator list only once a scheduled check has reached a regulator; before that it is all dashes
+    const checked = s.sources.some((x) => x.last_checked || x.last_error);
+    const rows = checked ? s.sources.map((x) => `<tr><td>${esc(where(x.name))}</td><td>${x.last_error ? `<span class="s-check">${esc(t("live_error"))}</span>` : x.last_checked ? esc(ago(x.last_checked)) : "–"}</td></tr>`).join("") : "";
     $("#live-pop").innerHTML = `<h3>${esc(t("live_title"))}</h3>
-      <p>${esc(t("live_explain"))}</p>
       <p><strong>${esc(ls.text)}</strong></p>
       <p>${run ? esc(t("live_last", fmtTime(run.finished || run.started), run.seconds, run.new, money(run.cost_usd))) : esc(t("live_never"))}</p>
       ${run && run.out_of_credit ? `<p class="s-check">${esc(t("live_credit_note"))}</p>` : ""}
       ${s.runs_24h ? `<p>${esc(t("live_24h", s.runs_24h, s.new_24h, money(s.cost_24h)))}</p>` : ""}
       ${s.detection && s.detection.median_hours != null ? `<p>${esc(t("live_detect", s.detection.median_hours, s.detection.alerts))}</p>` : ""}
-      <table class="src-table"><tbody>${rows}</tbody></table>
+      <p class="note">${esc(t("live_explain"))}</p>
+      ${rows ? `<table class="src-table"><tbody>${rows}</tbody></table>` : ""}
       <p><a href="/feed.xml">${esc(t("feed"))}</a> · <a href="#how" data-close>${esc(t("live_more"))}</a></p>`;
   }
   $("#live-btn").addEventListener("click", () => {
@@ -258,7 +268,7 @@
     });
   });
 
-  // ---------- intro: what the right column shows before any answer
+  // ---------- intro: one quiet line of proof under the box, before any answer
   function renderIntro() {
     const box = $("#intro");
     const empty = mode === "pack" ? !lastPack : !stock;
@@ -266,25 +276,14 @@
     $("#check-grid").classList.toggle("has-result", !empty);
     if (!empty) return;
     const ev = registry && registry.stats.evaluation;
-    const ins = insightsData;
-    const tiles = [
-      ev ? [`${ev.batches_correct}<small>/${ev.batches_gold}</small>`, t("p_batches")] : null,
-      ev ? [`${ev.batches_extra}`, t("p_invented")] : null,
-      ins ? [`${ins.with_verified}<small>/${ins.traced}</small>`, t("p_crossborder")] : null,
-      registry ? [`${registry.stats.sources.length}`, t("p_regulators")] : null,
+    const facts = [
+      registry ? [ICON.flag, `<b>${registry.stats.sources.length}</b> ${esc(t("p_regulators"))}`] : null,
+      ev ? [ICON.ok, `<b>${ev.batches_correct}/${ev.batches_gold}</b> ${esc(t("p_batches"))}`] : null,
+      [ICON.lock, esc(t(mode === "pack" ? "privacy_pack" : "privacy_stock"))],
     ].filter(Boolean);
-    const longest = ins && ins.longest && ins.longest.find((g) => Math.abs(g.days) >= 60);
-    box.innerHTML = `
-      ${mode === "pack" ? `<div class="demo-pack">
-        <img src="demo-pack.svg" alt="${esc(t("demo_pack_alt"))}" width="112" height="112">
-        <div><h3>${esc(t("demo_pack_title"))}</h3><p>${esc(t("demo_pack_text"))}</p>
-          <button class="btn btn-soft btn-sm" type="button" data-code="sample">${esc(t("demo_pack_btn"))}</button></div>
-      </div>` : ""}
-      <div class="proof">${tiles.map(([n, l]) => `<div><b>${n}</b><span>${esc(l)}</span></div>`).join("")}</div>
-      ${longest ? `<div class="story"><h3>${esc(t("story_title", Math.abs(longest.days)))}</h3><p>${esc(t("story_text"))}</p></div>` : ""}
-      <p class="credit">${t("credit_html")}</p>`;
+    box.innerHTML = `<ul class="facts-line">${facts.map(([icon, html]) => `<li>${icon}<span>${html}</span></li>`).join("")}</ul>
+      <p class="powered">${t("powered_html")}${mode === "pack" ? ` · <a href="demo-pack.svg" target="_blank" rel="noopener">${esc(t("demo_pack_link"))}</a>` : ""}</p>`;
   }
-  $("#intro").addEventListener("click", (e) => { if (e.target.closest("[data-code=sample]")) runDemo({ code: SAMPLE_PACK }); });
 
   // ---------- an alert as evidence (one pack and stock rows)
   function headline(m, scope) {
@@ -342,11 +341,13 @@
         ${a.required_action ? `<dt>${esc(t("f_regulator_says"))}</dt><dd dir="auto">${esc(a.required_action)}</dd>` : ""}
       </dl>
       ${flagNote(m)}
-      <div class="provenance"><span class="pill">${ICON.chip}${esc(t("read_by", a.model))}</span>${checksPill(a)}</div>
       ${crossLine(a.trace)}
-      <details class="more"><summary>${esc(t("why_matched"))}</summary><ul>${m.reasons.map((r) => `<li dir="auto">${esc(r)}</li>`).join("")}</ul></details>
-      <details class="more" data-reading="${esc(a.alert_id)}"><summary>${esc(t("how_read"))}</summary><div class="reading-out"><p class="loading">${esc(t("loading"))}</p></div></details>
-      ${opts.noTrace ? "" : `<details class="more" data-trace-open><summary>${esc(t("where_else"))}</summary>${traceBlock(a.alert_id)}</details>`}
+      <details class="more evidence"><summary>${esc(t("evidence"))}</summary><div class="evidence-body">
+        <div class="provenance"><span class="pill">${ICON.chip}${esc(t("read_by", a.model))}</span>${checksPill(a)}</div>
+        <p class="note">${esc(t("why_matched"))}</p><ul class="note">${m.reasons.map((r) => `<li dir="auto">${esc(r)}</li>`).join("")}</ul>
+        <details class="more" data-reading="${esc(a.alert_id)}"><summary>${esc(t("how_read"))}</summary><div class="reading-out"><p class="loading">${esc(t("loading"))}</p></div></details>
+        ${opts.noTrace ? "" : `<details class="more" data-trace-open><summary>${esc(t("where_else"))}</summary>${traceBlock(a.alert_id)}</details>`}
+      </div></details>
     </section>`;
   }
 
@@ -799,12 +800,12 @@
     const order = ["sa", ...Object.keys(counts).filter((c) => c !== "sa" && c !== "global").sort((x, y) => t(`c_${x}`).localeCompare(t(`c_${y}`), locale())), "global"].filter((c) => counts[c]);
     const groups = {};
     registry.alerts.forEach((a) => { const g = typeGroup(a); groups[g] = (groups[g] || 0) + 1; });
-    const chip = (attr, key, label, n, on) => `<button class="chip" type="button" ${attr}="${esc(key)}" aria-pressed="${on}">${esc(label)} <span class="n">${n}</span></button>`;
+    const opt = (key, label, n, on) => `<option value="${esc(key)}"${on ? " selected" : ""}>${esc(label)} (${n})</option>`;
     $("#filters").innerHTML = `
-      <div class="chip-row" role="group" aria-label="${esc(t("country"))}"><span class="filter-label label">${esc(t("country"))}</span>
-        ${chip("data-country", "", t("all"), registry.alerts.length, !fCountry)}${order.map((c) => chip("data-country", c, t(`c_${c}`), counts[c], fCountry === c)).join("")}</div>
-      <div class="chip-row" role="group" aria-label="${esc(t("type"))}"><span class="filter-label label">${esc(t("type"))}</span>
-        ${TYPE_FILTERS.filter((k) => !k || groups[k]).map((k) => chip("data-type", k, t(`tf_${k || "all"}`), k ? groups[k] : registry.alerts.length, fType === k)).join("")}</div>`;
+      <label class="select"><span class="sr-only">${esc(t("country"))}</span><select data-filter="country">
+        ${opt("", t("all_countries"), registry.alerts.length, !fCountry)}${order.map((c) => opt(c, t(`c_${c}`), counts[c], fCountry === c)).join("")}</select></label>
+      <label class="select"><span class="sr-only">${esc(t("type"))}</span><select data-filter="type">
+        ${TYPE_FILTERS.filter((k) => !k || groups[k]).map((k) => opt(k, t(`tf_${k || "all"}`), k ? groups[k] : registry.alerts.length, fType === k)).join("")}</select></label>`;
     const fresh = registry.alerts.filter(isNew);
     $("#new-since").innerHTML = fresh.length ? `<div class="new-since"><h2>${esc(t("new_since", fresh.length))}</h2><ul>${fresh.slice(0, 8).map((a) =>
       `<li><a href="#alerts" data-open="${esc(a.alert_id)}"><bdi>${esc(alertHeadline(a))}</bdi></a> · ${esc(where(a.source))} · ${esc(ago(a.detected_at))}</li>`).join("")}</ul></div>` : "";
@@ -817,12 +818,10 @@
     const row = $(`#alert-list details[data-alert="${CSS.escape(a.dataset.open)}"]`);
     if (row) { row.open = true; row.scrollIntoView({ block: "start" }); }
   });
-  $("#filters").addEventListener("click", (e) => {
-    const chip = e.target.closest(".chip");
-    if (!chip) return;
-    if ("country" in chip.dataset) fCountry = chip.dataset.country;
-    if ("type" in chip.dataset) fType = chip.dataset.type;
-    $$("#filters .chip").forEach((c) => c.setAttribute("aria-pressed", String("country" in c.dataset ? c.dataset.country === fCountry : c.dataset.type === fType)));
+  $("#filters").addEventListener("change", (e) => {
+    const sel = e.target.closest("select[data-filter]");
+    if (!sel) return;
+    if (sel.dataset.filter === "country") fCountry = sel.value; else fType = sel.value;
     drawAlerts();
   });
   function drawAlerts() {
@@ -972,20 +971,24 @@
       ${tr.summary ? `<details class="more"><summary>${esc(t("agent_summary"))}</summary><p class="trace-summary" dir="auto">${esc(tr.summary)}</p></details>` : ""}
       ${cards}
       <details class="more"><summary>${esc(t("agent_log", modelName(tr.model), calls.search, calls.extract, money(tr.llm_cost_usd)))}</summary><ol>${steps}</ol></details>
+      <div class="trace-bar trace-again"><button class="btn btn-quiet btn-sm trace-btn" type="button" data-fresh>${ICON.globe}${esc(t("trace_again"))}</button>
+        <span class="trace-hint">${[tr.traced_at ? t("traced_when", ago(tr.traced_at)) : "", t("trace_hint"), limits ? t("trace_left", Math.max(0, limits.daily_limit - limits.used_today)) : ""].filter(Boolean).map(esc).join(" · ")}</span></div>
     </div>`;
   }
   const modelName = (id) => (/super/i.test(id) ? "Nemotron 3 Super" : /ultra/i.test(id) ? "Nemotron 3 Ultra" : /nano/i.test(id) ? "Nemotron 3 Nano" : id);
-  async function loadTrace(box, run) {
+  // fresh: run the agent again over a saved trace (live, capped, not saved); on failure the saved trace stays on screen
+  async function loadTrace(box, run, fresh = false) {
     const out = $(".trace-out", box), bar = $(".trace-bar", box), btn = $(".trace-btn", box);
     if (!run) {
       try { const { trace } = await api(`/api/trace/${encodeURIComponent(box.dataset.alert)}`); if (trace) { renderTrace(out, trace); bar.hidden = true; } } catch { /* button stays */ }
       return;
     }
     btn.disabled = true;
+    const before = fresh ? out.innerHTML : "";
     out.innerHTML = `<div class="trace-live"><p class="loading">${esc(t("trace_running"))}</p><ol class="steps-live"></ol></div>`;
     const list = $(".steps-live", out);
     try {
-      const res = await fetch(`/api/trace/${encodeURIComponent(box.dataset.alert)}`, { method: "POST" });
+      const res = await fetch(`/api/trace/${encodeURIComponent(box.dataset.alert)}${fresh ? "?fresh=1" : ""}`, { method: "POST" });
       if (!res.ok) { const b = await res.json().catch(() => ({})); throw new Error(b.detail || t("err_request", res.status)); }
       const reader = res.body.getReader(), dec = new TextDecoder();
       let buf = "";
@@ -1006,10 +1009,10 @@
           else if (ev[1] === "error") throw new Error(payload.detail);
         }
       }
-    } catch (e) { out.innerHTML = `<p class="notice notice-error">${esc(e.message)}</p>`; }
+    } catch (e) { out.innerHTML = `<p class="notice notice-error">${esc(e.message)}</p>${before}`; }
     finally { btn.disabled = false; }
   }
-  document.addEventListener("click", (e) => { const btn = e.target.closest(".trace-btn"); if (btn) loadTrace(btn.closest(".trace"), true); });
+  document.addEventListener("click", (e) => { const btn = e.target.closest(".trace-btn"); if (btn) loadTrace(btn.closest(".trace"), true, "fresh" in btn.dataset); });
   async function refreshLimits() { try { limits = await api("/api/limits"); } catch { limits = null; } }
 
   // ---------- how it works
@@ -1044,14 +1047,14 @@
 
       <section class="how-section"><h2>${esc(t("flow_title"))}</h2><p>${esc(t("flow_lede"))}</p>
         <ol class="flow">${flow.map(([k, d, n]) => `<li><b>${esc(t(k))}</b><span>${esc(d)}</span>${n ? `<em>${esc(n)}</em>` : ""}</li>`).join("")}</ol>
-        <p class="note">${esc(t("flow_counts_note", s.alerts, ev ? ev.alerts : 90))}</p></section>
+        <details class="more"><summary>${esc(t("method_notes"))}</summary><p class="note">${esc(t("flow_counts_note", s.alerts, ev ? ev.alerts : 90))}</p></details></section>
 
       ${modelRows ? `<section class="how-section"><h2>${esc(t("models_title"))}</h2>
         <p>${esc(ultra && ours ? t("models_lede", Math.round(ultra.cost_usd / ours.cost_usd), nano ? nano.batches_missed : null, nano ? nano.alerts_fully_correct : null) : "")}</p>
         <div class="tbl-wrap"><table class="data"><thead><tr><th>${esc(t("m_setup"))}</th><th class="num">${esc(t("m_alerts"))}</th><th class="num">${esc(t("m_batches"))}</th>
           <th class="num">${esc(t("m_invented"))}</th><th class="num">${esc(t("m_cost"))}</th><th class="num">${esc(t("m_latency"))}</th></tr></thead><tbody>${modelRows}</tbody></table></div>
-        <p class="note">${esc(t("models_note"))}</p>
-        ${base ? `<p class="note">${esc(t("baseline", base.alerts_fully_correct, base.alerts, base.batches_correct, base.batches_gold))}</p>` : ""}</section>` : ""}
+        <details class="more"><summary>${esc(t("method_notes"))}</summary><p class="note">${esc(t("models_note"))}</p>
+        ${base ? `<p class="note">${esc(t("baseline", base.alerts_fully_correct, base.alerts, base.batches_correct, base.batches_gold))}</p>` : ""}</details></section>` : ""}
 
       ${ins ? `<section class="how-section"><h2>${esc(t("xb_title"))}</h2>
         <p>${esc(t("xb_lede", ins.with_verified, ins.traced, ins.gaps, ins.within_day, ins.month_or_more))}</p>
