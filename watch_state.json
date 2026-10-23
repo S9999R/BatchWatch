@@ -1,0 +1,50 @@
+{
+  "_budget": {
+    "day": "2026-10-23",
+    "usd": 0.0354
+  },
+  "sfda": {
+    "last_error": {
+      "at": "2026-10-23T13:34:14+00:00",
+      "error": "RemoteProtocolError: Server disconnected without sending a response."
+    }
+  },
+  "fda": {
+    "last_checked": "2026-10-23T13:34:14+00:00",
+    "last_changed": "2026-10-23T13:34:14+00:00",
+    "last_new": "2026-10-23T13:41:17+00:00"
+  },
+  "mhra": {
+    "last_checked": "2026-10-23T13:34:14+00:00",
+    "last_changed": "2026-10-23T13:34:14+00:00",
+    "last_new": "2026-10-23T13:41:25+00:00"
+  },
+  "health_canada": {
+    "last_checked": "2026-10-23T13:34:14+00:00",
+    "last_changed": "2026-10-23T13:34:14+00:00",
+    "last_new": "2026-10-23T13:42:46+00:00"
+  },
+  "nafdac": {
+    "last_checked": "2026-10-23T13:34:14+00:00"
+  },
+  "drap": {
+    "last_checked": "2026-10-23T13:34:14+00:00",
+    "last_changed": "2026-10-23T13:34:14+00:00"
+  },
+  "sahpra": {
+    "last_checked": "2026-10-23T13:34:14+00:00",
+    "last_changed": "2026-10-23T13:34:14+00:00"
+  },
+  "rwanda": {
+    "last_checked": "2026-10-23T13:34:14+00:00",
+    "last_changed": "2026-10-23T13:34:14+00:00"
+  },
+  "fda_ghana": {
+    "last_checked": "2026-10-23T13:34:14+00:00",
+    "last_changed": "2026-10-23T13:34:14+00:00"
+  },
+  "who": {
+    "last_checked": "2026-10-23T13:34:14+00:00",
+    "last_changed": "2026-10-23T13:34:14+00:00"
+  }
+}
