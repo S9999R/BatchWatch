@@ -144,10 +144,15 @@ def sfda_notice_text(page_html: str) -> tuple[str, str, str]:
     return title, (field_date or date).group(1) if (field_date or date) else "", text
 
 
+SFDA_MAX_PAGES = 40
+
+
 def list_sfda(c: httpx.Client, limit: int) -> list[dict]:
-    """Newest SFDA notice links from the paginated list (newest first), without opening the notices."""
+    """Newest SFDA notice links, without opening the notices. The list page is not in date order (a June 2026
+    recall sat on page 10 behind 2025 notices), so every page is read and the newest are picked by notice number,
+    which grows with time."""
     items, seen, page = [], set(), 0
-    while len(items) < limit and page < 10:
+    while page < SFDA_MAX_PAGES:  # ponytail: ~20 pages exist today, 0.3 s each; raise the cap if SFDA grows past it
         listing = c.get(f"{SFDA_BASE}/en/drugs_circulars_withdrawal", params={"page": page}).text
         links = [l for l in dict.fromkeys(re.findall(r'href="(/en/drugs_?circulars_?(?:and_?)?withdrawal/\d+)"', listing))
                  if l not in seen]
@@ -158,6 +163,7 @@ def list_sfda(c: httpx.Client, limit: int) -> list[dict]:
             items.append({"source": "SFDA (Saudi Arabia)", "alert_id": "SFDA-" + href.rsplit("/", 1)[-1],
                           "url": SFDA_BASE + href})
         page += 1
+    items.sort(key=lambda i: int(i["alert_id"].split("-")[1]), reverse=True)
     return items[:limit]
 
 

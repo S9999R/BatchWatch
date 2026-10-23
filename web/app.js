@@ -124,6 +124,7 @@
 
   // ---------- state
   let registry = null, statusData = null, insightsData = null, limits = null;
+  let lastLive = null;  // the live SFDA search for the batch on screen: {loading}, {error}, or the server's answer
   let lastPack = null, packParams = null, stock = null, stockFilter = "", groupByLocation = false;
   const lastVisit = store.get("bw.lastVisit");
 
@@ -404,11 +405,35 @@
     return `<p class="saudi-line">${ICON.info}<span>${esc(t("not_in_sfda", regs))}</span></p>`;
   }
 
+  // the answer of the live search of the SFDA's own notices, shown when no stored alert names the batch
+  function liveHtml() {
+    const r = lastLive;
+    if (!r || r.status === "skipped") return "";
+    if (r.loading) return `<p class="note" aria-busy="true">${esc(t("live_searching"))}</p>`;
+    if (r.error) return `<p class="note">${esc(t("live_error"))}</p>`;
+    if (r.status === "error") return `<p class="note">${esc(t("live_error"))}</p>`;
+    const hits = (r.hits || []).map((h) => `<div class="alert-ref"><p><b><bdi>${esc(h.title)}</bdi></b> · ${esc(fmtDate(h.date))}</p>
+        <p class="muted"><bdi>${esc(h.quote)}</bdi></p>
+        <p>${esc(t(h.in_registry ? "live_stored" : "live_new"))} <a href="${esc(h.url)}" target="_blank" rel="noopener noreferrer">${esc(t("live_open"))}</a></p></div>`).join("");
+    const done = r.complete ? t("live_not_found", r.listed, r.searched) : t("live_incomplete", r.listed, r.searched, r.failed);
+    return `${hits}${r.status === "found" && r.complete ? "" : `<p class="note">${esc(done)}</p>`}<p class="note muted">${esc(t("live_scope"))}</p>`;
+  }
+
   function verdictHtml(data) {
     const p = data.pack;
     const ms = [...data.matches].sort((x, y) => rank(x) - rank(y));
     const live = ms.filter((m) => statusKey(m) !== "ruledout");
     const asOf = data.alerts_as_of ? t("as_of", fmtTime(data.alerts_as_of)) : "";
+    if (!live.length && !ms.length && lastLive && lastLive.status === "found") {
+      return `<article class="verdict v-check">
+        <header class="verdict-head">${ICON.info}<div>
+          <p class="verdict-kicker">${esc(t("live_kicker"))} · ${mono(p.batch)}</p>
+          <h2 tabindex="-1">${esc(t("live_h_found"))}</h2>
+          <p class="verdict-sub">${esc(t("live_sub_found", lastLive.hits.length))}</p>
+        </div></header>
+        <div class="verdict-body">${liveHtml()}</div>
+      </article>`;
+    }
     if (!live.length) {
       const ruled = ms.length ? [...decisions.values()].find((d) => d.kind === "different") : null;
       const key = !ms.length ? "none" : ruled && ruled.why === "lookalike" ? "none_lookalike" : "none_dismissed";
@@ -419,6 +444,7 @@
           <p class="verdict-sub">${esc(t(`sub_${key}`, data.alerts_checked, registry ? registry.stats.sources.length : 10, iso(p.batch), !!p.gtin))} ${esc(asOf)}</p>
         </div></header>
         <div class="verdict-body">
+          ${!ms.length ? liveHtml() : ""}
           ${!p.gtin && !ms.length ? `<p class="note">${esc(t("tip_gtin"))}</p>` : ""}
           ${ms.map((m) => `${alertRef(m)}${decisionNote(m, "pack")}`).join("")}
         </div>
@@ -496,6 +522,22 @@
     }
   }
 
+  // No stored alert names the batch: open every notice on the SFDA site and search its text (about 15 s the first time)
+  async function liveSearch(pack) {
+    lastLive = { loading: true };
+    try {
+      const r = await api(`/api/lookup/live?${new URLSearchParams({ batch: pack.pack.batch })}`);
+      if (lastPack !== pack) return;  // the visitor started another check meanwhile
+      lastLive = r;
+    } catch (e) {
+      if (lastPack !== pack) return;
+      lastLive = { error: e.message };
+    }
+    renderPack();
+    const found = lastLive.status === "found";
+    announce(found ? t("live_h_found") : lastLive.error ? t("live_error") : t("h_none"));
+  }
+
   async function lookupPack(params) {
     packParams = params;
     [...decisions.keys()].filter((k) => k.startsWith("pack|")).forEach((k) => decisions.delete(k));
@@ -503,8 +545,10 @@
     $("#intro").hidden = true;
     out.innerHTML = `<div class="skeleton" aria-busy="true"><i></i><i></i><i></i></div>`;
     try {
+      lastLive = null;
       lastPack = await api(`/api/lookup?${new URLSearchParams(params)}`);
       $("#pack-batch").value = lastPack.pack.batch || "";
+      if (!lastPack.matches.length) liveSearch(lastPack);
       // the extra fields apply to this check only: the next pack starts clean, and the verdict shows what was used
       ["#pack-gtin", "#pack-expiry", "#pack-product"].forEach((s) => ($(s).value = ""));
       renderPack();
