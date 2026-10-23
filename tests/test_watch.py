@@ -128,3 +128,30 @@ def test_messages_and_feed():
     feed = atom_feed([entry], "https://bw.example")
     assert "<feed" in feed and "Lorivan 2mg Tab" in feed and "urn:batchwatch:SFDA-1" in feed
     assert "Lorivan" not in atom_feed([entry], country_filter=lambda e: False)
+
+
+def test_sfda_listing_picks_newest_notice_numbers_even_when_the_list_is_not_in_date_order():
+    from batchwatch import sources
+
+    pages = {0: [18858, 19769], 1: [19190, 19700], 2: [19096, 17786]}  # 19096 (a June recall) is not on page 0
+
+    class Client:
+        def get(self, url, params):
+            html = "".join(f'<a href="/en/drugs_circulars_withdrawal/{i}">x</a>' for i in pages.get(params["page"], []))
+            return type("Resp", (), {"text": html, "raise_for_status": lambda self: None})()
+
+    ids = [i["alert_id"] for i in sources.list_sfda(Client(), 4)]
+    assert ids == ["SFDA-19769", "SFDA-19700", "SFDA-19190", "SFDA-19096"]
+
+
+def test_sfda_listing_fails_loudly_when_a_page_errors_instead_of_looking_like_the_end():
+    from batchwatch import sources
+
+    class Client:
+        def get(self, url, params):
+            def boom():
+                raise RuntimeError("HTTP 503")
+            return type("Resp", (), {"text": "", "raise_for_status": lambda self: boom()})()
+
+    with pytest.raises(RuntimeError):
+        sources.list_sfda(Client(), 4)

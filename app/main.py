@@ -21,6 +21,7 @@ from fastapi.staticfiles import StaticFiles
 from app.limits import DailyLimiter
 from app.store import store
 from app.views import alert_summary, decorate_trace, insights, match_json, registry_stats, search, status
+from batchwatch import live
 from batchwatch.gs1 import parse_gs1
 from batchwatch.match import REQUIRED_COLUMNS, lookup_pack, map_columns, match_inventory, parse_inventory, read_rows
 from batchwatch.notify import atom_feed
@@ -33,6 +34,8 @@ _trace_lock = threading.Lock()  # one agent run at a time keeps API spend predic
 limiter = DailyLimiter.from_env()
 # Nemotron Nano column mapping for unfamiliar stock files is also paid, so it gets its own daily cap.
 column_limiter = DailyLimiter(int(os.environ.get("COLUMNS_DAILY_LIMIT", "200")), int(os.environ.get("COLUMNS_PER_VISITOR_LIMIT", "20")))
+# The live regulator search is free but opens SFDA pages, so it is capped so the demo cannot be used to hammer them.
+live_limiter = DailyLimiter(int(os.environ.get("LIVE_DAILY_LIMIT", "300")), int(os.environ.get("LIVE_PER_VISITOR_LIMIT", "40")))
 SAMPLES = {"riyadh": ROOT / "examples" / "riyadh_pharmacy.csv", "hospital": ROOT / "examples" / "inventory_sample.csv"}
 MAX_UPLOAD_BYTES = 2_000_000
 MAX_LINES = 20_000
@@ -173,6 +176,19 @@ def get_lookup(code: str = Query("", max_length=200), batch: str = Query("", max
     matches = lookup_pack(entries(), fields["batch"], fields["gtin"], product, fields["expiry"])
     return {"pack": fields, "alerts_checked": len(entries()), "checked_at": _now(), "alerts_as_of": alerts_as_of(),
             "matches": _matches(matches)}
+
+
+@app.get("/api/lookup/live")
+def get_lookup_live(request: Request, batch: str = Query("", max_length=40)):
+    """Search the regulator's own pages for a batch no stored alert names. Text search only: no AI, no cost,
+    but it opens SFDA pages, so it is rate limited per visitor and cached."""
+    if not batch.strip():
+        raise HTTPException(400, "No batch number given.")
+    refusal = live_limiter.take(request.client.host if request.client else "unknown")
+    if refusal:
+        raise HTTPException(429, refusal)
+    stored = {e["alert_id"]: e.get("text") or "" for e in entries() if e.get("source") == live.SOURCE}
+    return live.search_sfda(batch.strip(), stored) | {"checked_at": _now()}
 
 
 # ---------------------------------------------------------------- alerts
