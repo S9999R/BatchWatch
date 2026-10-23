@@ -20,6 +20,7 @@ DEADLINE_SECONDS = 60
 WORKERS = 8
 MIN_BATCH_CHARS = 3
 _TOKEN = re.compile(r"[A-Za-z0-9](?:[A-Za-z0-9\-/.]*[A-Za-z0-9])?")
+_slots = threading.BoundedSemaphore(WORKERS)  # one cap on parallel SFDA requests for the whole site, however many visitors search
 
 _lock = threading.Lock()
 _listing: tuple[float, list[dict]] = (0.0, [])
@@ -30,7 +31,8 @@ def find_batch(text: str, batch: str) -> str | None:
     """A short quote around the first token of text that is this batch number (spacing, dashes and case ignored)."""
     want = norm_batch(batch)
     for m in _TOKEN.finditer(text or ""):
-        if norm_batch(m.group()) == want:
+        # also each part of a joined list or range ("ABC123-ABC130", "A1/A2/A3")
+        if norm_batch(m.group()) == want or any(norm_batch(p) == want for p in re.split(r"[-/.]", m.group())):
             return re.sub(r"\s+", " ", text[max(0, m.start() - 90):m.end() + 90]).strip()
     return None  # ponytail: a batch split by spaces ("BF 25 008") is not found; the stored-alert match still handles it
 
@@ -38,21 +40,34 @@ def find_batch(text: str, batch: str) -> str | None:
 def _list(c) -> list[dict]:
     global _listing
     with _lock:
-        if time.time() - _listing[0] > 1800:
-            _listing = (time.time(), S.list_sfda(c, 10_000))
-        return _listing[1]
+        fresh = time.time() - _listing[0] <= 1800
+        items = _listing[1]
+    if not fresh:  # fetched outside the lock: a slow SFDA must not block every other search
+        items = S.list_sfda(c, 10_000)
+        with _lock:
+            _listing = (time.time(), items)
+    return items
 
 
-def _notice(c, item: dict) -> dict:
+def _cached(alert_id: str) -> dict | None:
     with _lock:
-        hit = _notices.get(item["alert_id"])
-    if hit and time.time() - hit[0] < CACHE_SECONDS:
-        return hit[1]
-    try:
-        alert = S.detail_sfda(c, item)
-    except Exception:  # SFDA drops the odd request under parallel load; one more try before the notice counts as unread
-        time.sleep(1)
-        alert = S.detail_sfda(c, item)
+        hit = _notices.get(alert_id)
+    return hit[1] if hit and time.time() - hit[0] < CACHE_SECONDS else None
+
+
+def _notice(c, item: dict, deadline: float) -> dict:
+    if alert := _cached(item["alert_id"]):
+        return alert
+    with _slots:
+        if alert := _cached(item["alert_id"]):  # another visitor fetched it while this one waited
+            return alert
+        if time.time() > deadline:
+            raise TimeoutError
+        try:
+            alert = S.detail_sfda(c, item)
+        except Exception:  # SFDA drops the odd request under parallel load; one more try before the notice counts as unread
+            time.sleep(1)
+            alert = S.detail_sfda(c, item)
     with _lock:
         _notices[item["alert_id"]] = (time.time(), alert)
     return alert
@@ -71,12 +86,11 @@ def search_sfda(batch: str, stored: dict[str, str]) -> dict:
 
             def look(item):
                 text = stored.get(item["alert_id"])
-                if text is None:
-                    if time.time() > deadline:
-                        raise TimeoutError
-                    item = _notice(c, item)
+                known = bool(text)  # a stored alert without text is read from SFDA like an unread one
+                if not known:
+                    item = _notice(c, item, deadline)
                     text = item.get("text", "")
-                return item, text, item["alert_id"] in stored
+                return item, text, known
 
             with ThreadPoolExecutor(WORKERS) as pool:
                 futures = [pool.submit(look, i) for i in items]
@@ -86,9 +100,12 @@ def search_sfda(batch: str, stored: dict[str, str]) -> dict:
                     except Exception:  # one unreadable notice must not hide the others, but the answer says it is incomplete
                         out["failed"] += 1
                         continue
+                    quote = find_batch(text, batch)
+                    if not quote and (not text or len(text) >= S.MAX_TEXT_CHARS):  # empty or cut short: the batch could be past the end
+                        out["failed"] += 1
+                        continue
                     out["searched"] += 1
                     out["from_registry"] += known
-                    quote = find_batch(text, batch)
                     if quote:
                         out["hits"].append({"alert_id": item["alert_id"], "url": item["url"], "title": item.get("title", ""),
                                             "date": item.get("date", ""), "quote": quote, "in_registry": known})

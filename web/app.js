@@ -408,10 +408,10 @@
   // the answer of the live search of the SFDA's own notices, shown when no stored alert names the batch
   function liveHtml() {
     const r = lastLive;
-    if (!r || r.status === "skipped") return "";
+    if (!r) return "";
+    if (r.status === "skipped") return `<p class="note">${esc(t("live_short"))}</p>`;
     if (r.loading) return `<p class="note" aria-busy="true">${esc(t("live_searching"))}</p>`;
-    if (r.error) return `<p class="note">${esc(t("live_error"))}</p>`;
-    if (r.status === "error") return `<p class="note">${esc(t("live_error"))}</p>`;
+    if (r.error || r.status === "error") return `<p class="note">${esc(t("lookup_live_error"))}</p>`;
     const hits = (r.hits || []).map((h) => `<div class="alert-ref"><p><b><bdi>${esc(h.title)}</bdi></b> · ${esc(fmtDate(h.date))}</p>
         <p class="muted"><bdi>${esc(h.quote)}</bdi></p>
         <p>${esc(t(h.in_registry ? "live_stored" : "live_new"))} <a href="${esc(h.url)}" target="_blank" rel="noopener noreferrer">${esc(t("live_open"))}</a></p></div>`).join("");
@@ -535,7 +535,7 @@
     }
     renderPack();
     const found = lastLive.status === "found";
-    announce(found ? t("live_h_found") : lastLive.error ? t("live_error") : t("h_none"));
+    announce(found ? t("live_h_found") : lastLive.error ? t("lookup_live_error") : t("h_none"));
   }
 
   async function lookupPack(params) {

@@ -68,3 +68,27 @@ def test_an_unreadable_notice_makes_the_answer_incomplete(sfda):
 
 def test_a_batch_too_short_to_search_is_skipped(sfda):
     assert live.search_sfda("12", stored={})["status"] == "skipped"
+
+
+def test_a_batch_inside_a_joined_list_or_range_is_found(sfda):
+    NOTICES["SFDA-19000"] = "Recalled lots ABC123-ABC130 and XY1/XY2/XY3 of a vial"
+    try:
+        assert live.search_sfda("ABC130", stored={})["status"] == "found"
+        assert live.search_sfda("XY2", stored={})["status"] == "found"
+        assert live.search_sfda("ABC12", stored={})["status"] == "not_found"
+    finally:
+        NOTICES["SFDA-19000"] = "Recall of batches 008 and A-12/34 of a vial"
+
+
+def test_a_stored_alert_without_text_is_read_from_sfda(sfda):
+    r = live.search_sfda("656089", stored={"SFDA-19096": ""})
+    assert r["status"] == "found" and "SFDA-19096" in sfda and not r["hits"][0]["in_registry"]
+
+
+def test_a_notice_cut_short_by_the_text_limit_makes_the_answer_incomplete(sfda):
+    NOTICES["SFDA-19190"] = "x " * S.MAX_TEXT_CHARS  # the batch could sit past the cut
+    try:
+        r = live.search_sfda("999999", stored={})
+    finally:
+        NOTICES["SFDA-19190"] = "Voluntary Recall of batch 2509984 from the product"
+    assert r["status"] == "not_found" and r["failed"] == 1 and not r["complete"]

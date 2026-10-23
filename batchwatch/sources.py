@@ -153,7 +153,9 @@ def list_sfda(c: httpx.Client, limit: int) -> list[dict]:
     which grows with time."""
     items, seen, page = [], set(), 0
     while page < SFDA_MAX_PAGES:  # ponytail: ~20 pages exist today, 0.3 s each; raise the cap if SFDA grows past it
-        listing = c.get(f"{SFDA_BASE}/en/drugs_circulars_withdrawal", params={"page": page}).text
+        resp = c.get(f"{SFDA_BASE}/en/drugs_circulars_withdrawal", params={"page": page})
+        resp.raise_for_status()  # a failed page must not look like the end of the list
+        listing = resp.text
         links = [l for l in dict.fromkeys(re.findall(r'href="(/en/drugs_?circulars_?(?:and_?)?withdrawal/\d+)"', listing))
                  if l not in seen]
         if not links:
