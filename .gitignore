@@ -17,5 +17,11 @@ registry/watch_state.json
 registry/*.tmp
 live/
 
+# screenshots kept next to the project
+images/
+
+# macOS Finder folder settings
+.DS_Store
+
 # git worktrees made for parallel work
 .claude/worktrees/
