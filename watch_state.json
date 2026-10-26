@@ -1,6 +1,6 @@
 {
   "_budget": {
-    "day": "2026-10-25",
+    "day": "2026-10-26",
     "usd": 0.0
   },
   "sfda": {
@@ -8,52 +8,52 @@
       "at": "2026-10-23T13:34:14+00:00",
       "error": "RemoteProtocolError: Server disconnected without sending a response."
     },
-    "last_checked": "2026-10-25T23:15:25+00:00",
+    "last_checked": "2026-10-26T01:13:13+00:00",
     "last_changed": "2026-10-23T18:43:37+00:00",
     "last_new": "2026-10-23T18:44:54+00:00"
   },
   "fda": {
-    "last_checked": "2026-10-25T23:15:25+00:00",
+    "last_checked": "2026-10-26T01:13:13+00:00",
     "last_changed": "2026-10-23T13:34:14+00:00",
     "last_new": "2026-10-23T13:41:17+00:00"
   },
   "mhra": {
-    "last_checked": "2026-10-25T23:15:25+00:00",
+    "last_checked": "2026-10-26T01:13:13+00:00",
     "last_changed": "2026-10-23T13:34:14+00:00",
     "last_new": "2026-10-23T13:41:25+00:00"
   },
   "health_canada": {
-    "last_checked": "2026-10-25T23:15:25+00:00",
+    "last_checked": "2026-10-26T01:13:13+00:00",
     "last_changed": "2026-10-23T14:27:44+00:00",
     "last_new": "2026-10-23T14:28:24+00:00",
-    "etag": "\"6adc1438-f13eb7\"",
-    "last_modified": "Sat, 24 Oct 2026 02:13:12 GMT"
+    "etag": "\"6add6b7e-f1406b\"",
+    "last_modified": "Sun, 25 Oct 2026 02:37:50 GMT"
   },
   "nafdac": {
-    "last_checked": "2026-10-25T23:15:25+00:00"
+    "last_checked": "2026-10-26T01:13:13+00:00"
   },
   "drap": {
-    "last_checked": "2026-10-25T23:15:25+00:00",
+    "last_checked": "2026-10-26T01:13:13+00:00",
     "last_changed": "2026-10-23T14:27:44+00:00",
     "last_new": "2026-10-23T14:33:13+00:00"
   },
   "sahpra": {
-    "last_checked": "2026-10-25T23:15:25+00:00",
+    "last_checked": "2026-10-26T01:13:13+00:00",
     "last_changed": "2026-10-23T14:27:44+00:00",
     "last_new": "2026-10-23T14:34:26+00:00"
   },
   "rwanda": {
-    "last_checked": "2026-10-25T23:15:25+00:00",
+    "last_checked": "2026-10-26T01:13:13+00:00",
     "last_changed": "2026-10-23T17:15:55+00:00",
     "last_new": "2026-10-23T17:16:58+00:00"
   },
   "fda_ghana": {
-    "last_checked": "2026-10-25T23:15:25+00:00",
+    "last_checked": "2026-10-26T01:13:13+00:00",
     "last_changed": "2026-10-23T17:15:55+00:00",
     "last_new": "2026-10-23T17:17:27+00:00"
   },
   "who": {
-    "last_checked": "2026-10-25T23:15:25+00:00",
+    "last_checked": "2026-10-26T01:13:13+00:00",
     "last_changed": "2026-10-23T17:15:55+00:00",
     "last_new": "2026-10-23T17:18:40+00:00",
     "last_modified": "Sun, 25 Oct 2026 19:39:31 GMT"
