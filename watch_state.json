@@ -8,12 +8,12 @@
       "at": "2026-11-04T15:46:50+00:00",
       "error": "HTTPStatusError: Server error '500 500 Service unavailable (with message)' for url 'https://www.sfda.gov.sa/en/drugs_circulars_withdrawal?page=15'\nFor more information check: ht"
     },
-    "last_checked": "2026-11-08T13:21:11+00:00",
+    "last_checked": "2026-11-08T18:30:06+00:00",
     "last_changed": "2026-10-23T18:43:37+00:00",
     "last_new": "2026-10-23T18:44:54+00:00"
   },
   "fda": {
-    "last_checked": "2026-11-08T13:21:11+00:00",
+    "last_checked": "2026-11-08T18:30:06+00:00",
     "last_changed": "2026-11-02T23:52:35+00:00",
     "last_new": "2026-11-02T23:55:14+00:00",
     "last_error": {
@@ -22,12 +22,12 @@
     }
   },
   "mhra": {
-    "last_checked": "2026-11-08T13:21:11+00:00",
+    "last_checked": "2026-11-08T18:30:06+00:00",
     "last_changed": "2026-11-05T17:39:14+00:00",
     "last_new": "2026-11-05T17:39:44+00:00"
   },
   "health_canada": {
-    "last_checked": "2026-11-08T13:21:11+00:00",
+    "last_checked": "2026-11-08T18:30:06+00:00",
     "last_changed": "2026-11-05T01:48:44+00:00",
     "last_new": "2026-11-05T01:49:20+00:00",
     "etag": "\"6aefdecd-f20617\"",
@@ -38,24 +38,24 @@
     }
   },
   "nafdac": {
-    "last_checked": "2026-11-08T13:21:11+00:00",
+    "last_checked": "2026-11-08T18:30:06+00:00",
     "last_error": {
       "at": "2026-11-03T06:44:58+00:00",
       "error": "ReadTimeout: The read operation timed out"
     }
   },
   "drap": {
-    "last_checked": "2026-11-08T13:21:11+00:00",
+    "last_checked": "2026-11-08T18:30:06+00:00",
     "last_changed": "2026-11-05T17:39:14+00:00",
     "last_new": "2026-11-05T17:40:12+00:00"
   },
   "sahpra": {
-    "last_checked": "2026-11-08T13:21:11+00:00",
+    "last_checked": "2026-11-08T18:30:06+00:00",
     "last_changed": "2026-10-23T14:27:44+00:00",
     "last_new": "2026-10-23T14:34:26+00:00"
   },
   "rwanda": {
-    "last_checked": "2026-11-08T13:21:11+00:00",
+    "last_checked": "2026-11-08T18:30:06+00:00",
     "last_changed": "2026-10-23T17:15:55+00:00",
     "last_new": "2026-10-23T17:16:58+00:00",
     "last_error": {
@@ -64,7 +64,7 @@
     }
   },
   "fda_ghana": {
-    "last_checked": "2026-11-08T13:21:11+00:00",
+    "last_checked": "2026-11-08T18:30:06+00:00",
     "last_changed": "2026-10-23T17:15:55+00:00",
     "last_new": "2026-10-23T17:17:27+00:00",
     "last_error": {
@@ -73,7 +73,7 @@
     }
   },
   "who": {
-    "last_checked": "2026-11-08T13:21:11+00:00",
+    "last_checked": "2026-11-08T18:30:06+00:00",
     "last_changed": "2026-10-23T17:15:55+00:00",
     "last_new": "2026-10-23T17:18:40+00:00",
     "last_modified": "Sun, 08 Nov 2026 05:54:50 GMT"
