@@ -1,19 +1,19 @@
 {
   "_budget": {
-    "day": "2026-11-10",
-    "usd": 0.0108
+    "day": "2026-11-11",
+    "usd": 0.0008
   },
   "sfda": {
     "last_error": {
       "at": "2026-11-04T15:46:50+00:00",
       "error": "HTTPStatusError: Server error '500 500 Service unavailable (with message)' for url 'https://www.sfda.gov.sa/en/drugs_circulars_withdrawal?page=15'\nFor more information check: ht"
     },
-    "last_checked": "2026-11-10T23:26:40+00:00",
+    "last_checked": "2026-11-11T03:01:32+00:00",
     "last_changed": "2026-11-10T10:27:30+00:00",
     "last_new": "2026-11-10T10:27:59+00:00"
   },
   "fda": {
-    "last_checked": "2026-11-10T23:26:40+00:00",
+    "last_checked": "2026-11-11T03:01:32+00:00",
     "last_changed": "2026-11-10T10:27:30+00:00",
     "last_new": "2026-11-10T10:30:20+00:00",
     "last_error": {
@@ -22,40 +22,40 @@
     }
   },
   "mhra": {
-    "last_checked": "2026-11-10T23:26:40+00:00",
+    "last_checked": "2026-11-11T03:01:32+00:00",
     "last_changed": "2026-11-05T17:39:14+00:00",
     "last_new": "2026-11-05T17:39:44+00:00"
   },
   "health_canada": {
-    "last_checked": "2026-11-10T23:26:40+00:00",
-    "last_changed": "2026-11-05T01:48:44+00:00",
-    "last_new": "2026-11-05T01:49:20+00:00",
-    "etag": "\"6af130c5-f20617\"",
-    "last_modified": "Mon, 09 Nov 2026 02:32:37 GMT",
+    "last_checked": "2026-11-11T03:01:32+00:00",
+    "last_changed": "2026-11-11T03:01:32+00:00",
+    "last_new": "2026-11-11T03:02:07+00:00",
+    "etag": "\"6af281a5-f20b0c\"",
+    "last_modified": "Tue, 10 Nov 2026 02:29:57 GMT",
     "last_error": {
       "at": "2026-10-31T23:45:21+00:00",
       "error": "RemoteProtocolError: peer closed connection without sending complete message body (received 8388608 bytes, expected 15831918)"
     }
   },
   "nafdac": {
-    "last_checked": "2026-11-10T23:26:40+00:00",
+    "last_checked": "2026-11-11T03:01:32+00:00",
     "last_error": {
       "at": "2026-11-10T18:16:22+00:00",
       "error": "ReadTimeout: The read operation timed out"
     }
   },
   "drap": {
-    "last_checked": "2026-11-10T23:26:40+00:00",
+    "last_checked": "2026-11-11T03:01:32+00:00",
     "last_changed": "2026-11-05T17:39:14+00:00",
     "last_new": "2026-11-05T17:40:12+00:00"
   },
   "sahpra": {
-    "last_checked": "2026-11-10T23:26:40+00:00",
+    "last_checked": "2026-11-11T03:01:32+00:00",
     "last_changed": "2026-10-23T14:27:44+00:00",
     "last_new": "2026-10-23T14:34:26+00:00"
   },
   "rwanda": {
-    "last_checked": "2026-11-10T23:26:40+00:00",
+    "last_checked": "2026-11-11T03:01:32+00:00",
     "last_changed": "2026-10-23T17:15:55+00:00",
     "last_new": "2026-10-23T17:16:58+00:00",
     "last_error": {
@@ -64,7 +64,7 @@
     }
   },
   "fda_ghana": {
-    "last_checked": "2026-11-10T23:26:40+00:00",
+    "last_checked": "2026-11-11T03:01:32+00:00",
     "last_changed": "2026-10-23T17:15:55+00:00",
     "last_new": "2026-10-23T17:17:27+00:00",
     "last_error": {
@@ -73,7 +73,7 @@
     }
   },
   "who": {
-    "last_checked": "2026-11-10T23:26:40+00:00",
+    "last_checked": "2026-11-11T03:01:32+00:00",
     "last_changed": "2026-10-23T17:15:55+00:00",
     "last_new": "2026-10-23T17:18:40+00:00",
     "last_modified": "Tue, 10 Nov 2026 18:32:18 GMT"
