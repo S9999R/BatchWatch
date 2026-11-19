@@ -1,19 +1,19 @@
 {
   "_budget": {
     "day": "2026-11-19",
-    "usd": 0.0
+    "usd": 0.0004
   },
   "sfda": {
     "last_error": {
       "at": "2026-11-04T15:46:50+00:00",
       "error": "HTTPStatusError: Server error '500 500 Service unavailable (with message)' for url 'https://www.sfda.gov.sa/en/drugs_circulars_withdrawal?page=15'\nFor more information check: ht"
     },
-    "last_checked": "2026-11-19T08:46:14+00:00",
+    "last_checked": "2026-11-19T17:42:46+00:00",
     "last_changed": "2026-11-17T11:09:51+00:00",
     "last_new": "2026-11-17T11:10:18+00:00"
   },
   "fda": {
-    "last_checked": "2026-11-19T08:46:14+00:00",
+    "last_checked": "2026-11-19T17:42:46+00:00",
     "last_changed": "2026-11-17T02:28:13+00:00",
     "last_new": "2026-11-17T02:35:39+00:00",
     "last_error": {
@@ -22,12 +22,12 @@
     }
   },
   "mhra": {
-    "last_checked": "2026-11-19T08:46:14+00:00",
+    "last_checked": "2026-11-19T17:42:46+00:00",
     "last_changed": "2026-11-12T17:04:51+00:00",
     "last_new": "2026-11-12T17:05:46+00:00"
   },
   "health_canada": {
-    "last_checked": "2026-11-19T08:46:14+00:00",
+    "last_checked": "2026-11-19T17:42:46+00:00",
     "last_changed": "2026-11-18T10:44:43+00:00",
     "last_new": "2026-11-18T10:45:33+00:00",
     "etag": "\"6afe5eaa-f26596\"",
@@ -38,24 +38,24 @@
     }
   },
   "nafdac": {
-    "last_checked": "2026-11-19T08:46:14+00:00",
+    "last_checked": "2026-11-19T17:42:46+00:00",
     "last_error": {
       "at": "2026-11-12T17:04:51+00:00",
       "error": "ConnectTimeout: _ssl.c:994: The handshake operation timed out"
     }
   },
   "drap": {
-    "last_checked": "2026-11-19T08:46:14+00:00",
-    "last_changed": "2026-11-17T19:50:32+00:00",
-    "last_new": "2026-11-17T19:51:36+00:00"
+    "last_checked": "2026-11-19T17:42:46+00:00",
+    "last_changed": "2026-11-19T17:42:46+00:00",
+    "last_new": "2026-11-19T17:43:22+00:00"
   },
   "sahpra": {
-    "last_checked": "2026-11-19T08:46:14+00:00",
+    "last_checked": "2026-11-19T17:42:46+00:00",
     "last_changed": "2026-10-23T14:27:44+00:00",
     "last_new": "2026-10-23T14:34:26+00:00"
   },
   "rwanda": {
-    "last_checked": "2026-11-19T08:46:14+00:00",
+    "last_checked": "2026-11-19T17:42:46+00:00",
     "last_changed": "2026-10-23T17:15:55+00:00",
     "last_new": "2026-10-23T17:16:58+00:00",
     "last_error": {
@@ -68,14 +68,14 @@
     "last_changed": "2026-10-23T17:15:55+00:00",
     "last_new": "2026-10-23T17:17:27+00:00",
     "last_error": {
-      "at": "2026-11-07T10:07:48+00:00",
-      "error": "ConnectError: [Errno -3] Temporary failure in name resolution"
+      "at": "2026-11-19T17:42:46+00:00",
+      "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://fdaghana.gov.gh/wp-json/wp/v2/posts?per_page=15&orderby=date&_fields=id%2Cdate%2Clink%2Ctitle%2Ccontent&search=bat"
     }
   },
   "who": {
-    "last_checked": "2026-11-19T08:46:14+00:00",
+    "last_checked": "2026-11-19T17:42:46+00:00",
     "last_changed": "2026-10-23T17:15:55+00:00",
     "last_new": "2026-10-23T17:18:40+00:00",
-    "last_modified": "Wed, 18 Nov 2026 17:59:20 GMT"
+    "last_modified": "Thu, 19 Nov 2026 14:47:20 GMT"
   }
 }
